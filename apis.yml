@@ -1,23 +1,115 @@
 aid: 51offer
 name: 51offer
-description: '51offer is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  51offer (Shanghai Huizhi Business Consulting Co., Ltd. / 上海汇紫商务咨询有限公司) is a Shanghai-based
+  one-stop online study-abroad platform for Chinese students applying to universities in the United
+  Kingdom, Australia, the United States, New Zealand, Japan and Singapore. Its consumer surface
+  covers DIY application filing, AI/big-data school and course matching, personal-statement and
+  document services, language training (IELTS/TOEFL), adviser and channel-partner services, a
+  study-abroad mall with online contract signing, payment and refund flows, a GPA calculator and a
+  student content and community section. 51offer publishes no developer program, but its official
+  site www.51offer.com serves a public, unauthenticated Swagger 1.2 API listing at /api-docs
+  ("Horizon Site APIConfig List / 51offer官网所有开放接口清单") describing 24 controllers and several
+  hundred JSON operations, and that listing is the machine-readable contract profiled here.
+image: https://static.51offer.com/skin/common/images/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/51offer/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-05'
 modified: '2026-09-05'
 tags:
 - Company
-apis: []
+- Education
+- Study Abroad
+- Higher Education
+- University Applications
+- Students
+- Language Training
+- E-Commerce
+- China
+- Consulting
+apis:
+- name: 51offer Horizon Site API
+  description: >-
+    The public JSON API surface of the 51offer official study-abroad site. 51offer serves its own
+    Swagger 1.2 resource listing and 24 resource declarations, unauthenticated, at
+    https://www.51offer.com/api-docs (and the same documents at https://m.51offer.com/api-docs).
+    Operations cover DIY application filing and materials, school and course selection, adviser and
+    alliance/channel services, the study-abroad mall, ordering, contract signing, payment and refund,
+    the GPA calculator, language-training correction, sign-in, article images and user profile.
+    Responses share one envelope - {message, code, data, header, page, apiInfo}.
+  humanURL: https://www.51offer.com/
+  image: https://static.51offer.com/skin/common/images/favicon.ico
+  baseURL: https://www.51offer.com
+  tags:
+  - Study Abroad
+  - Applications
+  - Education
+  - E-Commerce
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-horizon-site-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+  - type: Overlay
+    url: overlays/51offer-horizon-site-overlay.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/51offer-domain-security.yml
+- type: Authentication
+  url: authentication/51offer-authentication.yml
 - type: Website
-  url: https://equityzen.com/company/51offer
+  url: https://www.51offer.com/
+- type: About
+  url: https://www.51offer.com/aboutus/
+- type: SignUp
+  url: https://account.51offer.com/register.html
+- type: Login
+  url: https://account.51offer.com/login.html
+- type: Support
+  url: https://account.51offer.com/user/feedback.html
+- type: TermsOfService
+  url: https://www.51offer.com/aboutus/contract.html
+- type: PrivacyPolicy
+  url: https://www.51offer.com/aboutus/protection.html
+- type: Blog
+  url: https://51offer.github.io/
+- type: GitHubOrganization
+  url: https://github.com/51offer
+- type: Partners
+  url: https://www.51offer.com/aboutus/cooperation.html
+- type: Packages
+  url: packages/51offer-packages.yml
+- type: Conventions
+  url: conventions/51offer-conventions.yml
+- type: Conformance
+  url: conformance/51offer-conformance.yml
+- type: Lifecycle
+  url: lifecycle/51offer-lifecycle.yml
+- type: Plans
+  url: plans/51offer-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/51offer-rate-limits.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/51offer-llms.txt
+- type: X-MCPServerCandidate
+  url: mcp/51offer-mcp.yml
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 46
+  pass: local-v3

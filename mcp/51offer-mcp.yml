@@ -1,0 +1,142 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/51offer-horizon-site-openapi.yml
+status: candidate
+summary:
+  note: 51offer ships no MCP server. Searched the provider site, its GitHub organisation and the public MCP registries
+    on 2026-09-05 and found none, and no /.well-known document advertises one. The tools below are a CANDIDATE set
+    derived from operations in the OpenAPI converted from 51offer's own Swagger 1.2 documents - they describe what
+    an MCP server over this API could expose, and nothing 51offer publishes today.
+  tool_count: 31
+  derived_from_operations: 389
+deployment:
+  mode: none
+  auth: unknown
+  verified: derived
+  note: 'No hosted endpoint and no installable package exists. Nothing is guessed here: an endpoint URL is deliberately
+    absent rather than invented.'
+tools:
+- tool: queryRefundConstants
+  method: GET
+  path: /ngGpaCalc/constants
+  description: GPA计算器字典
+- tool: queryGpaBai
+  method: POST
+  path: /ngGpaCalc/gpabai
+  description: 百分制-GPA成绩计算
+- tool: queryGpaLevel
+  method: POST
+  path: /ngGpaCalc/gpalevel
+  description: 等级制-GPA成绩计算
+- tool: queryGpaWu
+  method: POST
+  path: /ngGpaCalc/gpawu
+  description: 五分制-GPA成绩计算
+- tool: addCart
+  method: GET
+  path: /ngdiyselectschool/addCart
+  description: 添加意向单
+- tool: ngdiyselectschool_checkDiyUserType_2
+  method: GET
+  path: /ngdiyselectschool/checkDiyUserType
+  description: diy用户成单类型分类
+- tool: confirmIntentions
+  method: GET
+  path: /ngdiyselectschool/confirmIntentions
+  description: 确认意向申请单
+- tool: deleteCartMajor
+  method: GET
+  path: /ngdiyselectschool/deleteCartMajor
+  description: 删除意向专业（两种方式：1.、根据id删除。 2、根据degreeId,schoolId,majorId删除）
+- tool: enterRecommend
+  method: GET
+  path: /ngdiychooseSchool/enterRecommend
+  description: 确认申请
+- tool: finalMaterial
+  method: GET
+  path: /ngdiychooseSchool/finalMaterial
+  description: 提交最后的申请
+- tool: generateSnapshot
+  method: GET
+  path: /ngdiychooseSchool/generateSnapshot
+  description: 生成快照
+- tool: getChooseSchoolList
+  method: GET
+  path: /ngdiychooseSchool/getChooseSchoolList
+  description: 待确认列表
+- tool: ngMall_getUserCheckOrderInfo_2
+  method: GET
+  path: /ngMall/checkOrderInfo
+  description: 获取用户确认订单信息
+- tool: createOrder
+  method: POST
+  path: /ngMall/createOrder
+  description: 用户下单
+- tool: ngMall_createOrderByWx_2
+  method: GET
+  path: /ngMall/createOrder_wx
+  description: 用户下单_未登录
+- tool: confirm
+  method: GET
+  path: /ngMall/doc/confirm/{id}
+  description: confirm
+- tool: getEntranceRefund
+  method: GET
+  path: /ngrefund/info
+  description: 获取入学退款申请
+- tool: getRefundProgress
+  method: GET
+  path: /ngrefund/progress
+  description: 获取退款进度
+- tool: submitEntranceRefund
+  method: POST
+  path: /ngrefund/sub
+  description: 提交入学退款申请
+- tool: getOfferDetail
+  method: GET
+  path: /ngHome/getOfferDetail
+  description: 获取offer的详细信息
+- tool: getUserSegment
+  method: GET
+  path: /ngHome/getUserSegment
+  description: getUserSegment
+- tool: ngHome_getUserSegment_3
+  method: POST
+  path: /ngHome/getUserSegment
+  description: getUserSegment
+- tool: queryOfferInfo
+  method: GET
+  path: /ngHome/queryOfferInfo
+  description: 查询offer信息
+- tool: getTodayCouponInfo
+  method: GET
+  path: /ngLanCorrect/coupon/today
+  description: 获取今日优惠券详情
+- tool: queryMyCouponCount
+  method: GET
+  path: /ngLanCorrect/couponCount/my
+  description: 获取我的批改券数量
+- tool: receiveShareCoupon
+  method: GET
+  path: /ngLanCorrect/receiveShareCoupon
+  description: 领取分享批改券
+- tool: robTodayFreeCoupon
+  method: GET
+  path: /ngLanCorrect/robCoupon
+  description: 领取今日免费批改券
+- tool: checkUserMobile
+  method: GET
+  path: /ngAdviser/checkUserMobile
+  description: 核查用户手机号是否已经被注册过
+- tool: exportExcelData
+  method: GET
+  path: /ngAdviser/exportExcelData
+  description: 导出excel
+- tool: ngAdviser_getAuthority_2
+  method: GET
+  path: /ngAdviser/getAuthority
+  description: 根据用户权限
+- tool: getCountryList
+  method: GET
+  path: /ngAdviser/getCountryList
+  description: 获取可申请国家列表

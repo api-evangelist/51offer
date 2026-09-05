@@ -1,0 +1,75 @@
+overlay: 1.0.0
+info:
+  title: 51offer Horizon Site API — API Evangelist enhancements
+  version: 1.0.0
+  description: >-
+    The enhancements API Evangelist applied on top of the raw Swagger 1.2 documents 51offer serves at
+    https://www.51offer.com/api-docs, expressed as an OpenAPI Overlay so they can be reviewed,
+    replayed or rejected independently of the conversion itself. 51offer publishes Swagger 1.2 and
+    nothing else; the OpenAPI 3.1 document these actions extend is a mechanical conversion of those
+    documents, and every path, method, operationId, summary, parameter, response code and model in it
+    came from the provider. This overlay adds only what the provider did NOT publish, and each action
+    below says where its value was observed.
+x-generated: '2026-09-05'
+x-method: generated
+x-extends: openapi/51offer-horizon-site-openapi.yml
+extends: https://raw.githubusercontent.com/api-evangelist/51offer/refs/heads/main/openapi/51offer-horizon-site-openapi.yml
+actions:
+- target: $.info
+  description: >-
+    Provenance of the conversion. The Swagger 1.2 source carries info.title "Horizon Site APIConfig
+    List", info.description "51offer官网所有开放接口清单" and info.contact "woodrow.w@51offer.com" -
+    all three name 51offer, which is how ownership of this contract was settled.
+  update:
+    x-provenance:
+      converted-from: Swagger 1.2
+      source: https://www.51offer.com/api-docs
+      fetched: '2026-09-05'
+      documents: 24
+      operations-in-source: 452
+      operations-after-merge: 389
+      note: >-
+        63 source operations collapsed on merge because two resource documents declare the same path
+        and method. Nothing was dropped from any single document.
+- target: $.servers
+  description: >-
+    The Swagger 1.2 source declares only basePath "/" and names no host, so a base URL had to be
+    established by probe rather than read. GET https://www.51offer.com/ngGpaCalc/constants returned
+    HTTP 200 application/json on 2026-09-05, and https://m.51offer.com/api-docs serves the same
+    documents. Note that repair-api-bases.py flags www.51offer.com as a docs host - on this provider
+    that flag is a false positive: the marketing site and the API are genuinely one host.
+  update:
+  - url: https://www.51offer.com
+    description: 51offer official site API host (verified live, HTTP 200, application/json).
+  - url: https://m.51offer.com
+    description: 51offer mobile-site host, serving the same Swagger 1.2 documents at /api-docs.
+- target: $.components.securitySchemes
+  description: >-
+    Swagger 1.2 declared an empty authorizations block, so the contract asserts no authentication at
+    all. The scheme added here was read off live response headers, not from documentation - 51offer
+    publishes no auth documentation of any kind.
+  update:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: >-
+        Session token header, evidenced by Access-Control-Allow-Headers "token, Content-Type,
+        Authorization" and Access-Control-Expose-Headers "token" on live responses from
+        https://www.51offer.com, 2026-09-05.
+- target: $.tags
+  description: >-
+    Tag descriptions carried over from the resource-listing document, which describes each of the 24
+    controllers in Chinese; the resource declarations themselves carry no tag metadata.
+  update: []
+- target: $.components.schemas
+  description: >-
+    Fourteen models are referenced by the provider's own Swagger 1.2 documents but never defined in
+    them (AllianceActiveResult, MaterialOther, PicInfoVO, RegisterUserVO, RunwaySysUser,
+    RunwaySysUserInfoSearch, RunwayUserInfo, RunwayUserInfoSearch, SignWechatCodeVO, UserDiyInfoVO,
+    UsersSignSearchVO and the untyped Java List/Map generics). Rather than invent properties for
+    them, each is emitted as an empty object flagged x-undefined-in-source so the reference resolves
+    and the gap stays visible. Model names carrying non-ASCII generic parameters (e.g.
+    HttpResult«邮件详情实体») are suffixed with a hash of the original name so a lossy sanitisation
+    can never collapse two distinct models; the original is preserved in x-swagger-1-2-name.
+  update: {}

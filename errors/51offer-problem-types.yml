@@ -1,0 +1,56 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/51offer-horizon-site-openapi.yml + live responses observed on https://www.51offer.com 2026-09-05
+format: vendor-envelope
+summary:
+  note: 51offer does not use RFC 9457 application/problem+json. Every operation returns HTTP 200 with a shared JSON
+    envelope whose `code` field carries the real outcome; the HTTP status codes declared in the contract are the
+    generic set Swagger 1.2 emitted for a Spring controller (401/403/404 on every operation, 201 on every write)
+    rather than a curated error model. No error-code reference is published anywhere on the 51offer site, so no
+    code registry can be recorded - that is a genuine gap in what the provider publishes, not a gap in this probe.
+  http_status_declarations:
+    '200': 389
+    '201': 70
+    '204': 120
+    '401': 389
+    '403': 389
+    '404': 269
+  operations: 389
+envelope:
+  media_type: application/json;charset=UTF-8
+  shape: HttpResult
+  fields:
+  - name: code
+    type: integer
+    description: Application status code. 200 on success. Observed live on GET /ngGpaCalc/constants and GET /diym/qrcode/create.
+  - name: message
+    type: string
+    description: Human-readable message, in Chinese (e.g. "成功", "生成二维码成功").
+  - name: data
+    type: object
+    description: Result payload; null on failure.
+  - name: header
+    type: string
+    description: Reserved; null on every observed response.
+  - name: page
+    type: object
+    description: Pagination block (Page) on list operations; null otherwise.
+  - name: apiInfo
+    type: object
+    description: 'Server echo: operationTime, version, hostName.'
+  evidence: https://www.51offer.com/ngGpaCalc/constants (HTTP 200, application/json, 2026-09-05)
+problem_types:
+- status: 401
+  title: Unauthorized
+  declared_on: 389
+  description: Declared by the provider on every operation in the Swagger 1.2 source. Authenticated operations expect
+    the `token` header.
+- status: 403
+  title: Forbidden
+  declared_on: 389
+  description: Declared by the provider on every operation in the Swagger 1.2 source.
+- status: 404
+  title: Not Found
+  declared_on: 269
+  description: Declared on most operations. Note that unknown paths on www.51offer.com answer HTTP 200 with an HTML
+    error page rather than 404.

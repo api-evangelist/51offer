@@ -1,0 +1,25 @@
+generated: '2026-09-05'
+method: searched
+source: registry.npmjs.org search + registry metadata, pypi.org, and the 51offer GitHub organisation (https://github.com/51offer,
+  11 public repositories, 2026-09-05)
+summary:
+  official_sdk_count: 0
+  package_count: 1
+  note: 51offer publishes no first-party client library for its API on any registry. Its GitHub organisation holds
+    11 public repositories - an iOS mobile-CI harness, a technical blog, and forks of third-party Objective-C/Swift
+    UI components (SVPullToRefresh, RATreeView, SDCycleScrollView, XLForm, PagingMenuController) - none of which
+    is an API client. The single npm package that names 51offer is a personal front-end build plugin, recorded below
+    as unofficial for completeness. No SDKs pointer is emitted.
+packages:
+- name: grunt-build-postcss
+  registry: npm
+  url: https://www.npmjs.com/package/grunt-build-postcss
+  official: false
+  kind: build-tool
+  language: JavaScript
+  version: 0.1.37
+  published: '2015-11-19'
+  source: https://registry.npmjs.org/grunt-build-postcss
+  note: Described as "51offer F2E build postcss" but published by an individual (umissthestars@gmail.com) to a personal
+    GitHub repository, not by 51offer. It is a Grunt/PostCSS build plugin, not an API client. Last release 2015-11-19,
+    more than a decade stale.

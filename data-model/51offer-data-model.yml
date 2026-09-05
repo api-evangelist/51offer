@@ -1,0 +1,821 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/51offer-horizon-site-openapi.yml
+summary:
+  entity_count: 77
+  relationship_count: 70
+  note: Derived from $ref links and id-reference field names in the OpenAPI converted from 51offer's own Swagger
+    1.2 documents. 51offer publishes no object reference, so no id prefixes, domains or business definitions can
+    be recorded - only the shapes the contract itself declares. Envelope wrappers (HttpResult*, Page, ApiInfo, Java
+    Map/List generics) and the 14 models the source documents reference but never define are excluded from the entity
+    list.
+entities:
+- name: VO_-_183f88
+  source_name: 订单信息VO - 前台
+  field_count: 52
+  identifiers:
+  - id
+  - uid
+  - goodsId
+  - refrenceUid
+  - orderBelongId
+- name: SchoolBasic
+  source_name: SchoolBasic
+  field_count: 37
+  identifiers:
+  - id
+  - areaId
+  - cityId
+  - countryId
+- name: OrderDocInfoDetailVo
+  source_name: OrderDocInfoDetailVo
+  field_count: 35
+  identifiers:
+  - id
+  - orderUid
+  - orderId
+  - orderDocSuid
+  - orderDocFileSuid
+  - orderDocFileSendSuid
+  - orderDocConfirmUid
+  - orderDocColseUid
+- name: UsersEducationVO
+  source_name: UsersEducationVO
+  field_count: 33
+  identifiers:
+  - id
+  - uid
+  - schoolId
+- name: Schema_1bb5ea
+  source_name: 报名申请信息对象
+  field_count: 33
+  identifiers:
+  - applyId
+  - nationalityId
+- name: SysUsers
+  source_name: SysUsers
+  field_count: 30
+  identifiers:
+  - uid
+- name: UsersInfoVO
+  source_name: UsersInfoVO
+  field_count: 26
+  identifiers:
+  - uid
+  - nationalityId
+  - resumeFileId
+  - countryId
+  - provinceId
+  - cityId
+  - passportFileId
+- name: Sku
+  source_name: Sku
+  field_count: 23
+  identifiers:
+  - skuId
+  - iuid
+- name: OrderStudyInfoDetailVo
+  source_name: OrderStudyInfoDetailVo
+  field_count: 22
+  identifiers:
+  - id
+  - orderUid
+  - orderStudyAssistantUid
+  - orderStudyEduUid
+- name: Schema_2467b7
+  source_name: 申请费支付信息对象
+  field_count: 21
+  identifiers:
+  - id
+  - uid
+  - applyOrderId
+- name: AllianceActiveVO
+  source_name: AllianceActiveVO
+  field_count: 21
+  identifiers:
+  - id
+- name: StudyCourseVo
+  source_name: StudyCourseVo
+  field_count: 21
+  identifiers:
+  - id
+  - uid
+- name: OrderVO
+  source_name: OrderVO
+  field_count: 20
+  identifiers:
+  - id
+  - orderId
+  - applyCountryId
+  - applyEducationId
+- name: UserDiyThreestepsInfo
+  source_name: UserDiyThreestepsInfo
+  field_count: 20
+  identifiers:
+  - id
+  - uid
+  - applyCountryId
+  - applyEducationId
+- name: OrderMallRefundParam
+  source_name: OrderMallRefundParam
+  field_count: 20
+  identifiers:
+  - id
+  - uid
+  - regOrderId
+- name: Major
+  source_name: Major
+  field_count: 18
+  identifiers:
+  - id
+  - schoolId
+  - gradeId
+- name: UsersReferenceVO
+  source_name: UsersReferenceVO
+  field_count: 18
+  identifiers:
+  - id
+  - uid
+  - suborderId
+  - referenceId
+  - referenceObjectId
+  - refereeId
+- name: AllianceStore
+  source_name: AllianceStore
+  field_count: 18
+  identifiers:
+  - id
+  - storeId
+  - provinceId
+  - cityId
+  - coutyId
+- name: SysUsersOrgRoleVO
+  source_name: SysUsersOrgRoleVO
+  field_count: 18
+  identifiers:
+  - id
+  - sysUserId
+  - uid
+- name: UserCouponVo
+  source_name: UserCouponVo
+  field_count: 18
+- name: UsersPartnerInfo
+  source_name: UsersPartnerInfo
+  field_count: 16
+  identifiers:
+  - uid
+  - applyCountryId
+- name: StudyCourseSearchVo
+  source_name: StudyCourseSearchVo
+  field_count: 16
+  identifiers:
+  - uid
+  - teacherId
+- name: ChannelInfo
+  source_name: ChannelInfo
+  field_count: 15
+  identifiers:
+  - channelId
+  - categoryId
+  - groupId
+- name: Users
+  source_name: Users
+  field_count: 15
+  identifiers:
+  - uid
+- name: UserDiyInfo
+  source_name: UserDiyInfo
+  field_count: 15
+  identifiers:
+  - uid
+  - wechatId
+  - planningBookId
+- name: Course
+  source_name: Course
+  field_count: 14
+  identifiers:
+  - id
+  - schoolId
+  - gradeId
+  - joinMajorId
+- name: MaterialSuborderOther
+  source_name: MaterialSuborderOther
+  field_count: 14
+  identifiers:
+  - id
+  - uid
+  - channelId
+  - suborderId
+  - materialFileId
+- name: AllianceUsers
+  source_name: AllianceUsers
+  field_count: 14
+  identifiers:
+  - id
+  - storeId
+  - openId
+  - sysUid
+  - unionid
+- name: MaterialSuborderPs
+  source_name: MaterialSuborderPs
+  field_count: 13
+  identifiers:
+  - id
+  - uid
+  - channelId
+  - suborderId
+  - psFileId
+- name: UsersWorkVO
+  source_name: UsersWorkVO
+  field_count: 13
+  identifiers:
+  - id
+  - uid
+- name: UsersLanguageScoreVO
+  source_name: UsersLanguageScoreVO
+  field_count: 13
+  identifiers:
+  - id
+  - uid
+  - testId
+- name: SysPartners
+  source_name: SysPartners
+  field_count: 13
+  identifiers:
+  - id
+- name: CMSCity
+  source_name: CMSCity
+  field_count: 12
+  identifiers:
+  - id
+  - countryId
+  - areaId
+- name: VO_-_890e8c
+  source_name: 添加订单参数VO - 后台
+  field_count: 12
+  identifiers:
+  - orderId
+  - uid
+  - goodsId
+  - skuId
+- name: Dict
+  source_name: Dict
+  field_count: 11
+  identifiers:
+  - id
+- name: AllianceActiveUsersLog
+  source_name: AllianceActiveUsersLog
+  field_count: 11
+  identifiers:
+  - id
+  - uid
+  - sysUid
+  - auid
+  - activityId
+- name: University
+  source_name: University
+  field_count: 11
+  identifiers:
+  - id
+- name: Schema_689fdb
+  source_name: 语培视屏信息对象
+  field_count: 11
+  identifiers:
+  - id
+  - courseId
+  - classId
+- name: SkuAttr
+  source_name: SkuAttr
+  field_count: 10
+  identifiers:
+  - skuId
+  - attrId
+  - pid
+- name: VO_-_a75db4
+  source_name: 确认订单信息VO - 前台
+  field_count: 10
+  identifiers:
+  - goodsId
+- name: Schema_2ea806
+  source_name: 邮件列表实体
+  field_count: 10
+  identifiers:
+  - mid
+- name: Schema_e23c20
+  source_name: 邮件详情实体
+  field_count: 10
+- name: Country
+  source_name: Country
+  field_count: 9
+  identifiers:
+  - id
+- name: UsersSignVO
+  source_name: UsersSignVO
+  field_count: 9
+  identifiers:
+  - id
+  - storeId
+  - uid
+- name: SignWechatCode
+  source_name: SignWechatCode
+  field_count: 9
+  identifiers:
+  - id
+  - storeId
+- name: AllianceUserVO
+  source_name: AllianceUserVO
+  field_count: 9
+  identifiers:
+  - id
+  - openId
+  - unionid
+- name: DiyAppliedSchoolVO
+  source_name: DiyAppliedSchoolVO
+  field_count: 9
+  identifiers:
+  - id
+  - uid
+  - schoolId
+  - majorId
+- name: Docele
+  source_name: Docele
+  field_count: 9
+  identifiers:
+  - id
+- name: Schema_f23045
+  source_name: 文书业务单文件关联信息对象
+  field_count: 9
+  identifiers:
+  - id
+- name: Area
+  source_name: Area
+  field_count: 8
+  identifiers:
+  - id
+  - countryId
+- name: SchoolRank
+  source_name: SchoolRank
+  field_count: 8
+  identifiers:
+  - id
+  - countryId
+- name: MajorDirection
+  source_name: MajorDirection
+  field_count: 8
+  identifiers:
+  - id
+  - countryId
+  - schoolId
+  - gradeId
+- name: SysGlobalStatus
+  source_name: SysGlobalStatus
+  field_count: 8
+  identifiers:
+  - id
+  - bsId
+- name: PayInfoVo
+  source_name: PayInfoVo
+  field_count: 8
+  identifiers:
+  - transactionId
+  - payId
+  - bizOrderId
+- name: -_ad6a28
+  source_name: 订单合同在线签署 - 前台
+  field_count: 8
+  identifiers:
+  - flowId
+  - fileId
+- name: SignCallback
+  source_name: SignCallback
+  field_count: 8
+  identifiers:
+  - signFlowId
+- name: Grade
+  source_name: Grade
+  field_count: 7
+  identifiers:
+  - id
+  - schoolId
+  - gradeId
+- name: MajorCategory
+  source_name: MajorCategory
+  field_count: 7
+  identifiers:
+  - id
+  - countryId
+  - schoolId
+  - gradeId
+- name: Schema_0b664c
+  source_name: 语言成绩对象
+  field_count: 7
+  identifiers:
+  - id
+  - applyId
+  - reportId
+- name: StoreInfoVO
+  source_name: StoreInfoVO
+  field_count: 6
+  identifiers:
+  - storeId
+- name: UserDiyThreestepVO
+  source_name: UserDiyThreestepVO
+  field_count: 6
+- name: DiyMaterialOrder
+  source_name: DiyMaterialOrder
+  field_count: 5
+  identifiers:
+  - id
+  - uid
+  - orderId
+- name: UsersApplyInfoVO
+  source_name: UsersApplyInfoVO
+  field_count: 5
+- name: Schema_86072f
+  source_name: 支付相关操作记录
+  field_count: 5
+- name: SchoolMaterialVO
+  source_name: SchoolMaterialVO
+  field_count: 4
+  identifiers:
+  - subOrderId
+- name: Schema_0e135e
+  source_name: 邮件附件实体
+  field_count: 4
+- name: IntelligentSchool
+  source_name: IntelligentSchool
+  field_count: 4
+  identifiers:
+  - categoryId
+- name: EnumsObj
+  source_name: EnumsObj
+  field_count: 4
+  identifiers:
+  - id
+- name: Schema_36ac7e
+  source_name: 意向国家对象
+  field_count: 4
+  identifiers:
+  - id
+  - applyId
+  - countryId
+- name: CityCounty
+  source_name: CityCounty
+  field_count: 3
+  identifiers:
+  - id
+  - cityId
+- name: MaterialOtherVO
+  source_name: MaterialOtherVO
+  field_count: 3
+- name: GpaCalc
+  source_name: GpaCalc
+  field_count: 3
+- name: Schema_c68756
+  source_name: 成绩单对象
+  field_count: 3
+  identifiers:
+  - reportId
+- name: Schema_92c8b6
+  source_name: 邮件基本信息实体
+  field_count: 2
+- name: Organization
+  source_name: Organization
+  field_count: 2
+  identifiers:
+  - orgId
+- name: VO_629325
+  source_name: 入学退款VO
+  field_count: 2
+- name: Entry_string_int_3e25de
+  source_name: Entry«string,int»
+  field_count: 1
+relationships:
+- from: OrderVO
+  to: OrderVO
+  type: belongs_to
+  via: orderId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: OrderVO
+  to: SchoolBasic
+  type: has_one
+  via: school
+- from: OrderVO
+  to: Major
+  type: has_one
+  via: major
+- from: OrderVO
+  to: Grade
+  type: has_one
+  via: grade
+- from: OrderVO
+  to: Course
+  type: has_one
+  via: course
+- from: OrderVO
+  to: Schema_2467b7
+  type: has_one
+  via: orderApplyFee
+- from: Grade
+  to: Grade
+  type: belongs_to
+  via: gradeId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: CMSCity
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: CMSCity
+  to: Area
+  type: belongs_to
+  via: areaId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: SchoolBasic
+  to: Area
+  type: belongs_to
+  via: areaId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: SchoolBasic
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: SchoolBasic
+  to: Area
+  type: has_one
+  via: area
+- from: SchoolBasic
+  to: CMSCity
+  type: has_one
+  via: city
+- from: SchoolBasic
+  to: Country
+  type: has_one
+  via: country
+- from: SchoolBasic
+  to: SchoolRank
+  type: has_many
+  via: rankList
+- from: Area
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: Major
+  to: Grade
+  type: belongs_to
+  via: gradeId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: SchoolRank
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: Course
+  to: Grade
+  type: belongs_to
+  via: gradeId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: DiyMaterialOrder
+  to: OrderVO
+  type: belongs_to
+  via: orderId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: UsersInfoVO
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: SchoolMaterialVO
+  to: MaterialSuborderPs
+  type: has_one
+  via: materialSuborderPs
+- from: SchoolMaterialVO
+  to: UsersReferenceVO
+  type: has_many
+  via: usersReferenceVOList
+- from: SchoolMaterialVO
+  to: MaterialSuborderOther
+  type: has_one
+  via: materialSuborderOther
+- from: UsersApplyInfoVO
+  to: UsersInfoVO
+  type: has_one
+  via: usersInfoVO
+- from: UsersApplyInfoVO
+  to: UsersEducationVO
+  type: has_many
+  via: usersEducationVOList
+- from: UsersApplyInfoVO
+  to: UsersWorkVO
+  type: has_many
+  via: usersWorkVOList
+- from: UsersApplyInfoVO
+  to: UsersLanguageScoreVO
+  type: has_many
+  via: usersLanguageScoreVOList
+- from: UsersApplyInfoVO
+  to: SchoolMaterialVO
+  type: has_many
+  via: schoolMaterialVOList
+- from: SkuAttr
+  to: Sku
+  type: belongs_to
+  via: skuId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: SkuAttr
+  to: SkuAttr
+  type: has_many
+  via: children
+- from: Sku
+  to: Sku
+  type: belongs_to
+  via: skuId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: Sku
+  to: SkuAttr
+  type: has_many
+  via: attrs
+- from: Sku
+  to: SkuAttr
+  type: has_many
+  via: attrsLevel
+- from: VO_-_a75db4
+  to: SkuAttr
+  type: has_many
+  via: skuAttrs
+- from: VO_-_a75db4
+  to: UserCouponVo
+  type: has_many
+  via: couponList
+- from: VO_-_183f88
+  to: SkuAttr
+  type: has_many
+  via: skuAttrs
+- from: VO_-_183f88
+  to: VO_-_183f88
+  type: has_many
+  via: unionOrderList
+- from: Schema_2ea806
+  to: Schema_92c8b6
+  type: has_one
+  via: from
+- from: Schema_2ea806
+  to: Schema_92c8b6
+  type: has_many
+  via: to
+- from: Schema_e23c20
+  to: Schema_92c8b6
+  type: has_one
+  via: from
+- from: Schema_e23c20
+  to: Schema_92c8b6
+  type: has_many
+  via: to
+- from: Schema_e23c20
+  to: Schema_92c8b6
+  type: has_many
+  via: cc
+- from: Schema_e23c20
+  to: Schema_92c8b6
+  type: has_many
+  via: bcc
+- from: Schema_e23c20
+  to: Schema_0e135e
+  type: has_many
+  via: files
+- from: MajorDirection
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: MajorDirection
+  to: Grade
+  type: belongs_to
+  via: gradeId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: MajorCategory
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: MajorCategory
+  to: Grade
+  type: belongs_to
+  via: gradeId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: DiyAppliedSchoolVO
+  to: Major
+  type: belongs_to
+  via: majorId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: UserDiyThreestepVO
+  to: UserDiyThreestepsInfo
+  type: has_one
+  via: userDiyThreestepsInfo
+- from: UserDiyThreestepVO
+  to: UserDiyInfo
+  type: has_one
+  via: userDiyInfo
+- from: UserDiyThreestepVO
+  to: DiyAppliedSchoolVO
+  type: has_many
+  via: applySchoolList
+- from: IntelligentSchool
+  to: SchoolBasic
+  type: has_one
+  via: schoolBasic
+- from: VO_-_890e8c
+  to: OrderVO
+  type: belongs_to
+  via: orderId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: VO_-_890e8c
+  to: Sku
+  type: belongs_to
+  via: skuId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: VO_-_890e8c
+  to: VO_-_890e8c
+  type: has_many
+  via: subList
+- from: OrderDocInfoDetailVo
+  to: OrderVO
+  type: belongs_to
+  via: orderId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: OrderDocInfoDetailVo
+  to: Schema_f23045
+  type: has_many
+  via: serviceUploadFileList
+- from: OrderDocInfoDetailVo
+  to: EnumsObj
+  type: has_many
+  via: statusEnumMap
+- from: OrderStudyInfoDetailVo
+  to: EnumsObj
+  type: has_many
+  via: statusMap
+- from: StudyCourseVo
+  to: Schema_689fdb
+  type: has_one
+  via: studyVideo
+- from: Schema_689fdb
+  to: Course
+  type: belongs_to
+  via: courseId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: SignCallback
+  to: Organization
+  type: has_one
+  via: organization
+- from: VO_629325
+  to: VO_-_183f88
+  type: has_one
+  via: orderMallInfoVO
+- from: VO_629325
+  to: OrderMallRefundParam
+  type: has_one
+  via: orderMallRefundParam
+- from: Schema_36ac7e
+  to: Country
+  type: belongs_to
+  via: countryId
+  confidence: medium
+  note: inferred from an id-reference field name, not from a $ref
+- from: Schema_1bb5ea
+  to: Schema_36ac7e
+  type: has_many
+  via: countryList
+- from: Schema_1bb5ea
+  to: Schema_0b664c
+  type: has_many
+  via: languageScoreList
+- from: Schema_1bb5ea
+  to: Schema_c68756
+  type: has_many
+  via: reportCardList

@@ -1,0 +1,19 @@
+generated: '2026-09-05'
+method: searched
+source: https://www.51offer.com/mall/ and https://www.51offer.com/mall/list/208 (both HTTP 200), 2026-09-05
+plan_count: 0
+summary:
+  note: '51offer publishes no API plans or API pricing of any kind - there is no developer programme to price. Its
+    consumer commerce surface (the 留学商城 study-abroad mall, seven category pages 208-214) exists and is reachable
+    anonymously, but the pages are client-side rendered shells: the served HTML carries no product names, no ¥ amounts
+    and no price fields, and the catalogue is fetched at runtime from the site API. The free application service
+    is the company''s headline consumer proposition ("免费留学申请"), but that is a service offer, not a published plan
+    table. plan_count is 0 because nothing priced was actually readable, not because pricing was not looked for.'
+plans: []
+evidence:
+- url: https://www.51offer.com/mall/
+  status: 200
+  note: HTTP 200, 20,851 bytes, zero ¥ amounts and zero price fields in the served HTML
+- url: https://www.51offer.com/mall/list/208
+  status: 200
+  note: same SPA shell; catalogue loads client-side

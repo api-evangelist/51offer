@@ -1,0 +1,102 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/51offer-horizon-site-openapi.yml + live responses and CORS headers observed on https://www.51offer.com
+  2026-09-05. 51offer publishes no developer documentation, so nothing here is quoted from a docs page - every statement
+  is read from the contract or from a response actually observed.
+auth:
+  style: apiKey header
+  parameter: token
+  evidence: 'Access-Control-Allow-Headers: token, Content-Type, Authorization; Access-Control-Expose-Headers: token'
+  documented: false
+  note: No developer auth documentation exists. Public read endpoints answer anonymously; user endpoints do not.
+idempotency:
+  coverage: none
+  mechanism: null
+  header: null
+  note: No Idempotency-Key header, no client-supplied request key and no replay-protection semantics appear anywhere
+    in the 24 Swagger 1.2 documents or in observed responses. 118 mutating operations (POST/PUT/PATCH/DELETE) carry
+    no replay protection at all, including createOrder, payOrder and submitEntranceRefund.
+  evidence: openapi/51offer-horizon-site-openapi.yml
+reversibility:
+  grade: documented
+  note: 'A reversal path exists and is part of the published contract, but no window is stated anywhere 51offer
+    publishes, so this grades `documented`, not `verified`. NEVER read a window into this record: none is asserted
+    because none was found.'
+  surfaces:
+  - write: createOrder / payOrder (POST /ngMall/createOrder, POST /ngMall/payOrder)
+    reversal: submitEntranceRefund
+    operation: POST /ngrefund/sub
+    status_operation: GET /ngrefund/progress
+    window: null
+    window_source: null
+    note: Refund is applied for and then progressed through review (getRefundProgress); it is not an immediate void.
+  - write: saveUserEducationInfo / saveUserLanguageScoreInfo / saveUserWorkInfo (POST /diym/basic/save/*)
+    reversal: deleteUserEducationInfo / deleteUserLanguageScoreInfo / deleteUserWorkInfo
+    operation: GET /diym/basic/delete/{education|language|work}
+    window: null
+    window_source: null
+  - write: material and school-document upload (POST /diym/apply/*, /diym/school/*)
+    reversal: deleteMaterialFileInfo / deleteUserPSInfo / deleteUserSuborderReferenceInfo / deleteUserSuborderOtherInfo
+    operation: GET /diym/apply/delete/file, GET /diym/school/delete/*
+    window: null
+    window_source: null
+  - write: intent cart (add school / major)
+    reversal: deleteCartSchool / deleteCartMajor
+    operation: GET /ngdiyselectschool/deleteCartSchool, GET /ngdiyselectschool/deleteCartMajor
+    window: null
+    window_source: null
+dry_run_mode:
+  supported: false
+  note: No dry-run, preview, validate-only or simulation parameter exists in the contract.
+pagination:
+  style: page-number
+  response_field: page
+  fields:
+  - currPage
+  - pageSize
+  - count
+  - totalPage
+  - hasPre
+  - hasNext
+  - pageStr
+  - startRow
+  - endRow
+  request_params:
+  - currPage
+  - pageSize
+  note: Every list response carries the shared Page block inside the envelope rather than link headers or cursors.
+  evidence: components.schemas.Page in openapi/51offer-horizon-site-openapi.yml
+field_expansion:
+  supported: false
+metadata:
+  supported: false
+request_tracing:
+  request_id_header: null
+  note: No request-id or correlation header is returned. The envelope's apiInfo block carries operationTime, version
+    and hostName, all of which were null or a timestamp on observed responses - it is the nearest thing to a trace
+    signal this API offers.
+versioning:
+  scheme: none-in-path
+  declared_version: '1.0'
+  note: apiVersion "1.0" is declared in every Swagger 1.2 document. There is no version segment in any path, no
+    version header, and no published versioning policy.
+error_envelope:
+  shape: HttpResult {message, code, data, header, page, apiInfo}
+  rfc9457: false
+  see: errors/51offer-problem-types.yml
+rate_limit_signaling:
+  headers: []
+  note: No RateLimit-*, X-RateLimit-* or Retry-After header on any observed response.
+  see: rate-limits/51offer-rate-limits.yml
+cors:
+  allow_origin: '*'
+  allow_methods: GET, POST, OPTIONS
+  allow_headers: token, Content-Type, Authorization
+  expose_headers: token
+  allow_credentials: true
+  evidence: response headers on https://www.51offer.com/ngGpaCalc/constants, 2026-09-05
+see_also:
+- errors/51offer-problem-types.yml
+- authentication/51offer-authentication.yml
+- lifecycle/51offer-lifecycle.yml
+- rate-limits/51offer-rate-limits.yml

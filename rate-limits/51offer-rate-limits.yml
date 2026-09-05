@@ -1,0 +1,16 @@
+generated: '2026-09-05'
+method: probed
+source: live unauthenticated responses from https://www.51offer.com (GET /ngGpaCalc/constants, GET /diym/qrcode/create),
+  2026-09-05
+limit_count: 0
+summary:
+  note: 'No rate limits are documented - 51offer publishes no developer documentation at all - and none are signalled
+    at runtime. Live 200 responses carried no RateLimit-*, X-RateLimit-* or Retry-After header, and no 429 was observed.
+    An honest zero: nothing published, nothing signalled.'
+limits: []
+response_headers:
+  observed: []
+  expected_on_exhaustion: null
+  evidence: Response headers observed were Server, Date, Content-Type, Transfer-Encoding, Connection, Set-Cookie
+    (JSESSIONID) and the CORS Access-Control-* set. No rate-limit signalling of any kind.
+status_code_on_exhaustion: null

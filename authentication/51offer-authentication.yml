@@ -1,0 +1,20 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/51offer-horizon-site-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: tokenHeader
+  type: apiKey
+  in: header
+  parameter: token
+  description: 'Session token header. Observed on live responses from https://www.51offer.com:
+    Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token".
+    Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated
+    user endpoints return the envelope with a non-200 code field. 51offer publishes no developer
+    auth documentation.'
+  sources:
+  - openapi/51offer-horizon-site-openapi.yml

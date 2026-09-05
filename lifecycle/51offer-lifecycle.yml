@@ -1,0 +1,47 @@
+generated: '2026-09-05'
+method: searched
+source: 'probes of the 51offer hosts on 2026-09-05: www.51offer.com/ (200), /aboutus/ (200), /api-docs (200), and
+  DNS lookups for status.51offer.com, developer.51offer.com, open.51offer.com and docs.51offer.com (all NXDOMAIN);
+  api.51offer.com resolves but redirects to https://www.51offer.com/404.html. Every /.well-known path returns a
+  soft 404. No changelog, status page, SLA or deprecation policy exists on any surface.'
+summary:
+  note: '51offer runs no developer programme, so none of the operational surfaces a developer would look for exist:
+    no status page, no changelog or release notes, no deprecation or sunset policy, no SLA, no support channel for
+    API consumers (the only support surface is the consumer feedback form at https://account.51offer.com/user/feedback.html).
+    Nothing here is a probe failure - these pages are absent.'
+  developer_surface_probe:
+  - host: status.51offer.com
+    result: NXDOMAIN
+  - host: developer.51offer.com
+    result: NXDOMAIN
+  - host: open.51offer.com
+    result: NXDOMAIN
+  - host: docs.51offer.com
+    result: NXDOMAIN
+  - host: api.51offer.com
+    result: resolves; HTTPS redirects to https://www.51offer.com/404.html (HTTP 200 soft 404)
+versioning:
+  scheme: none
+  declared_version: '1.0'
+  note: apiVersion "1.0" in every Swagger 1.2 document; no version segment in any path and no version negotiation.
+status_page:
+  present: false
+  url: null
+  note: status.51offer.com does not resolve (NXDOMAIN, 2026-09-05) and no status link appears on the site. No StatusPage
+    pointer is emitted.
+changelog:
+  present: false
+  url: null
+  note: No dated changelog or release-notes surface exists on any host.
+deprecation_policy:
+  present: false
+  note: No deprecation or sunset policy is published, and no Sunset or Deprecation response header was observed.
+    The contract marks 0 operations deprecated. No Deprecation pointer is emitted.
+deprecated_operations: []
+sla:
+  present: false
+support:
+  developer_channel: false
+  consumer_channel: https://account.51offer.com/user/feedback.html
+  phone: 400-6152-656
+  note: A consumer support line and feedback form; no API support channel.

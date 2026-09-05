@@ -1,0 +1,197 @@
+generated: '2026-09-05'
+method: probed
+source: live GET of each named /.well-known path (plus /llms.txt and /robots.txt) on every 51offer host in this
+  record, 2026-09-05
+summary:
+  hosts_probed: 5
+  documents_found: 0
+  note: No /.well-known document is served on any 51offer host. www.51offer.com, 51offer.com and m.51offer.com answer
+    every unknown path with an HTTP 200 HTML error page ("亲，出错啦" / soft 404); static.51offer.com returns a real
+    nginx 404 and s2.51offer.com returns {"error":"Document not found"}. No security.txt, no api-catalog, no openid-configuration,
+    no oauth-authorization-server, no ai-plugin.json, no agent card, no llms.txt, and no robots.txt. No WellKnown,
+    SecurityTxt or AgentCard pointer is emitted, because a recorded absence is not a presence.
+hosts:
+- host: www.51offer.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+    file: null
+    note: no response (connection reset / timeout) after 3 attempts from this network
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/api-catalog
+    status: 0
+    file: null
+    note: no response (connection reset / timeout) after 3 attempts from this network
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /llms.txt
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /robots.txt
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+- host: 51offer.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 302
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 0
+    file: null
+    note: no response (connection reset / timeout) after 3 attempts from this network
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 302
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 302
+    file: null
+  - path: /.well-known/agent.json
+    status: 302
+    file: null
+  - path: /llms.txt
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /robots.txt
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+- host: m.51offer.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/openid-configuration
+    status: 302
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/api-catalog
+    status: 0
+    file: null
+    note: no response (connection reset / timeout) after 3 attempts from this network
+  - path: /.well-known/ai-plugin.json
+    status: 0
+    file: null
+    note: no response (connection reset / timeout) after 3 attempts from this network
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /.well-known/agent.json
+    status: 302
+    file: null
+  - path: /llms.txt
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+  - path: /robots.txt
+    status: 200
+    file: null
+    note: HTTP 200 but the body is the site HTML error page ("亲，出错啦") - a soft 404, not a document
+- host: static.51offer.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 0
+    file: null
+    note: no response (connection reset / timeout) after 3 attempts from this network
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 0
+    file: null
+    note: no response (connection reset / timeout) after 3 attempts from this network
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+  - path: /robots.txt
+    status: 404
+    file: null
+- host: s2.51offer.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+  - path: /robots.txt
+    status: 404
+    file: null

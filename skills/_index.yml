@@ -1,0 +1,32 @@
+generated: '2026-09-05'
+method: generated
+source: openapi/51offer-horizon-site-openapi.yml (converted from the Swagger 1.2 documents 51offer serves at https://www.51offer.com/api-docs)
+summary:
+  skill_count: 4
+  note: >-
+    Every operationId, path and HTTP method in these skills was read out of the contract 51offer
+    itself publishes; none is invented. The skills deliberately carry the API's hazards with them -
+    no idempotency on 118 mutating operations, mutating operations declared as GET, an application
+    code inside a 200 envelope instead of HTTP status semantics, and a refund path with no published
+    window - because an agent that does not know those things will get them wrong.
+skills:
+- name: 51offer-gpa-calculation
+  file: skills/51offer-gpa-calculation.md
+  description: Convert a Chinese transcript into UK/US/AU GPA scales via the public, anonymous GPA calculator.
+  operations: 4
+  auth_required: false
+- name: 51offer-diy-school-selection
+  file: skills/51offer-diy-school-selection.md
+  description: Background capture, intelligent matching, intent cart and submission for review.
+  operations: 13
+  auth_required: true
+- name: 51offer-applicant-profile
+  file: skills/51offer-applicant-profile.md
+  description: Applicant profile, education, language scores, work history and per-school materials, with the delete that reverses each write.
+  operations: 15
+  auth_required: true
+- name: 51offer-entrance-refund
+  file: skills/51offer-entrance-refund.md
+  description: File and track an entrance refund - the only money-reversal path in the API.
+  operations: 6
+  auth_required: true

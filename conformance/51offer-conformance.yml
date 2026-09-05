@@ -1,0 +1,49 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/51offer-horizon-site-openapi.yml + a search of the 51offer site (www.51offer.com/aboutus/, /aboutus/contract.html,
+  /aboutus/protection.html) for published standards, certification or compliance claims, 2026-09-05
+summary:
+  note: '51offer publishes no standards, certification or compliance programme. Its API is a bespoke JSON envelope
+    over Spring controllers with no cross-cutting standard adopted. This record is REWARD-ONLY: study-abroad agency
+    services have no market-wide API standard for a domain-standard conformance claim, so none is invented here.
+    No Compliance pointer is emitted.'
+conformance:
+- id: openapi
+  conforms: false
+  evidence: The provider publishes Swagger 1.2 (https://www.51offer.com/api-docs), superseded in 2014. The OpenAPI
+    3.1 document in openapi/ is API Evangelist's faithful conversion of it, not a contract 51offer publishes.
+- id: swagger-1.2
+  conforms: true
+  evidence: https://www.51offer.com/api-docs - swaggerVersion "1.2", 24 resource declarations, HTTP 200
+- id: rfc9457
+  conforms: false
+  evidence: No application/problem+json media type anywhere in the contract; errors ride an application-code field
+    inside a 200 envelope.
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 security scheme in the contract and no /.well-known/oauth-authorization-server on any host.
+- id: oidc
+  conforms: false
+  evidence: No /.well-known/openid-configuration on any host (see well-known/51offer-well-known.yml).
+- id: idempotency
+  conforms: false
+  evidence: No idempotency key mechanism on any of the 118 mutating operations (see conventions/51offer-conventions.yml).
+- id: pagination
+  conforms: true
+  evidence: 'A single shared page-number block (Page: currPage/pageSize/count/totalPage/hasPre/hasNext) is applied
+    consistently across list responses in openapi/51offer-horizon-site-openapi.yml'
+- id: cors
+  conforms: true
+  evidence: 'Access-Control-Allow-Origin: * with an explicit allow/expose header set, observed on https://www.51offer.com/ngGpaCalc/constants
+    2026-09-05'
+- id: https
+  conforms: true
+  evidence: TLS 1.2, wildcard certificate CN=*.51offer.com issued by Xcc Trust DV SSL CA, valid to 2026-10-21; verified
+    2026-09-05
+- id: json-schema
+  conforms: false
+  evidence: Swagger 1.2 models are pre-JSON-Schema; the provider publishes no JSON Schema documents.
+- id: icp-filing
+  conforms: true
+  evidence: The site footer carries a Chinese MIIT ICP filing (https://beian.miit.gov.cn) and a Shanghai AIC business
+    licence link - a Chinese regulatory registration, not an API standard.

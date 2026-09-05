@@ -64,5 +64,51 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-51offer is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/51offer
+51offer (Shanghai Huizhi Business Consulting Co., Ltd. / 上海汇紫商务咨询有限公司, Xuhui District,
+Shanghai) is a one-stop online study-abroad platform for Chinese students applying to universities in
+the United Kingdom, Australia, the United States, New Zealand, Japan and Singapore. Its surface covers
+DIY application filing, AI/big-data school and course matching, personal statements and application
+materials, IELTS/TOEFL language training, adviser and channel-partner services, a study-abroad mall
+with online contract signing, payment and refund, a GPA calculator, and a student content section.
+
+## The contract
+
+51offer runs **no developer programme** — no portal, no documentation, no SDKs, no support channel for
+API consumers. It does, however, serve an unauthenticated **Swagger 1.2** API listing on its own
+official site:
+
+- <https://www.51offer.com/api-docs> — HTTP 200, `application/json`, `swaggerVersion: 1.2`,
+  `info.title: "Horizon Site APIConfig List"`, `info.description: "51offer官网所有开放接口清单"`,
+  `info.contact: woodrow.w@51offer.com`. 24 resource declarations, 452 operations.
+- The same documents are served at <https://m.51offer.com/api-docs>.
+
+Those 25 documents are saved verbatim under `openapi/_original/`. `openapi/51offer-horizon-site-openapi.yml`
+is a mechanical conversion of them to OpenAPI 3.1 — 221 paths, 389 operations, 159 schemas — carrying
+their provenance in `info.x-provenance` and per-operation `x-swagger-1-2-source`. Nothing in it was
+invented; 14 models the provider's own documents reference but never define are flagged
+`x-undefined-in-source` rather than filled in.
+
+The API base is `https://www.51offer.com` — the marketing site and the API share one host. Verified
+live on 2026-09-05: `GET https://www.51offer.com/ngGpaCalc/constants` returned HTTP 200 and
+`application/json`.
+
+## What an integrator needs to know
+
+- One envelope on every response — `{message, code, data, header, page, apiInfo}`. The HTTP status is
+  200 on success **and** on most failures; the outcome is the `code` field.
+- Authentication is a `token` request header, evidenced only by CORS headers. Undocumented.
+- **No idempotency mechanism** on any of the 118 mutating operations, including `createOrder`,
+  `payOrder` and `submitEntranceRefund`.
+- Many mutating operations are declared `GET` (`addCart`, `submitIntentions`, every `diym` delete).
+- A refund path exists (`POST /ngrefund/sub`, `GET /ngrefund/progress`) but **no reversal window is
+  published anywhere**, so reversibility grades `documented`, not `verified`.
+- Unknown paths return HTTP 200 with an HTML error page rather than a 404.
+
+## What is absent
+
+Probed and not found on 2026-09-05: any `/.well-known/` document on any of five hosts (every path
+returns a soft 404, a real 404, or `{"error":"Document not found"}`), `security.txt`, `llms.txt`,
+`robots.txt`, an A2A agent card, an MCP server, OAuth or OIDC metadata, GraphQL, WSDL, AsyncAPI or
+webhooks, a status page (`status.51offer.com` is NXDOMAIN, as are `developer.`, `open.` and `docs.`),
+a changelog, a deprecation policy, an SLA, published rate limits, an error-code reference, a trust
+centre or vulnerability-disclosure programme, and any API pricing.

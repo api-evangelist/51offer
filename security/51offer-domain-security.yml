@@ -1,0 +1,37 @@
+generated: '2026-09-05'
+method: probed
+source: live TLS/HTTP probes of www.51offer.com and m.51offer.com plus DNS lookups of 51offer.com against 8.8.8.8,
+  2026-09-05. Re-probed by hand after probe-domain-security.py recorded https:false for www.51offer.com on a transient
+  connection failure - the host does serve HTTPS.
+hosts:
+- host: www.51offer.com
+  https: true
+  tls_version: TLSv1.2
+  cipher: ECDHE-RSA-AES256-GCM-SHA384
+  certificate_subject: CN=*.51offer.com
+  certificate_issuer: C=CN, O=Beijing Xinchacha Credit Management Co., Ltd., CN=Xcc Trust DV SSL CA
+  certificate_not_before: '2025-10-21'
+  certificate_not_after: '2026-10-21'
+  certificate_verify: ok
+  hsts: false
+  note: No Strict-Transport-Security header. TLS 1.3 not negotiated; the host settles on TLS 1.2.
+- host: m.51offer.com
+  https: true
+  hsts: false
+  note: Serves the same Swagger 1.2 documents at /api-docs.
+domains:
+- domain: 51offer.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 ip4:47.100.215.175 include:_s.corp-email.com -all
+  dmarc: false
+  dmarc_note: _dmarc.51offer.com returns NXDOMAIN
+  mx:
+  - 51offer-com.corpsmtp.net
+  - 51offer-com.corpsmtp.cn
+  - cnc.biz-email.net
+  - mail.biz-email.net
+  nameservers:
+  - f1g1ns1.dnspod.net
+  note: SPF is published with a hard fail (-all). No DNSSEC, no CAA and no DMARC record exists.
