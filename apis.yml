@@ -30,26 +30,16 @@ tags:
 - China
 - Consulting
 apis:
-- name: 51offer Horizon Site API
-  description: >-
-    The public JSON API surface of the 51offer official study-abroad site. 51offer serves its own
-    Swagger 1.2 resource listing and 24 resource declarations, unauthenticated, at
-    https://www.51offer.com/api-docs (and the same documents at https://m.51offer.com/api-docs).
-    Operations cover DIY application filing and materials, school and course selection, adviser and
-    alliance/channel services, the study-abroad mall, ordering, contract signing, payment and refund,
-    the GPA calculator, language-training correction, sign-in, article images and user profile.
-    Responses share one envelope - {message, code, data, header, page, apiInfo}.
+- aid: 51offer:51offer-diym-api
+  name: 51offer Diym API
+  description: diy材料申请信息控制层
   humanURL: https://www.51offer.com/
-  image: https://static.51offer.com/skin/common/images/favicon.ico
   baseURL: https://www.51offer.com
   tags:
-  - Study Abroad
-  - Applications
-  - Education
-  - E-Commerce
+  - diym
   properties:
   - type: OpenAPI
-    url: openapi/51offer-horizon-site-openapi.yml
+    url: openapi/51offer-diym-api-openapi.yml
   - type: Swagger
     url: openapi/_original/51offer-api-docs-resource-listing.json
   - type: APIReference
@@ -58,14 +48,374 @@ apis:
     url: errors/51offer-problem-types.yml
   - type: DataModel
     url: data-model/51offer-data-model.yml
-  - type: Overlay
-    url: overlays/51offer-horizon-site-overlay.yaml
+- aid: 51offer:51offer-ngadviser-api
+  name: 51offer Ng Adviser API
+  description: 顾问控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngAdviser
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngadviser-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngalliance-api
+  name: 51offer Ng Alliance API
+  description: 大总管服务控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngAlliance
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngalliance-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdeliverychannel-api
+  name: 51offer Ng Delivery Channel API
+  description: 渠道限时兑换礼包相关控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngDeliveryChannel
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdeliverychannel-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdiy-api
+  name: 51offer Ng Diy API
+  description: Diy服务控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngDiy
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdiy-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdiyapplypay-api
+  name: 51offer Ngdiyapplypay API
+  description: Diy申请支付服务控制
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngdiyapplypay
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdiyapplypay-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdiychooseschool-api
+  name: 51offer Ngdiychoose School API
+  description: diy选校控制器
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngdiychooseSchool
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdiychooseschool-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdiypositioningnotice-api
+  name: 51offer Ngdiypositioningnotice API
+  description: diy定位通知服务
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngdiypositioningnotice
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdiypositioningnotice-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdiyselectschool-api
+  name: 51offer Ngdiyselectschool API
+  description: Diy选校控制器前置
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngdiyselectschool
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdiyselectschool-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdiysinglepage-api
+  name: 51offer Ngdiysinglepage API
+  description: diy单品页控制器
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngdiysinglepage
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdiysinglepage-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngdoubletwelve-api
+  name: 51offer Ng Double Twelve API
+  description: 双十二活动服务控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngDoubleTwelve
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngdoubletwelve-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngenroll-api
+  name: 51offer Ng Enroll API
+  description: Enroll Controller
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngEnroll
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngenroll-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-nggpacalc-api
+  name: 51offer Ng Gpa Calc API
+  description: GPA计算器
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngGpaCalc
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-nggpacalc-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-nghome-api
+  name: 51offer Ng Home API
+  description: H5首页控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngHome
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-nghome-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-nglancorrect-api
+  name: 51offer Ng Lan Correct API
+  description: 语培口语批改
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngLanCorrect
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-nglancorrect-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngmall-api
+  name: 51offer Ng Mall API
+  description: 商城控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngMall
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngmall-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngpaycoupon-api
+  name: 51offer Ng Pay Coupon API
+  description: 51品牌节支付优惠券
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngPayCoupon
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngpaycoupon-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngpic-api
+  name: 51offer Ng Pic API
+  description: 文章图片更新控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngPic
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngpic-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngrefund-api
+  name: 51offer Ngrefund API
+  description: 订单退款控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngrefund
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngrefund-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-ngsign-api
+  name: 51offer Ng Sign API
+  description: Sign Controller
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngSign
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-ngsign-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
+- aid: 51offer:51offer-nguserinfo-api
+  name: 51offer Ng User Info API
+  description: runway用户控制层
+  humanURL: https://www.51offer.com/
+  baseURL: https://www.51offer.com
+  tags:
+  - ngUserInfo
+  properties:
+  - type: OpenAPI
+    url: openapi/51offer-nguserinfo-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/51offer-api-docs-resource-listing.json
+  - type: APIReference
+    url: https://www.51offer.com/api-docs
+  - type: ErrorCatalog
+    url: errors/51offer-problem-types.yml
+  - type: DataModel
+    url: data-model/51offer-data-model.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/51offer-horizon-site-overlay.yaml
 - type: DomainSecurity
   url: security/51offer-domain-security.yml
 - type: Authentication
