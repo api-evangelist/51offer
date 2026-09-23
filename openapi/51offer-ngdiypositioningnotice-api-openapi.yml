@@ -1,0 +1,284 @@
+openapi: 3.2.0
+info:
+  title: 51offer Horizon Site Ngdiypositioningnotice API
+  version: '1.0'
+  summary: 51offer official-site (www.51offer.com) JSON API surface
+  description: Machine-readable description of the public JSON API surface of 51offer's official study-abroad site (www.51offer.com).
+  contact:
+    name: 51offer
+    email: woodrow.w@51offer.com
+    url: https://www.51offer.com/
+  x-provenance:
+    converted-from: Swagger 1.2
+    source: https://www.51offer.com/api-docs
+    fetched: '2026-09-05'
+servers:
+- url: https://www.51offer.com
+  description: '51offer official site API host. Verified live 2026-09-05: GET /ngGpaCalc/constants returned HTTP 200 application/json.'
+- url: https://m.51offer.com
+  description: 51offer mobile-site host. Serves the same Swagger 1.2 documents at /api-docs (HTTP 200, application/json, 2026-09-05).
+tags:
+- name: ngdiypositioningnotice
+  description: diy定位通知服务
+paths:
+  /ngdiypositioningnotice/checkDiyUserType:
+    get:
+      operationId: checkDiyUserType
+      tags:
+      - ngdiypositioningnotice
+      summary: 判断用户是否有效
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: firstCountry
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: education
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aetAttendGrade
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: hopeYear
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiypositioningnotice
+  /ngdiypositioningnotice/getUserPayGoods:
+    get:
+      operationId: getUserPayGoods
+      tags:
+      - ngdiypositioningnotice
+      summary: 用户是否支付当前商品
+      parameters:
+      - name: paymentId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiypositioningnotice
+  /ngdiypositioningnotice/getUserZeroGoods:
+    get:
+      operationId: getUserZeroGoods
+      tags:
+      - ngdiypositioningnotice
+      summary: 用户是否购买DIY0元商品
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiypositioningnotice
+  /ngdiypositioningnotice/leaveMiniProgram:
+    get:
+      operationId: getLeaveMiniProgram
+      tags:
+      - ngdiypositioningnotice
+      summary: 检查用户是否离开小程序
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiypositioningnotice
+  /ngdiypositioningnotice/unsubmittedIntentionalOrder:
+    get:
+      operationId: unsubmittedIntentionalOrder
+      tags:
+      - ngdiypositioningnotice
+      summary: 检查用户是否点击了选好了，提交至顾问评估按钮
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiypositioningnotice
+  /ngdiypositioningnotice/unsubmittedUserThreeStepInfo:
+    get:
+      operationId: unsubmittedUserThreeStepInfo
+      tags:
+      - ngdiypositioningnotice
+      summary: 检查用户是否点击了立即选校按钮
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiypositioningnotice
+components:
+  schemas:
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    HttpResult_Map_string_object_5812ac:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+  securitySchemes:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: 'Session token header. Observed on live responses from https://www.51offer.com: Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token". Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated user endpoints return the envelope with a non-200 code field. 51offer publishes no developer auth documentation.'

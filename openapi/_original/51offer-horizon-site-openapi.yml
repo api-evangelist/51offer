@@ -1,3 +1,5 @@
+# x-archived-from: 51offer-horizon-site-openapi.yml
+# x-archived-on: 2026-09-16
 openapi: 3.1.0
 info:
   title: 51offer Horizon Site API

@@ -1,0 +1,2314 @@
+openapi: 3.2.0
+info:
+  title: 51offer Horizon Site Ng Mall API
+  version: '1.0'
+  summary: 51offer official-site (www.51offer.com) JSON API surface
+  description: Machine-readable description of the public JSON API surface of 51offer's official study-abroad site (www.51offer.com).
+  contact:
+    name: 51offer
+    email: woodrow.w@51offer.com
+    url: https://www.51offer.com/
+  x-provenance:
+    converted-from: Swagger 1.2
+    source: https://www.51offer.com/api-docs
+    fetched: '2026-09-05'
+servers:
+- url: https://www.51offer.com
+  description: '51offer official site API host. Verified live 2026-09-05: GET /ngGpaCalc/constants returned HTTP 200 application/json.'
+- url: https://m.51offer.com
+  description: 51offer mobile-site host. Serves the same Swagger 1.2 documents at /api-docs (HTTP 200, application/json, 2026-09-05).
+tags:
+- name: ngMall
+  description: 商城控制层
+paths:
+  /ngMall/checkOrderInfo:
+    get:
+      operationId: ngMall_getUserCheckOrderInfo_2
+      tags:
+      - ngMall
+      summary: 获取用户确认订单信息
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: skuId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: couponNo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: cancelCoupon
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_VO_-_3affa5'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/createOrder:
+    post:
+      operationId: createOrder
+      tags:
+      - ngMall
+      summary: 用户下单
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VO_-_890e8c'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_PayInfoVo_66732c'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/createOrder_wx:
+    get:
+      operationId: ngMall_createOrderByWx_2
+      tags:
+      - ngMall
+      summary: 用户下单_未登录
+      parameters:
+      - name: uid
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: skuId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: code
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: wxKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: schoolId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_5d5fab'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/doc/confirm/{id}:
+    get:
+      operationId: confirm
+      tags:
+      - ngMall
+      summary: confirm
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/doc/detail/{orderDocCode}:
+    get:
+      operationId: queryUserOrderDetail
+      tags:
+      - ngMall
+      summary: queryUserOrderDetail
+      parameters:
+      - name: orderDocCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_OrderDocInfoDetailVo_acc9c1'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/doc/docFiles/{orderDocCode}:
+    get:
+      operationId: docFiles
+      tags:
+      - ngMall
+      summary: 文书服务单材料列表
+      parameters:
+      - name: orderDocCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/doc/getDocOrderList:
+    get:
+      operationId: getDocOrderList
+      tags:
+      - ngMall
+      summary: 查询服务列表
+      parameters:
+      - name: orderCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: orderUid
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: realname
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pinyin
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: orderDocCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: orderDocStatus
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: payTimeStart
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: payTimeEnd
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: createTimeStart
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: createTimeEnd
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: goodsId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: goodsName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: serviecUserName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: orderDocSuid
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: orderDocSuidIsNull
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+        description: 文书服务顾问是否为空 0不为空 1 空
+      - name: sortPayTime
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: sortCreateTime
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: sortStatus
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: sortLastTime
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: orderBelongId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: consultantId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: hopeYear
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: hopeQuarter
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/doc/saveOrderDocInfoFile:
+    post:
+      operationId: docOrderModify
+      tags:
+      - ngMall
+      summary: 上传文书文件,删除文件
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Schema_f23045'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/downloadContract:
+    get:
+      operationId: downloadContract
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    head:
+      operationId: ngMall_downloadContract_2
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    post:
+      operationId: ngMall_downloadContract_3
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    put:
+      operationId: ngMall_downloadContract_4
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    patch:
+      operationId: ngMall_downloadContract_5
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    delete:
+      operationId: ngMall_downloadContract_6
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    options:
+      operationId: ngMall_downloadContract_7
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    trace:
+      operationId: ngMall_downloadContract_8
+      tags:
+      - ngMall
+      summary: downloadContract
+      parameters:
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/getShareContract:
+    get:
+      operationId: queryContractSigning
+      tags:
+      - ngMall
+      summary: 获取分享合同信息
+      parameters:
+      - name: agreementCode
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: flowId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/hasPayGoods:
+    get:
+      operationId: getUserHasPayGoodsByGoodsId
+      tags:
+      - ngMall
+      summary: 根据UID和商品ID获取用户是否购买过该商品
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: callBack
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/orderPayOperationRecord:
+    get:
+      operationId: queryOrderPayOperationRecord
+      tags:
+      - ngMall
+      summary: 根据订单编号获取订单支付相关操作记录
+      parameters:
+      - name: orderCode
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_02431d'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/payOrder:
+    post:
+      operationId: payOrder
+      tags:
+      - ngMall
+      summary: 用户下单
+      parameters:
+      - name: callBack
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VO_-_890e8c'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/signSuccessNotice:
+    post:
+      operationId: signSuccessNotice
+      tags:
+      - ngMall
+      summary: 签署成功回调
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignCallback'
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/study/courseDetail:
+    get:
+      operationId: queryCourseDetail
+      tags:
+      - ngMall
+      summary: queryCourseDetail
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Schema_81c246'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_StudyCourseVo_4a61ad'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/study/courseList:
+    get:
+      operationId: courseList
+      tags:
+      - ngMall
+      summary: 课程列表
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudyCourseSearchVo'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/study/detail/{orderStudyCode}:
+    get:
+      operationId: queryUserStudyOrderDetail
+      tags:
+      - ngMall
+      summary: queryUserStudyOrderDetail
+      parameters:
+      - name: orderStudyCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_OrderStudyInfoDetailVo_174008'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/study/enterVideoLive/{courseId}:
+    get:
+      operationId: enterVideoLive
+      tags:
+      - ngMall
+      summary: 进入直播间
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/study/to1course:
+    get:
+      operationId: to1course
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    head:
+      operationId: ngMall_to1course_2
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    post:
+      operationId: ngMall_to1course_3
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    put:
+      operationId: ngMall_to1course_4
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    patch:
+      operationId: ngMall_to1course_5
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    delete:
+      operationId: ngMall_to1course_6
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    options:
+      operationId: ngMall_to1course_7
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+    trace:
+      operationId: ngMall_to1course_8
+      tags:
+      - ngMall
+      summary: to1course
+      parameters:
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/userContractSigning:
+    get:
+      operationId: ngMall_queryContractSigning_2
+      tags:
+      - ngMall
+      summary: 获取用户订单在线合同
+      parameters:
+      - name: orderId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_-_a0ea6d'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/userOrder:
+    get:
+      operationId: ngMall_queryUserOrder_2
+      tags:
+      - ngMall
+      summary: 获取用户订单
+      parameters:
+      - name: type
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_VO_-_1b4268'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/userOrderDetails:
+    get:
+      operationId: getUserOrderDetails
+      tags:
+      - ngMall
+      summary: 获取用户订单详情
+      parameters:
+      - name: orderCode
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_VO_-_d79457'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/userOrderInfoDetails:
+    get:
+      operationId: getUserOrderInfoDetails
+      tags:
+      - ngMall
+      summary: 获取用户订单详情（为支付项目提供）
+      description: 获取用户订单详情
+      parameters:
+      - name: orderCode
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_string_5634e8'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+  /ngMall/visa/detail/{orderVisaCode}:
+    get:
+      operationId: queryUserOrderVisaDetail
+      tags:
+      - ngMall
+      summary: queryUserOrderVisaDetail
+      parameters:
+      - name: orderVisaCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
+components:
+  schemas:
+    HttpResult_List_-_a0ea6d:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/-_ad6a28'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«订单合同在线签署 - 前台»»
+    HttpResult:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult
+    Schema_86072f:
+      type: object
+      properties:
+        orderCode:
+          type: string
+          description: 订单编号
+        opTime:
+          type: string
+          format: date-time
+          description: 订单编号
+        opType:
+          type: string
+          description: 操作类型  支付/退款
+        gateway:
+          type: string
+          description: 支付方式/退款方式
+        amount:
+          type: string
+          description: 金额 支付金额/退款金额
+      x-swagger-1-2-name: 支付相关操作记录
+    SignCallback:
+      type: object
+      properties:
+        action:
+          type: string
+        signFlowId:
+          type: string
+        signResult:
+          type: integer
+          format: int32
+        signOrder:
+          type: integer
+          format: int32
+        timestamp:
+          type: integer
+          format: int64
+        operateTime:
+          type: integer
+          format: int64
+        resultDescription:
+          type: string
+        organization:
+          $ref: '#/components/schemas/Organization'
+      x-swagger-1-2-name: SignCallback
+    VO_-_183f88:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderCode:
+          type: string
+          description: 支付单编号（主单编号）
+        orderType:
+          type: integer
+          format: int32
+          description: 订单类型（各业务线标识） 1=联合 2=留学 3=语培 4=文书 5=签证
+        unionCode:
+          type: string
+          description: 联合订单编号(只有联合订单的子单，此属性才会有值)
+        uid:
+          type: integer
+          format: int32
+          description: 订单用户ID
+        originalPrice:
+          type: integer
+          format: int32
+          description: (商品/sku)原价,单位=分
+        costPrice:
+          type: integer
+          format: int32
+          description: (商品/sku)成本价,单位=分
+        realPrice:
+          type: integer
+          format: int32
+          description: (商品/sku)实际售价,单位=分
+        orderAmount:
+          type: integer
+          format: int32
+          description: (订单)应收金额,单位=分,(应收金额=实际售价-优惠金额-优惠券金额)
+        discountAmount:
+          type: integer
+          format: int32
+          description: 优惠金额（单位：分）,(后台下单，顾问手动填写的优惠额)
+        payPrice:
+          type: integer
+          format: int32
+          description: (订单)实收金额,单位=分,(用户实际支付的金额,如果产生1单多笔支付,则会统计此单的所有出/入帐总和)
+        payTime:
+          type: string
+          format: date-time
+          description: 订单支付时间
+        orderStatus:
+          type: integer
+          format: int32
+          description: 订单状态0=待支付 可跳转- 部分支付、支付完成、取消订单；1=部分支付 可跳转- 支付完成、取消订单、退款中；2=支付完成 可跳转- 取消订单、已升级、已转移、退款中；3=订单取消 无跳转；4=已升级 无跳转；5=已转移 无跳转；6=退款中 可跳转- 退款完成；7=退款完成 无跳转
+        refundPrice:
+          type: integer
+          format: int32
+          description: 退款金额，单位=分,(如有多笔出帐，会记录其总和)
+        refundTime:
+          type: string
+          format: date-time
+          description: 退款时间(退款时间，由财务录入)
+        goodsId:
+          type: integer
+          format: int32
+          description: 商品ID
+        goodsName:
+          type: string
+          description: 商品名称
+        sku:
+          type: integer
+          format: int32
+          description: SKU id
+        skuType:
+          type: integer
+          format: int32
+          description: 商品类型（SKU里面字段）
+        orderRemark:
+          type: string
+          description: 订单备注
+        couponNo:
+          type: string
+          description: 优惠券号
+        couponPrice:
+          type: integer
+          format: int32
+          description: 优惠券金额，单位=分
+        refrenceUid:
+          type: integer
+          format: int32
+          description: 订单推荐人(暂未启用字段)
+        orderBelongId:
+          type: integer
+          format: int32
+          description: (成单人)订单所属ID,顾问ID或部门ID，此字段值要结合orderBelongType一起来使用
+        orderBelongType:
+          type: integer
+          format: int32
+          description: (成单人类型)订单所属类型, 1顾问 2部门
+        hasOpenService:
+          type: integer
+          format: int32
+          description: 是否已开启服务,0未开启 1已开启
+        openServiceTime:
+          type: string
+          format: date-time
+          description: 开启服务时间
+        serviceOrderCode:
+          type: string
+          description: 业务单编号
+        orderCreator:
+          type: integer
+          format: int32
+        orderCreated:
+          type: string
+          format: date-time
+        orderModifier:
+          type: integer
+          format: int32
+        orderModified:
+          type: string
+          format: date-time
+        invoiceNumber:
+          type: string
+          description: 发票号
+        isCost:
+          type: integer
+          format: int32
+        skuName:
+          type: string
+          description: sku名称
+        service53Code:
+          type: string
+          description: 53客服编码
+        goodsPriceYuan:
+          type: integer
+          format: int64
+          description: 商品实际售价 元
+        receivableAmountYuan:
+          type: integer
+          format: int64
+          description: 应收金额 元
+        paidAmountYuan:
+          type: integer
+          format: int64
+          description: 实收金额 元
+        remainderAmountYuan:
+          type: integer
+          format: int64
+          description: 剩余支付金额 元
+        couponAmountYuan:
+          type: integer
+          format: int64
+          description: 优惠券金额 元
+        refundAmountYuan:
+          type: integer
+          format: int64
+          description: 退款金额 元
+        servicePageUrlPc:
+          type: string
+          description: 服务单PC落地页URL
+        servicePageUrlH5:
+          type: string
+          description: 服务单H5落地页URL
+        orderTypeName:
+          type: string
+          description: 订单类型名称
+        orderStatusName:
+          type: string
+          description: 订单状态名称
+        skuAttrs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+          description: sku属性列表
+        unionOrderList:
+          type: array
+          items:
+            $ref: '#/components/schemas/VO_-_183f88'
+          description: 联合订单子订单列表
+        isRefund:
+          type: boolean
+          description: 是否有退款记录
+        discountAmountYuan:
+          type: integer
+          format: int64
+          description: 优惠金额（单位：元）,(后台下单，顾问手动填写的优惠额)
+        orderCreatorRole:
+          type: integer
+          format: int32
+          description: 角色
+        whetherContract:
+          type: boolean
+          description: 是否存在在线合同
+      x-swagger-1-2-name: 订单信息VO - 前台
+    SkuAttr:
+      type: object
+      properties:
+        skuId:
+          type: integer
+          format: int32
+        attrId:
+          type: integer
+          format: int32
+        attrVal:
+          type: string
+        pid:
+          type: integer
+          format: int32
+        parentVal:
+          type: string
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+      x-swagger-1-2-name: SkuAttr
+    HttpResult_VO_-_d79457:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/VO_-_183f88'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«订单信息VO - 前台»
+    EnumsObj:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        code:
+          type: string
+        value:
+          type: string
+        type:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: EnumsObj
+    OrderStudyInfoDetailVo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderCode:
+          type: string
+        orderUid:
+          type: integer
+          format: int32
+        orderStudyCode:
+          type: string
+        orderStudyStatus:
+          type: integer
+          format: int32
+        orderStudyAssistantUid:
+          type: integer
+          format: int32
+        orderStudyAssistantTime:
+          type: string
+          format: date-time
+        orderStudyEduUid:
+          type: integer
+          format: int32
+        orderStudyEduTime:
+          type: string
+          format: date-time
+        scoreType:
+          type: integer
+          format: int32
+        scoreSmallType:
+          type: integer
+          format: int32
+        trainBeforeScore:
+          type: number
+          format: double
+        trainTargetScore:
+          type: number
+          format: double
+        trainAfterScore:
+          type: number
+          format: double
+        testDate:
+          type: string
+          format: date-time
+        orderStudyCreated:
+          type: string
+          format: date-time
+        orderStudyCreator:
+          type: integer
+          format: int32
+        orderStudyModified:
+          type: string
+          format: date-time
+        orderStudyModifier:
+          type: integer
+          format: int32
+        orderStudyReark:
+          type: string
+        orderType:
+          type: integer
+          format: int32
+        statusMap:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumsObj'
+      x-swagger-1-2-name: OrderStudyInfoDetailVo
+    HttpResult_Map_string_string_5634e8:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
+    OrderDocInfoDetailVo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderCode:
+          type: string
+        orderUid:
+          type: integer
+          format: int32
+        orderId:
+          type: integer
+          format: int32
+        realname:
+          type: string
+        goodsType:
+          type: string
+        orderDocCode:
+          type: string
+        orderDocStatus:
+          type: integer
+          format: int32
+        orderDocStatusName:
+          type: string
+        orderDocSuid:
+          type: integer
+          format: int32
+        orderDocSuName:
+          type: string
+        orderDocLastTime:
+          type: string
+          format: date-time
+        orderDocSuidTime:
+          type: string
+          format: date-time
+        orderDocFileStartTime:
+          type: string
+          format: date-time
+        orderDocFileSuid:
+          type: integer
+          format: int32
+        orderDocFileSendTime:
+          type: string
+          format: date-time
+        orderDocFileSendSuid:
+          type: integer
+          format: int32
+        autoConfirmDay:
+          type: integer
+          format: int32
+        autoConfirmHour:
+          type: integer
+          format: int32
+        orderDocConfirmTime:
+          type: string
+          format: date-time
+        orderDocConfirmUid:
+          type: integer
+          format: int32
+        orderDocColseTime:
+          type: string
+          format: date-time
+        orderDocColseUid:
+          type: integer
+          format: int32
+        orderDocRemark:
+          type: string
+        orderDocCreated:
+          type: string
+          format: date-time
+        orderDocCreator:
+          type: integer
+          format: int32
+        orderDocModified:
+          type: string
+          format: date-time
+        orderDocModifier:
+          type: integer
+          format: int32
+        orderStatus:
+          type: integer
+          format: int32
+        orderDoUserType:
+          type: integer
+          format: int32
+        orderType:
+          type: integer
+          format: int32
+        goodsName:
+          type: string
+        serviceUploadFileList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_f23045'
+        statusEnumMap:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumsObj'
+        materialTemplateUrl:
+          type: string
+      x-swagger-1-2-name: OrderDocInfoDetailVo
+    HttpResult_List_02431d:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_86072f'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«支付相关操作记录»»
+    PayInfoVo:
+      type: object
+      properties:
+        transactionId:
+          type: string
+        itemPriceFen:
+          type: integer
+          format: int32
+        payPriceFen:
+          type: integer
+          format: int32
+        payFinishTime:
+          type: string
+          format: date-time
+        payId:
+          type: string
+        bizOrderId:
+          type: string
+        payActionUrl:
+          type: string
+        payStatus:
+          type: string
+          enum:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+      x-swagger-1-2-name: PayInfoVo
+    HttpResult_Map_5d5fab:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map»
+    Organization:
+      type: object
+      properties:
+        orgId:
+          type: string
+        orgName:
+          type: string
+      x-swagger-1-2-name: Organization
+    HttpResult_List_VO_-_1b4268:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/VO_-_183f88'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«订单信息VO - 前台»»
+    VO_-_890e8c:
+      type: object
+      properties:
+        orderId:
+          type: integer
+          format: int32
+          description: 订单ID 添加成功后将订单编号放回此处
+        orderCode:
+          type: string
+          description: 订单编号 添加成功后将订单编号放回此处
+        uid:
+          type: integer
+          format: int32
+          description: 用户ID
+        goodsId:
+          type: integer
+          format: int32
+          description: 商品ID
+        skuId:
+          type: integer
+          format: int32
+          description: skuID
+        creator:
+          type: integer
+          format: int32
+          description: 创建人
+        couponNo:
+          type: string
+          description: 优惠券号
+        discountAmount:
+          type: integer
+          format: int64
+          description: 优惠金额
+        receivableAmount:
+          type: integer
+          format: int64
+          description: 联合子商品应收金额
+        payAmount:
+          type: integer
+          format: int64
+          description: 本次支付金额 元
+        needPay:
+          type: boolean
+          description: 联合子订单列表
+        subList:
+          type: array
+          items:
+            $ref: '#/components/schemas/VO_-_890e8c'
+          description: 联合子订单列表
+      x-swagger-1-2-name: 添加订单参数VO - 后台
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    StudyCourseVo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        courseName:
+          type: string
+        courseStarttime:
+          type: string
+          format: date-time
+        couserEndtime:
+          type: string
+          format: date-time
+        courseStartTimeStr:
+          type: string
+        couserEndTimeStr:
+          type: string
+        uid:
+          type: integer
+          format: int32
+        userName:
+          type: string
+        status:
+          type: integer
+          format: int32
+        teacher1:
+          type: integer
+          format: int32
+        teacher2:
+          type: integer
+          format: int32
+        teacher3:
+          type: integer
+          format: int32
+        teacherName:
+          type: string
+        orderStudyCode:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        createUser:
+          type: integer
+          format: int32
+        updateTime:
+          type: string
+          format: date-time
+        updateUser:
+          type: integer
+          format: int32
+        courseComboCode:
+          type: string
+        courseType:
+          type: integer
+          format: int32
+        studyVideo:
+          $ref: '#/components/schemas/Schema_689fdb'
+      x-swagger-1-2-name: StudyCourseVo
+    Schema_f23045:
+      type: object
+      description: order_doc_info_file
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderDocCode:
+          type: string
+          description: 文书业务单编号
+        orderDocFileType:
+          type: integer
+          format: int32
+          description: 文件类型（如:ps、cv等）106=个人陈述107=推荐信108=小论文109=个人简历
+        orderDocFile:
+          type: integer
+          format: int32
+          description: 关联文件ID
+        orderDocUserType:
+          type: integer
+          format: int32
+          description: 文件上传人类型(0=顾问,1=学生)
+        orderDocUser:
+          type: integer
+          format: int32
+          description: 上传人ID
+        orderDocFileTime:
+          type: string
+          format: date-time
+          description: 上传时间
+        orderFileIsDelete:
+          type: integer
+          format: int32
+          description: 是否删除 0=未删除 1=已除
+        orderFileDeleted:
+          type: string
+          format: date-time
+          description: 删除时间
+      x-swagger-1-2-name: 文书业务单文件关联信息对象
+    -_ad6a28:
+      type: object
+      properties:
+        agreementCode:
+          type: string
+          description: 合同编号
+        goodsName:
+          type: string
+          description: 商品名称
+        contractCreated:
+          type: string
+          format: date-time
+          description: 合同创建时间
+        signStatus:
+          type: integer
+          format: int32
+          description: 流程状态,0-草稿1-签署中2-完成3-撤销5-过期（签署截至日志到期后触发）7-拒签 8-失效
+        flowId:
+          type: string
+          description: 签署流程id
+        flowUrl:
+          type: string
+          description: 用户签署链接
+        fileId:
+          type: string
+          description: 文件id
+        fileUrl:
+          type: string
+          description: 原文件地址
+      x-swagger-1-2-name: 订单合同在线签署 - 前台
+    HttpResult_OrderStudyInfoDetailVo_174008:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/OrderStudyInfoDetailVo'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«OrderStudyInfoDetailVo»
+    UserCouponVo:
+      type: object
+      properties:
+        code:
+          type: string
+        poolCode:
+          type: string
+        poolName:
+          type: string
+        receiver:
+          type: integer
+          format: int32
+        receiveTime:
+          type: string
+          format: date-time
+        useTime:
+          type: string
+          format: date-time
+        channel:
+          type: string
+        payCode:
+          type: string
+        couponStatus:
+          type: integer
+          format: int32
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        poolStatusUse:
+          type: integer
+          format: int32
+        poolStatusProvide:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        val:
+          type: integer
+          format: int32
+        description:
+          type: string
+        effectiveType:
+          type: integer
+          format: int32
+        effectiveTime:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: UserCouponVo
+    HttpResult_VO_-_3affa5:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/VO_-_a75db4'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«确认订单信息VO - 前台»
+    HttpResult_OrderDocInfoDetailVo_acc9c1:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/OrderDocInfoDetailVo'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«OrderDocInfoDetailVo»
+    VO_-_a75db4:
+      type: object
+      properties:
+        goodsId:
+          type: integer
+          format: int32
+          description: 商品ID
+        goodsName:
+          type: string
+          description: 商品名称
+        goodsPriceYuan:
+          type: integer
+          format: int64
+          description: 商品价格 元
+        united:
+          type: boolean
+          description: 是否是联合商品 1=是 0=否
+        sku:
+          type: integer
+          format: int32
+          description: SKU id
+        skuName:
+          type: string
+          description: sku名称
+        skuAttrs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+          description: sku属性列表
+        couponList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserCouponVo'
+          description: 优惠券列表
+        activCoupon:
+          type: string
+          description: 当前选中的优惠券号
+        payAmount:
+          type: integer
+          format: int64
+          description: 应付金额 元
+      x-swagger-1-2-name: 确认订单信息VO - 前台
+    StudyCourseSearchVo:
+      type: object
+      properties:
+        courseStarttime:
+          type: string
+        couserEndtime:
+          type: string
+        uid:
+          type: integer
+          format: int32
+        courseName:
+          type: string
+        userName:
+          type: string
+        status:
+          type: integer
+          format: int32
+        orderStudyCode:
+          type: string
+        pageNo:
+          type: integer
+          format: int32
+        offset:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        sort:
+          type: string
+        teacherId:
+          type: integer
+          format: int32
+        teacherName:
+          type: string
+        itemName:
+          type: string
+        itemPrice:
+          type: integer
+          format: int64
+        pinyin:
+          type: string
+      x-swagger-1-2-name: StudyCourseSearchVo
+    HttpResult_PayInfoVo_66732c:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/PayInfoVo'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«PayInfoVo»
+    Schema_689fdb:
+      type: object
+      description: order_video
+      properties:
+        id:
+          type: integer
+          format: int32
+        courseId:
+          type: integer
+          format: int32
+          description: 课程id
+        classId:
+          type: string
+          description: 展视互动教室id或者全时教室唯一码
+        classNumber:
+          type: integer
+          format: int32
+          description: 课堂编号
+        assistantToken:
+          type: string
+          description: 助教口令
+        teacherToken:
+          type: string
+          description: 老师口令
+        studentClientToken:
+          type: string
+          description: 学生客户端口令
+        startDate:
+          type: string
+          format: date-time
+          description: 开始时间
+        teacherJoinUrl:
+          type: string
+          description: 老师和助教加入url
+        studentJoinUrl:
+          type: string
+          description: 学生加入url
+        scene:
+          type: integer
+          format: int32
+          description: 0:大讲堂，1：小班课，2：私教课
+      x-swagger-1-2-name: 语培视屏信息对象
+    HttpResult_Map_string_object_5812ac:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
+    Schema_81c246:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    HttpResult_StudyCourseVo_4a61ad:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/StudyCourseVo'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«StudyCourseVo»
+  securitySchemes:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: 'Session token header. Observed on live responses from https://www.51offer.com: Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token". Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated user endpoints return the envelope with a non-200 code field. 51offer publishes no developer auth documentation.'

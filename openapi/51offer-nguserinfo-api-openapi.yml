@@ -1,0 +1,1184 @@
+openapi: 3.2.0
+info:
+  title: 51offer Horizon Site Ng User Info API
+  version: '1.0'
+  summary: 51offer official-site (www.51offer.com) JSON API surface
+  description: Machine-readable description of the public JSON API surface of 51offer's official study-abroad site (www.51offer.com).
+  contact:
+    name: 51offer
+    email: woodrow.w@51offer.com
+    url: https://www.51offer.com/
+  x-provenance:
+    converted-from: Swagger 1.2
+    source: https://www.51offer.com/api-docs
+    fetched: '2026-09-05'
+servers:
+- url: https://www.51offer.com
+  description: '51offer official site API host. Verified live 2026-09-05: GET /ngGpaCalc/constants returned HTTP 200 application/json.'
+- url: https://m.51offer.com
+  description: 51offer mobile-site host. Serves the same Swagger 1.2 documents at /api-docs (HTTP 200, application/json, 2026-09-05).
+tags:
+- name: ngUserInfo
+  description: runway用户控制层
+paths:
+  /ngUserInfo/applyAdd:
+    post:
+      operationId: applyAdd
+      tags:
+      - ngUserInfo
+      summary: 报名申请信息保存
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Schema_1bb5ea'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/get/list:
+    get:
+      operationId: getMainNewsList
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    head:
+      operationId: ngUserInfo_getMainNewsList_2
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    post:
+      operationId: ngUserInfo_getMainNewsList_3
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    put:
+      operationId: ngUserInfo_getMainNewsList_4
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    patch:
+      operationId: ngUserInfo_getMainNewsList_5
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    delete:
+      operationId: ngUserInfo_getMainNewsList_6
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    options:
+      operationId: ngUserInfo_getMainNewsList_7
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    trace:
+      operationId: ngUserInfo_getMainNewsList_8
+      tags:
+      - ngUserInfo
+      summary: getMainNewsList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pageEntity:
+                  $ref: '#/components/schemas/Page'
+                key:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/get/list/operations_content:
+    get:
+      operationId: getOperationsContentList
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    head:
+      operationId: ngUserInfo_getOperationsContentList_2
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    post:
+      operationId: ngUserInfo_getOperationsContentList_3
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    put:
+      operationId: ngUserInfo_getOperationsContentList_4
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    patch:
+      operationId: ngUserInfo_getOperationsContentList_5
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    delete:
+      operationId: ngUserInfo_getOperationsContentList_6
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    options:
+      operationId: ngUserInfo_getOperationsContentList_7
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    trace:
+      operationId: ngUserInfo_getOperationsContentList_8
+      tags:
+      - ngUserInfo
+      summary: getOperationsContentList
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/get/{newsId}:
+    get:
+      operationId: getMainNewsById
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    head:
+      operationId: ngUserInfo_getMainNewsById_2
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    post:
+      operationId: ngUserInfo_getMainNewsById_3
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    put:
+      operationId: ngUserInfo_getMainNewsById_4
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    patch:
+      operationId: ngUserInfo_getMainNewsById_5
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    delete:
+      operationId: ngUserInfo_getMainNewsById_6
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    options:
+      operationId: ngUserInfo_getMainNewsById_7
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    trace:
+      operationId: ngUserInfo_getMainNewsById_8
+      tags:
+      - ngUserInfo
+      summary: getMainNewsById
+      parameters:
+      - name: newsId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/getAdviserWechat:
+    get:
+      operationId: getAdviserWechat
+      tags:
+      - ngUserInfo
+      summary: 获取顾问微信号
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/getApplyResult:
+    get:
+      operationId: getApplyResult
+      tags:
+      - ngUserInfo
+      summary: 获取通知页信息
+      parameters:
+      - name: applyId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/getSearchInfo:
+    get:
+      operationId: getSearchInfo
+      tags:
+      - ngUserInfo
+      summary: 获取基本信息
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/index:
+    get:
+      operationId: ngUserInfo_index_9
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    head:
+      operationId: ngUserInfo_index_10
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    post:
+      operationId: ngUserInfo_index_11
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    put:
+      operationId: ngUserInfo_index_12
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    patch:
+      operationId: ngUserInfo_index_13
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    delete:
+      operationId: ngUserInfo_index_14
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    options:
+      operationId: ngUserInfo_index_15
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+    trace:
+      operationId: ngUserInfo_index_16
+      tags:
+      - ngUserInfo
+      summary: index
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+  /ngUserInfo/initUserRegister:
+    get:
+      operationId: initUserRegister
+      tags:
+      - ngUserInfo
+      summary: initUserRegister
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
+components:
+  schemas:
+    Schema_c68756:
+      type: object
+      description: ReportCardReq
+      properties:
+        reportName:
+          type: string
+          description: 成绩单名称
+        reportId:
+          type: integer
+          format: int32
+          description: 成绩单id
+        type:
+          type: integer
+          format: int32
+          description: 类型 1-成绩单  2-语言成绩  3-其他
+      x-swagger-1-2-name: 成绩单对象
+    Schema_0b664c:
+      type: object
+      description: RunwayLanguageScore
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id
+        applyId:
+          type: string
+          description: 申请id
+        type:
+          type: integer
+          format: int32
+          description: 类型 1-成绩单  2-语言成绩  3-其他
+        languageName:
+          type: string
+          description: 语言成绩类型 TOEFL IELTS 高考英语 无
+        score:
+          type: string
+          description: 分数
+        reportName:
+          type: string
+          description: 成绩单名称
+        reportId:
+          type: integer
+          format: int32
+          description: 成绩单id
+      x-swagger-1-2-name: 语言成绩对象
+    Schema_36ac7e:
+      type: object
+      description: RunwayCountry
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id
+        applyId:
+          type: string
+          description: 申请id
+        countryId:
+          type: integer
+          format: int32
+          description: 意向国家Id
+        countryName:
+          type: string
+          description: 意向国家名称
+      x-swagger-1-2-name: 意向国家对象
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    Schema_1bb5ea:
+      type: object
+      description: RunwayUserInfoReq
+      properties:
+        messCode:
+          type: string
+          description: 短信验证码
+        ddsCode:
+          type: string
+          description: 随机校验码
+        applyId:
+          type: string
+          description: 申请id
+        name:
+          type: string
+          description: 姓名
+          enum:
+          - '20'
+        sex:
+          type: integer
+          format: int32
+          description: 性别 1男 2女
+          enum:
+          - '1'
+        picUrl:
+          type: string
+          description: 免冠照片
+          enum:
+          - '200'
+        nominalFamily:
+          type: string
+          description: 民族
+          enum:
+          - '20'
+        mobile:
+          type: string
+          description: 手机号
+          enum:
+          - '11'
+        mail:
+          type: string
+          description: 邮箱
+          enum:
+          - '100'
+        contactWx:
+          type: string
+          description: 微信
+          enum:
+          - '100'
+        idNumber:
+          type: string
+          description: 身份证号
+          enum:
+          - '20'
+        nationalityId:
+          type: integer
+          format: int32
+          description: 籍贯
+          enum:
+          - '11'
+        mailAddress:
+          type: string
+          description: 通讯地址
+          enum:
+          - '50'
+        healthCondition:
+          type: string
+          description: 健康状况
+          enum:
+          - '50'
+        symptom:
+          type: string
+          description: 有无重大病史
+          enum:
+          - '50'
+        speciality:
+          type: string
+          description: 特长
+          enum:
+          - '100'
+        prize:
+          type: string
+          description: 获奖情况
+          enum:
+          - '100'
+        isOverseas:
+          type: integer
+          format: int32
+          description: 有无留学经验 0-有 1-无
+          enum:
+          - '1'
+        guarderName:
+          type: string
+          description: 监护人姓名
+          enum:
+          - '20'
+        guarderMobile:
+          type: string
+          description: 监护人电话
+          enum:
+          - '11'
+        guarderMail:
+          type: string
+          description: 监护人邮箱
+          enum:
+          - '50'
+        currentSchool:
+          type: string
+          description: 就读学校
+          enum:
+          - '50'
+        schoolStart:
+          type: string
+          format: date-time
+          description: 就读开始时间
+        schoolEnd:
+          type: string
+          format: date-time
+          description: 就读结束时间
+        disciplineDirection:
+          type: integer
+          format: int32
+          description: 学科方向
+          enum:
+          - '3'
+        gpa:
+          type: string
+          description: 平均成绩
+          enum:
+          - '3'
+        hopeYear:
+          type: integer
+          format: int32
+          description: 入读年份
+          enum:
+          - '10'
+        contactMobile:
+          type: string
+          description: 联系号码
+          enum:
+          - '11'
+        created:
+          type: string
+          format: date-time
+          description: 创建时间
+        countryList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_36ac7e'
+          description: 意向国家List
+        languageScoreList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_0b664c'
+          description: 语言成绩List
+        reportCardList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_c68756'
+          description: 成绩单List
+        applyEducation:
+          type: integer
+          format: int32
+          description: 申请学历
+      required:
+      - messCode
+      - ddsCode
+      - name
+      - sex
+      - picUrl
+      - nominalFamily
+      - mobile
+      - mail
+      - contactWx
+      - idNumber
+      - nationalityId
+      - mailAddress
+      - healthCondition
+      - symptom
+      - speciality
+      - prize
+      - isOverseas
+      - guarderName
+      - guarderMobile
+      - guarderMail
+      - currentSchool
+      - schoolStart
+      - schoolEnd
+      - disciplineDirection
+      - gpa
+      - hopeYear
+      - contactMobile
+      - applyEducation
+      x-swagger-1-2-name: 报名申请信息对象
+  securitySchemes:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: 'Session token header. Observed on live responses from https://www.51offer.com: Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token". Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated user endpoints return the envelope with a non-200 code field. 51offer publishes no developer auth documentation.'

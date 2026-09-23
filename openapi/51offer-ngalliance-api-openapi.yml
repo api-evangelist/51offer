@@ -1,0 +1,2246 @@
+openapi: 3.2.0
+info:
+  title: 51offer Horizon Site Ng Alliance API
+  version: '1.0'
+  summary: 51offer official-site (www.51offer.com) JSON API surface
+  description: Machine-readable description of the public JSON API surface of 51offer's official study-abroad site (www.51offer.com).
+  contact:
+    name: 51offer
+    email: woodrow.w@51offer.com
+    url: https://www.51offer.com/
+  x-provenance:
+    converted-from: Swagger 1.2
+    source: https://www.51offer.com/api-docs
+    fetched: '2026-09-05'
+servers:
+- url: https://www.51offer.com
+  description: '51offer official site API host. Verified live 2026-09-05: GET /ngGpaCalc/constants returned HTTP 200 application/json.'
+- url: https://m.51offer.com
+  description: 51offer mobile-site host. Serves the same Swagger 1.2 documents at /api-docs (HTTP 200, application/json, 2026-09-05).
+tags:
+- name: ngAlliance
+  description: 大总管服务控制层
+paths:
+  /ngAlliance/addActivityAdress:
+    get:
+      operationId: addActivityAdress
+      tags:
+      - ngAlliance
+      summary: 保存活动地址
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: activityId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: rubAdress
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: psAdress
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/addActivityUserInfo:
+    get:
+      operationId: addActivityUserInfo
+      tags:
+      - ngAlliance
+      summary: 添加用户参加活动信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session:
+                  type: string
+                miniNum:
+                  type: integer
+                  format: int32
+                aid:
+                  type: string
+                signCodeId:
+                  type: string
+                is_newUser:
+                  type: boolean
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/addScanInfo:
+    get:
+      operationId: addScanInfo
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    head:
+      operationId: ngAlliance_addScanInfo_2
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    post:
+      operationId: ngAlliance_addScanInfo_3
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    put:
+      operationId: ngAlliance_addScanInfo_4
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    patch:
+      operationId: ngAlliance_addScanInfo_5
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    delete:
+      operationId: ngAlliance_addScanInfo_6
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    options:
+      operationId: ngAlliance_addScanInfo_7
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    trace:
+      operationId: ngAlliance_addScanInfo_8
+      tags:
+      - ngAlliance
+      summary: 添加大总管海报扫码信息
+      description: addScanInfo
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: miniNum
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/checkWeixin:
+    get:
+      operationId: checkWeixin
+      tags:
+      - ngAlliance
+      summary: 检查总管的微信号是否正确
+      parameters:
+      - name: wxNumber
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/getSession:
+    get:
+      operationId: getSession
+      tags:
+      - ngAlliance
+      summary: 给审核人员专用的session
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userName:
+                  type: string
+                password:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_string_3275da'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/getSharepicture:
+    get:
+      operationId: getSharepicture
+      tags:
+      - ngAlliance
+      summary: 获取分享图片
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: activityId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/getSharepictureInfo:
+    get:
+      operationId: getSharepictureInfo
+      tags:
+      - ngAlliance
+      summary: 获取邀请海报图片信息
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: activityId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/getUserSession:
+    get:
+      operationId: getUserSession
+      tags:
+      - ngAlliance
+      summary: 获取用户session
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: ddsCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: region
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: jsCode
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AllianceUsers'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_string_3275da'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/getWechatUrl:
+    get:
+      operationId: getWechatUrl
+      tags:
+      - ngAlliance
+      summary: 获取小程序链接
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: activityId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/isVailUser:
+    get:
+      operationId: isVailUser
+      tags:
+      - ngAlliance
+      summary: 判断用户是否有效
+      parameters:
+      - name: jsCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/positionalTitleInfo:
+    get:
+      operationId: positionalTitleInfo
+      tags:
+      - ngAlliance
+      summary: 获取职位职称
+      parameters:
+      - name: storeId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_string_f13f7f'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/pushInviteSuccessInfo:
+    get:
+      operationId: pushSuccessInfo
+      tags:
+      - ngAlliance
+      summary: 定时的成功邀请推送
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryActivityInfo:
+    get:
+      operationId: queryActivityInfo
+      tags:
+      - ngAlliance
+      summary: 获取活动信息
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AllianceActiveResult'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveVO_6e990e'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryActivityUserInfo:
+    get:
+      operationId: queryActivityUserInfo
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    head:
+      operationId: ngAlliance_queryActivityUserInfo_2
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    post:
+      operationId: ngAlliance_queryActivityUserInfo_3
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    put:
+      operationId: ngAlliance_queryActivityUserInfo_4
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    patch:
+      operationId: ngAlliance_queryActivityUserInfo_5
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    delete:
+      operationId: ngAlliance_queryActivityUserInfo_6
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    options:
+      operationId: ngAlliance_queryActivityUserInfo_7
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    trace:
+      operationId: ngAlliance_queryActivityUserInfo_8
+      tags:
+      - ngAlliance
+      summary: queryActivityUserInfo
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: listType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: pageNo
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceActiveUsersLog_5ac030'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryAllianceUsersByWx:
+    get:
+      operationId: queryAllianceUsersByWx
+      tags:
+      - ngAlliance
+      summary: 查询承接人信息
+      parameters:
+      - name: wx
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceUsers_c26b17'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryNewReleaseTime:
+    get:
+      operationId: queryNewReleaseTime
+      tags:
+      - ngAlliance
+      summary: 根据活动类型查询最新发布时间
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Map_string_string_4cefdd'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryReg:
+    get:
+      operationId: queryReg
+      tags:
+      - ngAlliance
+      summary: 是否有新注册的用户
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: datetime
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterUserVO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryRegUserInfo:
+    get:
+      operationId: queryRegUserInfo
+      tags:
+      - ngAlliance
+      summary: 获取注册用户信息
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterUserVO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Users_81a132'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/querySalesList:
+    get:
+      operationId: querySalesList
+      tags:
+      - ngAlliance
+      summary: 获取营销榜信息
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_AllianceUserVO_854b7b'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/querySignPosterInfo:
+    get:
+      operationId: querySignPosterInfo
+      tags:
+      - ngAlliance
+      summary: 获取报名活动所需海报信息
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryStoreCoordinate:
+    get:
+      operationId: queryStoreCoordinate
+      tags:
+      - ngAlliance
+      summary: 获取门店信息
+      parameters:
+      - name: lat1
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: lng1
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryStoreInfoByCode:
+    get:
+      operationId: queryStoreInfoByCode
+      tags:
+      - ngAlliance
+      summary: 通过门店的唯一code值获取门店信息
+      parameters:
+      - name: code
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_StoreInfoVO_e3de80'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/querySysUserInfo:
+    get:
+      operationId: querySysUserInfo
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    head:
+      operationId: ngAlliance_querySysUserInfo_2
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    post:
+      operationId: ngAlliance_querySysUserInfo_3
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    put:
+      operationId: ngAlliance_querySysUserInfo_4
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    patch:
+      operationId: ngAlliance_querySysUserInfo_5
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    delete:
+      operationId: ngAlliance_querySysUserInfo_6
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    options:
+      operationId: ngAlliance_querySysUserInfo_7
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+    trace:
+      operationId: ngAlliance_querySysUserInfo_8
+      tags:
+      - ngAlliance
+      summary: querySysUserInfo
+      parameters:
+      - name: username
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysUsersOrgRoleVO_7cbe03'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryUserInfo:
+    get:
+      operationId: ngAlliance_queryUserInfo_9
+      tags:
+      - ngAlliance
+      summary: 获取邀请人信息
+      parameters:
+      - name: session
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/queryUserMobile:
+    get:
+      operationId: queryUserMobile
+      tags:
+      - ngAlliance
+      summary: 获取报名用户手机号
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: thirdChannel
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_string_5634e8'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/reviseUserInfo:
+    get:
+      operationId: reviseUserInfo
+      tags:
+      - ngAlliance
+      summary: 修改用户信息
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AllianceUsers'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/reviseUserMobile:
+    get:
+      operationId: reviseUserMobile
+      tags:
+      - ngAlliance
+      summary: 修改用户手机号
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: ddsCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: region
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AllianceUsers'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/sendExplosiveActInfo:
+    get:
+      operationId: sendExplosiveActInfo
+      tags:
+      - ngAlliance
+      summary: 爆款活动扫码通知
+      parameters:
+      - name: aid
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: userName
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+  /ngAlliance/updateUserStatus:
+    get:
+      operationId: ngAlliance_addActivityAdress_2
+      tags:
+      - ngAlliance
+      summary: 改变邀请人状态
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: activityId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngalliance
+components:
+  schemas:
+    RegisterUserVO:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    HttpResult_List_AllianceActiveUsersLog_5ac030:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AllianceActiveUsersLog'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«AllianceActiveUsersLog»»
+    Map_string_string_5005ea:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    AllianceActiveUsersLog:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        uid:
+          type: integer
+          format: int32
+        activeName:
+          type: string
+        sysUid:
+          type: integer
+          format: int32
+        auid:
+          type: integer
+          format: int32
+        username:
+          type: string
+        thirdUsername:
+          type: string
+        type:
+          type: integer
+          format: int32
+        regSource:
+          type: integer
+          format: int32
+        created:
+          type: string
+          format: date-time
+        activityId:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: AllianceActiveUsersLog
+    AllianceActiveResult:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    HttpResult_List_AllianceUserVO_854b7b:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AllianceUserVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«AllianceUserVO»»
+    HttpResult_StoreInfoVO_e3de80:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/StoreInfoVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«StoreInfoVO»
+    HttpResult_List_AllianceUsers_c26b17:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AllianceUsers'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«AllianceUsers»»
+    AllianceUsers:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        realname:
+          type: string
+        storeId:
+          type: integer
+          format: int32
+        job:
+          type: string
+        mobile:
+          type: string
+        openId:
+          type: string
+        wxNumber:
+          type: string
+        wxImg:
+          type: string
+        wxUsername:
+          type: string
+        sysUid:
+          type: integer
+          format: int32
+        sysUsername:
+          type: string
+        created:
+          type: string
+          format: date-time
+        updated:
+          type: string
+          format: date-time
+        unionid:
+          type: string
+      x-swagger-1-2-name: AllianceUsers
+    HttpResult_List_string_f13f7f:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            type: string
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«string»»
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    AllianceUserVO:
+      type: object
+      properties:
+        rank:
+          type: string
+        registerNum:
+          type: integer
+          format: int32
+        id:
+          type: integer
+          format: int32
+        openId:
+          type: string
+        unionid:
+          type: string
+        realname:
+          type: string
+        wxUsername:
+          type: string
+        currUser:
+          type: integer
+          format: int32
+        dayregisterNum:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: AllianceUserVO
+    HttpResult_Map_string_string_5634e8:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
+    HttpResult_SysUsersOrgRoleVO_7cbe03:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/SysUsersOrgRoleVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«SysUsersOrgRoleVO»
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    AllianceActiveVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        activeType:
+          type: integer
+          format: int32
+        activeName:
+          type: string
+        activeRemark:
+          type: string
+        participants:
+          type: string
+        participatoryApproach:
+          type: string
+        shareRemark:
+          type: string
+        releaseTime:
+          type: string
+          format: date-time
+        isActive:
+          type: integer
+          format: int32
+        userNum:
+          type: integer
+          format: int32
+        autoReply:
+          type: string
+        endTime:
+          type: string
+          format: date-time
+        seriesTheme:
+          type: string
+        isLongTime:
+          type: integer
+          format: int32
+        abroadCountry:
+          type: string
+        abroadYear:
+          type: string
+        relatedSchool:
+          type: string
+        businessCategoryName:
+          type: string
+        sharedList:
+          type: array
+          items:
+            type: string
+        startTime:
+          type: string
+          format: date-time
+        whetherEnd:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: AllianceActiveVO
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    HttpResult_List_Map_string_string_4cefdd:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Map_string_string_5005ea'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Map«string,string»»»
+    StoreInfoVO:
+      type: object
+      properties:
+        storeId:
+          type: string
+        storeName:
+          type: string
+        distance:
+          type: number
+          format: double
+        signSrc:
+          type: string
+        src:
+          type: string
+        type:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: StoreInfoVO
+    Users:
+      type: object
+      properties:
+        uid:
+          type: integer
+          format: int32
+        username:
+          type: string
+        nickname:
+          type: string
+        password:
+          type: string
+        salt:
+          type: string
+        region:
+          type: string
+        mobile:
+          type: string
+        email:
+          type: string
+        userStatus:
+          type: integer
+          format: int32
+        mobileStatus:
+          type: integer
+          format: int32
+        emailStatus:
+          type: integer
+          format: int32
+        userAvatar:
+          type: string
+        createDate:
+          type: string
+          format: date-time
+        modifyDate:
+          type: string
+          format: date-time
+        token:
+          type: string
+      x-swagger-1-2-name: Users
+    HttpResult_string_3275da:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: string
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«string»
+    HttpResult_List_Users_81a132:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Users'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Users»»
+    HttpResult_List_AllianceActiveVO_6e990e:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AllianceActiveVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«AllianceActiveVO»»
+    HttpResult_Map_string_object_5812ac:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
+    SysUsersOrgRoleVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        sysUserId:
+          type: integer
+          format: int32
+        callCenter:
+          type: string
+        ccName:
+          type: string
+        ccPassword:
+          type: string
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        deleted:
+          type: string
+          format: date-time
+        deleter:
+          type: integer
+          format: int32
+        uid:
+          type: integer
+          format: int32
+        username:
+          type: string
+        ename:
+          type: string
+        nickename:
+          type: string
+        realname:
+          type: string
+        roleName:
+          type: string
+        orgName:
+          type: string
+      x-swagger-1-2-name: SysUsersOrgRoleVO
+  securitySchemes:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: 'Session token header. Observed on live responses from https://www.51offer.com: Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token". Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated user endpoints return the envelope with a non-200 code field. 51offer publishes no developer auth documentation.'

@@ -1,0 +1,2917 @@
+openapi: 3.2.0
+info:
+  title: 51offer Horizon Site Diym API
+  version: '1.0'
+  summary: 51offer official-site (www.51offer.com) JSON API surface
+  description: Machine-readable description of the public JSON API surface of 51offer's official study-abroad site (www.51offer.com).
+  contact:
+    name: 51offer
+    email: woodrow.w@51offer.com
+    url: https://www.51offer.com/
+  x-provenance:
+    converted-from: Swagger 1.2
+    source: https://www.51offer.com/api-docs
+    fetched: '2026-09-05'
+servers:
+- url: https://www.51offer.com
+  description: '51offer official site API host. Verified live 2026-09-05: GET /ngGpaCalc/constants returned HTTP 200 application/json.'
+- url: https://m.51offer.com
+  description: 51offer mobile-site host. Serves the same Swagger 1.2 documents at /api-docs (HTTP 200, application/json, 2026-09-05).
+tags:
+- name: diym
+  description: diy材料申请信息控制层
+paths:
+  /diym/apply/delete/file:
+    get:
+      operationId: deleteMaterialFileInfo
+      tags:
+      - diym
+      summary: diy申请信息
+      description: 删除上传的材料信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/getCityByProvince:
+    get:
+      operationId: getCityByProvince
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    head:
+      operationId: diym_getCityByProvince_2
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    post:
+      operationId: diym_getCityByProvince_3
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    put:
+      operationId: diym_getCityByProvince_4
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    patch:
+      operationId: diym_getCityByProvince_5
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    delete:
+      operationId: diym_getCityByProvince_6
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    options:
+      operationId: diym_getCityByProvince_7
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    trace:
+      operationId: diym_getCityByProvince_8
+      tags:
+      - diym
+      summary: getCityByProvince
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CMSCity_c63aae'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/getCountyByCity:
+    get:
+      operationId: getCountyByCity
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    head:
+      operationId: diym_getCountyByCity_2
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    post:
+      operationId: diym_getCountyByCity_3
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    put:
+      operationId: diym_getCountyByCity_4
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    patch:
+      operationId: diym_getCountyByCity_5
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    delete:
+      operationId: diym_getCountyByCity_6
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    options:
+      operationId: diym_getCountyByCity_7
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    trace:
+      operationId: diym_getCountyByCity_8
+      tags:
+      - diym
+      summary: getCountyByCity
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_CityCounty_269c0c'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/getProvinceByCountry:
+    get:
+      operationId: getProvinceByCountry
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    head:
+      operationId: diym_getProvinceByCountry_2
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    post:
+      operationId: diym_getProvinceByCountry_3
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    put:
+      operationId: diym_getProvinceByCountry_4
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    patch:
+      operationId: diym_getProvinceByCountry_5
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    delete:
+      operationId: diym_getProvinceByCountry_6
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    options:
+      operationId: diym_getProvinceByCountry_7
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+    trace:
+      operationId: diym_getProvinceByCountry_8
+      tags:
+      - diym
+      summary: getProvinceByCountry
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_Area_f64d77'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/query/apply:
+    post:
+      operationId: getUserMainApplyInfo
+      tags:
+      - diym
+      summary: diy申请信息
+      description: 查询申请信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_UsersApplyInfoVO_61ce7d'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/query/common:
+    get:
+      operationId: getCommonInfo
+      tags:
+      - diym
+      summary: diy申请信息
+      description: 查询通用信息
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/query/list:
+    get:
+      operationId: getApplySchoolList
+      tags:
+      - diym
+      summary: diy申请信息
+      description: 用户待提交材料订单列表
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_OrderVO_89c6f2'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/query/mainStatus:
+    post:
+      operationId: getUserMainApplyStatus
+      tags:
+      - diym
+      summary: diy申请信息
+      description: 查询申请信息状态
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_object_5812ac'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/query/status:
+    get:
+      operationId: getOrderSubmitStatus
+      tags:
+      - diym
+      summary: diy申请信息
+      description: 查询子订单状态信息
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_DiyMaterialOrder_066184'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/apply/save/status:
+    post:
+      operationId: updateOrderSubmitStatus
+      tags:
+      - diym
+      summary: diy申请信息
+      description: 保存子订单状态信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymapply
+  /diym/basic/delete/education:
+    get:
+      operationId: deleteUserEducationInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 删除用户教育背景
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/delete/language:
+    get:
+      operationId: deleteUserLanguageScoreInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 删除用户语言成绩信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/delete/work:
+    get:
+      operationId: deleteUserWorkInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 删除用户工作经历信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/query/basicinfo:
+    get:
+      operationId: getUserBasicInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 查询用户基本信息
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_UsersInfoVO_fe4808'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/query/education:
+    get:
+      operationId: getUserEducationInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 查询用户教育背景
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_UsersEducationVO_f1a5d3'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/query/language:
+    get:
+      operationId: getUserLanguageScoreInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 查询用户语言成绩信息
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_UsersLanguageScoreVO_3a3339'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/query/work:
+    get:
+      operationId: getUserWorkInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 查询用户工作经历信息
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_UsersWorkVO_99b986'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/save/basicinfo:
+    post:
+      operationId: saveUserBasicInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 保存用户基本信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsersInfoVO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/save/education:
+    post:
+      operationId: saveUserEducationInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 保存用户教育背景
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/UsersEducationVO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/save/language:
+    post:
+      operationId: saveUserLanguageScoreInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 保存用户语言成绩信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/UsersLanguageScoreVO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/basic/save/work:
+    post:
+      operationId: saveUserWorkInfo
+      tags:
+      - diym
+      summary: diy个人信息
+      description: 保存用户工作经历信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/UsersWorkVO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymbasic
+  /diym/qrcode/check:
+    get:
+      operationId: checkQrCode
+      tags:
+      - diym
+      summary: diy扫码登录
+      description: 校验二维码
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_string_5634e8'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymqrcode
+  /diym/qrcode/create:
+    get:
+      operationId: createQrCode
+      tags:
+      - diym
+      summary: diy扫码登录
+      description: 生成二维码
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_string_string_5634e8'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymqrcode
+  /diym/qrcode/login:
+    get:
+      operationId: login
+      tags:
+      - diym
+      summary: diy扫码登录
+      description: 登陆
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session:
+                  type: string
+                thirdChannelId:
+                  type: integer
+                  format: int32
+                uuid:
+                  type: string
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymqrcode
+  /diym/qrcode/logout:
+    get:
+      operationId: logout
+      tags:
+      - diym
+      summary: logout
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymqrcode
+  /diym/school/delete/ps:
+    get:
+      operationId: deleteUserPSInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 删除当前子订单用户个人陈述信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                orderId:
+                  type: integer
+                  format: int32
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/delete/reference:
+    get:
+      operationId: deleteUserSuborderReferenceInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 删除当前子订单用户推荐人及推荐信全部信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                orderId:
+                  type: integer
+                  format: int32
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/delete/suborderother:
+    get:
+      operationId: deleteUserSuborderOtherInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 删除当前子订单用户作品及其他信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int32
+                orderId:
+                  type: integer
+                  format: int32
+              x-derived-from: swagger-1.2 body parameters (generator emitted name "body"; the real field name is carried in the parameter description)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/query/ps:
+    get:
+      operationId: getUserPSInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 查询当前子订单用户个人陈述信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_MaterialSuborderPs_13bc4a'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/query/psList:
+    get:
+      operationId: diym_getUserPSInfo_2
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 查询当前子订单用户个人陈述信息
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_MaterialSuborderPs_27499a'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/query/reference:
+    get:
+      operationId: getUserSuborderReferenceInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 查询当前子订单用户推荐信信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_UsersReferenceVO_94b319'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/query/suborderother:
+    get:
+      operationId: getUserSuborderOtherInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 查询当前子订单用户作品及其他信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_MaterialSuborderOther_e3a16c'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/query/suborderotherList:
+    get:
+      operationId: diym_getUserSuborderOtherInfo_2
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 根据uid查询用户作品及其他信息列表
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_List_MaterialSuborderOther_df22a6'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/save/ps:
+    post:
+      operationId: saveUserPSInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 保存当前子订单用户个人陈述信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaterialSuborderPs'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/save/reference:
+    post:
+      operationId: saveUserSuborderReferenceInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 保存当前子订单用户推荐信信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/UsersReferenceVO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+  /diym/school/save/suborderother:
+    post:
+      operationId: saveUserSuborderOtherInfo
+      tags:
+      - diym
+      summary: diy学校材料
+      description: 保存当前子订单用户作品及其他信息
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaterialSuborderOther'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
+components:
+  schemas:
+    SchoolRank:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        country:
+          type: string
+        year:
+          type: integer
+          format: int32
+        type:
+          type: string
+        ranking:
+          type: integer
+          format: int32
+        showRank:
+          type: string
+        score:
+          type: string
+        countryId:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: SchoolRank
+    HttpResult_List_CMSCity_c63aae:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CMSCity'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«CMSCity»»
+    HttpResult_List_UsersWorkVO_99b986:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersWorkVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersWorkVO»»
+    HttpResult_List_CityCounty_269c0c:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CityCounty'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«CityCounty»»
+    HttpResult_MaterialSuborderPs_13bc4a:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/MaterialSuborderPs'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«MaterialSuborderPs»
+    HttpResult_UsersInfoVO_fe4808:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/UsersInfoVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«UsersInfoVO»
+    Schema_2467b7:
+      type: object
+      description: order_apply_fee
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderCode:
+          type: string
+          description: 订单编号（用于与支付中心结构一致）
+        uid:
+          type: integer
+          format: int32
+          description: 订单用户ID
+        applyOrderType:
+          type: integer
+          format: int32
+          description: 申请订单类型 2 正课 3 欧亚 4 语言 5 美国
+        applyOrderId:
+          type: integer
+          format: int32
+          description: 申请订单ID
+        isRequire:
+          type: integer
+          format: int32
+          description: 需要不需要 0-不需要 1-需要
+        receivableAmount:
+          type: number
+          format: double
+          description: 应收金额 元
+        receivableCurrency:
+          type: integer
+          format: int32
+          description: 应收币种 1-人民币 2-英镑 3-美元 4-澳币 5-新加坡元
+        payPrice:
+          type: integer
+          format: int32
+          description: 实收金额，单位=分
+        exchangeRate:
+          type: number
+          format: double
+          description: 支付时汇率
+        payTime:
+          type: string
+          format: date-time
+          description: 支付时间
+        refundPrice:
+          type: integer
+          format: int32
+          description: 退款金额，单位=分
+        refundTime:
+          type: string
+          format: date-time
+          description: 退款时间
+        orderStatus:
+          type: integer
+          format: int32
+          description: 订单状态（0=待支付 1=关闭 2=部分支付 3=已支付 4=退款中 5=已退款）
+        payToSchool:
+          type: integer
+          format: int32
+          description: 是否缴纳到学校 0=否 1=是
+        remitProof:
+          type: integer
+          format: int32
+          description: 向学校的汇款凭证
+        orderRemark:
+          type: string
+          description: 订单备注
+        creator:
+          type: integer
+          format: int32
+        created:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+      x-swagger-1-2-name: 申请费支付信息对象
+    HttpResult_List_UsersReferenceVO_94b319:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersReferenceVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersReferenceVO»»
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        brief:
+          type: string
+        theirSchools:
+          type: string
+        degreeType:
+          type: integer
+          format: int32
+        joinMajorId:
+          type: string
+        gradeEname:
+          type: string
+        majorCourse:
+          type: string
+        chooseCourse:
+          type: string
+        credits:
+          type: integer
+          format: int32
+        languageClass:
+          type: string
+      x-swagger-1-2-name: Course
+    Area:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        regionalCname:
+          type: string
+        regionalEname:
+          type: string
+        zipCode:
+          type: integer
+          format: int32
+        phoneCode:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Area
+    UsersApplyInfoVO:
+      type: object
+      properties:
+        usersInfoVO:
+          $ref: '#/components/schemas/UsersInfoVO'
+          description: 用户个人基础信息实体
+        usersEducationVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersEducationVO'
+          description: 用户教育背景实体
+        usersWorkVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersWorkVO'
+          description: 用户工作经历实体
+        usersLanguageScoreVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersLanguageScoreVO'
+          description: 用户语言成绩实体
+        schoolMaterialVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchoolMaterialVO'
+          description: 用户学校材料实体
+      x-swagger-1-2-name: UsersApplyInfoVO
+    Grade:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        shortName:
+          type: string
+        type:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Grade
+    HttpResult_List_DiyMaterialOrder_066184:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiyMaterialOrder'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«DiyMaterialOrder»»
+    HttpResult_List_MaterialSuborderPs_27499a:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaterialSuborderPs'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«MaterialSuborderPs»»
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    CMSCity:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        areaId:
+          type: integer
+          format: int32
+        cityEname:
+          type: string
+        cityCname:
+          type: string
+        areaCode:
+          type: string
+        lable:
+          type: string
+        weather:
+          type: string
+        spendMoney:
+          type: string
+        traffic:
+          type: string
+        partTime:
+          type: string
+        picture:
+          type: string
+      x-swagger-1-2-name: CMSCity
+    UsersEducationVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: 自增id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        degreeType:
+          type: integer
+          format: int32
+          description: 学历类型
+        degreeTypeName:
+          type: string
+          description: 学历类型中文名
+        school:
+          type: string
+          description: 就读学校
+        schoolCname:
+          type: string
+          description: 就读学校中文名
+        schoolId:
+          type: string
+          description: 就读学校中文名
+        major:
+          type: string
+          description: 所学专业
+        entranceDate:
+          type: string
+          format: date-time
+          description: 入学时间
+        graduationDate:
+          type: string
+          format: date-time
+          description: 毕业时间
+        isFullTime:
+          type: integer
+          format: int32
+          description: 是否全日制
+        gpaType:
+          type: integer
+          format: int32
+          description: GPA类型
+        gpaValue:
+          type: string
+          description: GPA分数
+        degreeName:
+          type: string
+          description: 就读学位
+        graduated:
+          type: string
+          format: date-time
+          description: 获得学位时间
+        language:
+          type: integer
+          format: int32
+          description: 授课语言
+        languageName:
+          type: string
+          description: 授课语言中文名
+        coursesType:
+          type: integer
+          format: int32
+          description: 就读课程类型
+        coursesTypeName:
+          type: string
+          description: 就读课程类型中文名
+        greType:
+          type: integer
+          format: int32
+          description: GRE/GMAT类型，0：无，1：GRE，2：GMAT
+        greValue:
+          type: integer
+          format: int32
+          description: GRE/GMAT分数
+        greCertificate:
+          type: integer
+          format: int32
+          description: GRE/GMAT附件
+        greCertificateName:
+          type: string
+          description: GRE/GMAT附件文件名
+        reportCard:
+          type: integer
+          format: int32
+          description: 成绩单
+        reportCardName:
+          type: string
+          description: 成绩单文件名
+        learningCertificate:
+          type: integer
+          format: int32
+          description: 在读证明
+        learningCertificateName:
+          type: string
+          description: 在读证明文件名
+        diploma:
+          type: integer
+          format: int32
+          description: 毕业证
+        diplomaName:
+          type: string
+          description: 毕业证文件名
+        degreeCertificate:
+          type: integer
+          format: int32
+          description: 学位证
+        degreeCertificateName:
+          type: string
+          description: 学位证文件名
+        awardsCertificate:
+          type: integer
+          format: int32
+          description: 获奖证书
+        awardsCertificateName:
+          type: string
+          description: 获奖证书文件名
+      x-swagger-1-2-name: UsersEducationVO
+    DiyMaterialOrder:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: 自增id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        orderId:
+          type: integer
+          format: int32
+          description: 订单id
+        orderStatus:
+          type: integer
+          format: int32
+          description: 订单提交状态，0:未提交，1:已提交
+        submitTime:
+          type: string
+          format: date-time
+          description: 子订单材料提交时间
+      x-swagger-1-2-name: DiyMaterialOrder
+    HttpResult_Map_string_string_5634e8:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
+    MaterialSuborderOther:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        uid:
+          type: integer
+          format: int32
+        channelId:
+          type: integer
+          format: int32
+        suborderId:
+          type: integer
+          format: int32
+        materialFileId:
+          type: integer
+          format: int32
+        materialFileName:
+          type: string
+        materialName:
+          type: string
+        isDelete:
+          type: integer
+          format: int32
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        deleted:
+          type: string
+          format: date-time
+        deleter:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: MaterialSuborderOther
+    HttpResult_MaterialSuborderOther_e3a16c:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/MaterialSuborderOther'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«MaterialSuborderOther»
+    HttpResult_List_UsersEducationVO_f1a5d3:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersEducationVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersEducationVO»»
+    UsersWorkVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: 自增id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        org:
+          type: string
+          description: 工作单位
+        orgZip:
+          type: string
+          description: 工作单位邮编
+        address:
+          type: string
+          description: 单位地址
+        orgPhone:
+          type: string
+          description: 工作单位联系电话
+        startDate:
+          type: string
+          format: date-time
+          description: 开始时间
+        endDate:
+          type: string
+          format: date-time
+          description: 结束时间
+        title:
+          type: string
+          description: 职位
+        workType:
+          type: integer
+          format: int32
+          description: 工作性质，1：全职，2：非全职
+        job:
+          type: string
+          description: 指责
+        employmentCertificate:
+          type: integer
+          format: int32
+          description: 工作证明
+        employmentCertificateName:
+          type: string
+          description: 工作证明文件名
+      x-swagger-1-2-name: UsersWorkVO
+    SchoolMaterialVO:
+      type: object
+      properties:
+        subOrderId:
+          type: integer
+          format: int32
+          description: 子订单ID
+        materialSuborderPs:
+          $ref: '#/components/schemas/MaterialSuborderPs'
+          description: 个人陈述实体
+        usersReferenceVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersReferenceVO'
+          description: 推荐信实体
+        materialSuborderOther:
+          $ref: '#/components/schemas/MaterialSuborderOther'
+          description: 作品及其他实体
+      x-swagger-1-2-name: SchoolMaterialVO
+    Major:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        direction:
+          type: string
+        eductionalSystem:
+          type: string
+        degreeName:
+          type: string
+        courseType:
+          type: string
+        majorUrl:
+          type: string
+        tuition:
+          type: string
+        applyFee:
+          type: number
+          format: double
+        shortName:
+          type: string
+        applyStatus:
+          type: integer
+          format: int32
+        currency:
+          type: integer
+          format: int32
+        ieltsRequire:
+          type: string
+        applyRequire:
+          type: string
+        applyType:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Major
+    Country:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        upperName:
+          type: string
+        cname:
+          type: string
+        ename:
+          type: string
+        logo:
+          type: string
+        iso:
+          type: string
+        iso3:
+          type: string
+        numCode:
+          type: integer
+          format: int32
+        phoneCode:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Country
+    HttpResult_List_MaterialSuborderOther_df22a6:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaterialSuborderOther'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«MaterialSuborderOther»»
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    UsersInfoVO:
+      type: object
+      properties:
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        realnameFirst:
+          type: string
+          description: 姓
+        realnameLast:
+          type: string
+          description: 名
+        pinyinFirst:
+          type: string
+          description: 姓拼音
+        pinyinLast:
+          type: string
+          description: 名拼音
+        sex:
+          type: integer
+          format: int32
+          description: 性别
+        birthday:
+          type: string
+          format: date-time
+          description: 生日
+        nationalityId:
+          type: integer
+          format: int32
+          description: 国籍
+        nationalityName:
+          type: string
+          description: 国籍中文名
+        contactsName:
+          type: string
+          description: 紧急联系人姓名
+        areaCode:
+          type: string
+          description: 紧急联系人电话区域号
+        phone:
+          type: string
+          description: 紧急联系人电话
+        contactsType:
+          type: integer
+          format: int32
+          description: 紧急联系人关系
+        resumeFileId:
+          type: integer
+          format: int32
+          description: 简历
+        resumeFileName:
+          type: string
+          description: 简历文件名
+        countryId:
+          type: integer
+          format: int32
+          description: 居住地-国家
+        countryName:
+          type: string
+          description: 居住地-国家中文名
+        provinceId:
+          type: integer
+          format: int32
+          description: 居住地-省份
+        provinceName:
+          type: string
+          description: 居住地-省份中文名
+        cityId:
+          type: integer
+          format: int32
+          description: 居住地-城市
+        cityName:
+          type: string
+          description: 居住地-城市中文名
+        address:
+          type: string
+          description: 居住地-详细地址
+        zip:
+          type: string
+          description: 邮编
+        passport:
+          type: string
+          description: 护照号
+        passportFileId:
+          type: integer
+          format: int32
+          description: 护照
+        passportFileName:
+          type: string
+          description: 护照文件名
+      x-swagger-1-2-name: UsersInfoVO
+    UsersReferenceVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        suborderId:
+          type: integer
+          format: int32
+          description: 订单id
+        referenceId:
+          type: integer
+          format: int32
+          description: 推荐信文件id
+        referenceObjectId:
+          type: integer
+          format: int32
+          description: 推荐信id
+        referenceName:
+          type: string
+          description: 推荐信文件名
+        refereeId:
+          type: integer
+          format: int32
+          description: 推荐人id
+        realname:
+          type: string
+          description: 推荐人姓名
+        title:
+          type: integer
+          format: int32
+          description: 推荐人称谓
+        type:
+          type: integer
+          format: int32
+          description: 类型 1-学术推荐人 2-工作推荐人
+        relation:
+          type: string
+          description: 与学生关系
+        knownDate:
+          type: string
+          description: 认识年数
+        telphone:
+          type: string
+          description: 推荐人联系电话
+        orgZip:
+          type: string
+          description: 推荐人工作单位邮编
+        email:
+          type: string
+          description: 推荐人邮箱
+        job:
+          type: string
+          description: 推荐人职业
+        org:
+          type: string
+          description: 推荐人所在单位
+        address:
+          type: string
+          description: 推荐人单位地址
+      x-swagger-1-2-name: UsersReferenceVO
+    HttpResult_List_Area_f64d77:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Area'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Area»»
+    HttpResult_List_OrderVO_89c6f2:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«OrderVO»»
+    HttpResult_List_UsersLanguageScoreVO_3a3339:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersLanguageScoreVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersLanguageScoreVO»»
+    HttpResult_UsersApplyInfoVO_61ce7d:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/UsersApplyInfoVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«UsersApplyInfoVO»
+    MaterialSuborderPs:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        uid:
+          type: integer
+          format: int32
+        channelId:
+          type: integer
+          format: int32
+        suborderId:
+          type: integer
+          format: int32
+        psFileId:
+          type: integer
+          format: int32
+        psFileName:
+          type: string
+        isDelete:
+          type: integer
+          format: int32
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        deleted:
+          type: string
+          format: date-time
+        deleter:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: MaterialSuborderPs
+    SchoolBasic:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        logo:
+          type: string
+        url:
+          type: string
+        tel:
+          type: string
+        address:
+          type: string
+        longitude:
+          type: string
+        latitude:
+          type: string
+        zip:
+          type: string
+        areaId:
+          type: integer
+          format: int32
+        cityId:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        area:
+          $ref: '#/components/schemas/Area'
+        city:
+          $ref: '#/components/schemas/CMSCity'
+        country:
+          $ref: '#/components/schemas/Country'
+        modified:
+          type: string
+          format: date-time
+        buildTime:
+          type: string
+        eduLevel:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        urlkey:
+          type: string
+        logo2:
+          type: string
+        status:
+          type: integer
+          format: int32
+        courseType:
+          type: string
+        schoolType:
+          type: string
+        logo3:
+          type: string
+        automaticApply:
+          type: integer
+          format: int32
+        schoolRent:
+          type: string
+        houseRent:
+          type: string
+        fax:
+          type: string
+        weibo:
+          type: string
+        email:
+          type: string
+        wechat:
+          type: string
+        recommendType:
+          type: string
+        rankList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchoolRank'
+        logoCover:
+          type: string
+        openTime:
+          type: string
+          format: date-time
+      x-swagger-1-2-name: SchoolBasic
+    UsersLanguageScoreVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: 自增id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        type:
+          type: integer
+          format: int32
+          description: 语言成绩类型 1-雅思 2-托福 3-其他
+        typeName:
+          type: string
+          description: 语言成绩名称
+        testId:
+          type: string
+          description: 考试号
+        testDate:
+          type: string
+          format: date-time
+          description: 考试时间
+        scoreTotal:
+          type: string
+          description: 总成绩
+        scoreL:
+          type: number
+          format: double
+          description: 雅思或托福L
+        scoreR:
+          type: number
+          format: double
+          description: 雅思或托福R
+        scoreW:
+          type: number
+          format: double
+          description: 雅思或托福W
+        scoreS:
+          type: number
+          format: double
+          description: 雅思或托福S
+        scoreReport:
+          type: integer
+          format: int32
+          description: 成绩单(文件)
+        scoreReportName:
+          type: string
+          description: 成绩单(文件)文件名
+      x-swagger-1-2-name: UsersLanguageScoreVO
+    HttpResult_Map_string_object_5812ac:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
+    OrderVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderId:
+          type: integer
+          format: int32
+        orderType:
+          type: integer
+          format: int32
+        applyCountryId:
+          type: integer
+          format: int32
+        applyEducationId:
+          type: integer
+          format: int32
+        applyCountryName:
+          type: string
+        applyEducationName:
+          type: string
+        status:
+          type: integer
+          format: int32
+        statusName:
+          type: string
+        school:
+          $ref: '#/components/schemas/SchoolBasic'
+        major:
+          $ref: '#/components/schemas/Major'
+        grade:
+          $ref: '#/components/schemas/Grade'
+        course:
+          $ref: '#/components/schemas/Course'
+        orderApplyFee:
+          $ref: '#/components/schemas/Schema_2467b7'
+        showPayment:
+          type: boolean
+        modifedTime:
+          type: string
+          format: date-time
+        degreeType:
+          type: string
+        snapShotKey:
+          type: string
+        operateTime:
+          type: string
+          format: date-time
+        isAdviserCreated:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: OrderVO
+    CityCounty:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        cityId:
+          type: integer
+          format: int32
+        disName:
+          type: string
+      x-swagger-1-2-name: CityCounty
+  securitySchemes:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: 'Session token header. Observed on live responses from https://www.51offer.com: Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token". Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated user endpoints return the envelope with a non-200 code field. 51offer publishes no developer auth documentation.'

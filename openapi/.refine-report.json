@@ -1,0 +1,60 @@
+{
+  "provider": "51offer",
+  "sources": [
+    "_original/51offer-horizon-site-openapi.yml"
+  ],
+  "outputs": [
+    "51offer-diym-api-openapi.yml",
+    "51offer-ngadviser-api-openapi.yml",
+    "51offer-ngalliance-api-openapi.yml",
+    "51offer-ngdeliverychannel-api-openapi.yml",
+    "51offer-ngdiy-api-openapi.yml",
+    "51offer-ngdoubletwelve-api-openapi.yml",
+    "51offer-ngenroll-api-openapi.yml",
+    "51offer-nggpacalc-api-openapi.yml",
+    "51offer-nghome-api-openapi.yml",
+    "51offer-nglancorrect-api-openapi.yml",
+    "51offer-ngmall-api-openapi.yml",
+    "51offer-ngpaycoupon-api-openapi.yml",
+    "51offer-ngpic-api-openapi.yml",
+    "51offer-ngsign-api-openapi.yml",
+    "51offer-nguserinfo-api-openapi.yml",
+    "51offer-ngdiyapplypay-api-openapi.yml",
+    "51offer-ngdiychooseschool-api-openapi.yml",
+    "51offer-ngdiypositioningnotice-api-openapi.yml",
+    "51offer-ngdiyselectschool-api-openapi.yml",
+    "51offer-ngdiysinglepage-api-openapi.yml",
+    "51offer-ngrefund-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "51offer-horizon-site-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "51offer-diym-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngadviser-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngalliance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdeliverychannel-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdiy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdiyapplypay-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdiychooseschool-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdiypositioningnotice-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdiyselectschool-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdiysinglepage-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngdoubletwelve-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngenroll-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-nggpacalc-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-nghome-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-nglancorrect-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngmall-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngpaycoupon-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngpic-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngrefund-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-ngsign-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "51offer-nguserinfo-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}

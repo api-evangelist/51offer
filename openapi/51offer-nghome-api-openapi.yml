@@ -1,0 +1,439 @@
+openapi: 3.2.0
+info:
+  title: 51offer Horizon Site Ng Home API
+  version: '1.0'
+  summary: 51offer official-site (www.51offer.com) JSON API surface
+  description: Machine-readable description of the public JSON API surface of 51offer's official study-abroad site (www.51offer.com).
+  contact:
+    name: 51offer
+    email: woodrow.w@51offer.com
+    url: https://www.51offer.com/
+  x-provenance:
+    converted-from: Swagger 1.2
+    source: https://www.51offer.com/api-docs
+    fetched: '2026-09-05'
+servers:
+- url: https://www.51offer.com
+  description: '51offer official site API host. Verified live 2026-09-05: GET /ngGpaCalc/constants returned HTTP 200 application/json.'
+- url: https://m.51offer.com
+  description: 51offer mobile-site host. Serves the same Swagger 1.2 documents at /api-docs (HTTP 200, application/json, 2026-09-05).
+tags:
+- name: ngHome
+  description: H5首页控制层
+paths:
+  /ngHome/getOfferDetail:
+    get:
+      operationId: getOfferDetail
+      tags:
+      - ngHome
+      summary: 获取offer的详细信息
+      description: offer详细
+      parameters:
+      - name: orderType
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: realName
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: orderId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: uid
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: callBack
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+  /ngHome/getUserSegment:
+    get:
+      operationId: getUserSegment
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+    head:
+      operationId: ngHome_getUserSegment_2
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+    post:
+      operationId: ngHome_getUserSegment_3
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+    put:
+      operationId: ngHome_getUserSegment_4
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+    patch:
+      operationId: ngHome_getUserSegment_5
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+    delete:
+      operationId: ngHome_getUserSegment_6
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+    options:
+      operationId: ngHome_getUserSegment_7
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+    trace:
+      operationId: ngHome_getUserSegment_8
+      tags:
+      - ngHome
+      summary: getUserSegment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_SysGlobalStatus_6c6a94'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+  /ngHome/queryOfferInfo:
+    get:
+      operationId: queryOfferInfo
+      tags:
+      - ngHome
+      summary: 查询offer信息
+      parameters:
+      - name: callBack
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+  /ngHome/queryOfferSchoolInfo:
+    get:
+      operationId: queryOfferSchoolInfo
+      tags:
+      - ngHome
+      summary: 获取offer最多的院校
+      parameters:
+      - name: countryId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: callBack
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+  /ngHome/queryRecommendedStrategy:
+    get:
+      operationId: queryRecommendedStrategy
+      tags:
+      - ngHome
+      summary: 查询热门攻略信息
+      parameters:
+      - name: countryType
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: callBack
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
+components:
+  schemas:
+    HttpResult_SysGlobalStatus_6c6a94:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/SysGlobalStatus'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«SysGlobalStatus»
+    SysGlobalStatus:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        gsName:
+          type: string
+        gsValue:
+          type: integer
+          format: int32
+        gsViewName:
+          type: string
+        gsType:
+          type: string
+          format: byte
+        gsViewGroup:
+          type: integer
+          format: int32
+        bsId:
+          type: integer
+          format: int32
+        gsDesc:
+          type: string
+      x-swagger-1-2-name: SysGlobalStatus
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+  securitySchemes:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: 'Session token header. Observed on live responses from https://www.51offer.com: Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token". Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated user endpoints return the envelope with a non-200 code field. 51offer publishes no developer auth documentation.'

@@ -1,0 +1,231 @@
+openapi: 3.2.0
+info:
+  title: 51offer Horizon Site Ng Double Twelve API
+  version: '1.0'
+  summary: 51offer official-site (www.51offer.com) JSON API surface
+  description: Machine-readable description of the public JSON API surface of 51offer's official study-abroad site (www.51offer.com).
+  contact:
+    name: 51offer
+    email: woodrow.w@51offer.com
+    url: https://www.51offer.com/
+  x-provenance:
+    converted-from: Swagger 1.2
+    source: https://www.51offer.com/api-docs
+    fetched: '2026-09-05'
+servers:
+- url: https://www.51offer.com
+  description: '51offer official site API host. Verified live 2026-09-05: GET /ngGpaCalc/constants returned HTTP 200 application/json.'
+- url: https://m.51offer.com
+  description: 51offer mobile-site host. Serves the same Swagger 1.2 documents at /api-docs (HTTP 200, application/json, 2026-09-05).
+tags:
+- name: ngDoubleTwelve
+  description: 双十二活动服务控制层
+paths:
+  /ngDoubleTwelve/TimingallocationConsultant:
+    get:
+      operationId: TimingallocationConsultant
+      tags:
+      - ngDoubleTwelve
+      summary: 定时分配顾问
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdoubletwelve
+  /ngDoubleTwelve/dt_createOrder:
+    get:
+      operationId: ngDoubleTwelve_createOrderByDt_2
+      tags:
+      - ngDoubleTwelve
+      summary: 微信小程序下单
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: goodsId
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: skuId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: thirdChannel
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_Map_5d5fab'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdoubletwelve
+  /ngDoubleTwelve/queryUserOrderInfo:
+    get:
+      operationId: queryUserOrderInfo
+      tags:
+      - ngDoubleTwelve
+      summary: 判断该用户是否可以购买该服务
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: thirdChannel
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdoubletwelve
+  /ngDoubleTwelve/queryUserOrderStatus:
+    get:
+      operationId: queryUserOrderStatus
+      tags:
+      - ngDoubleTwelve
+      summary: 判断该用户是否购买过该产品
+      parameters:
+      - name: session
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: thirdChannel
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResult_boolean_f50dfc'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdoubletwelve
+components:
+  schemas:
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    HttpResult_Map_5d5fab:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map»
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+  securitySchemes:
+    tokenHeader:
+      type: apiKey
+      in: header
+      name: token
+      description: 'Session token header. Observed on live responses from https://www.51offer.com: Access-Control-Allow-Headers includes "token" and Access-Control-Expose-Headers is "token". Unauthenticated calls to public endpoints (e.g. GET /ngGpaCalc/constants) return 200; authenticated user endpoints return the envelope with a non-200 code field. 51offer publishes no developer auth documentation.'
