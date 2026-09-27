@@ -34,7 +34,7 @@ apis:
   name: 51offer Diym API
   description: diy材料申请信息控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - diym
   properties:
@@ -52,7 +52,7 @@ apis:
   name: 51offer Ng Adviser API
   description: 顾问控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngAdviser
   properties:
@@ -70,7 +70,7 @@ apis:
   name: 51offer Ng Alliance API
   description: 大总管服务控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngAlliance
   properties:
@@ -88,7 +88,7 @@ apis:
   name: 51offer Ng Delivery Channel API
   description: 渠道限时兑换礼包相关控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngDeliveryChannel
   properties:
@@ -106,7 +106,7 @@ apis:
   name: 51offer Ng Diy API
   description: Diy服务控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngDiy
   properties:
@@ -124,7 +124,7 @@ apis:
   name: 51offer Ngdiyapplypay API
   description: Diy申请支付服务控制
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngdiyapplypay
   properties:
@@ -142,7 +142,7 @@ apis:
   name: 51offer Ngdiychoose School API
   description: diy选校控制器
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags: []
   tags_raw:
   - ngdiychooseSchool
@@ -161,7 +161,7 @@ apis:
   name: 51offer Ngdiypositioningnotice API
   description: diy定位通知服务
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngdiypositioningnotice
   properties:
@@ -179,7 +179,7 @@ apis:
   name: 51offer Ngdiyselectschool API
   description: Diy选校控制器前置
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngdiyselectschool
   properties:
@@ -197,7 +197,7 @@ apis:
   name: 51offer Ngdiysinglepage API
   description: diy单品页控制器
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngdiysinglepage
   properties:
@@ -215,7 +215,7 @@ apis:
   name: 51offer Ng Double Twelve API
   description: 双十二活动服务控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngDoubleTwelve
   properties:
@@ -233,7 +233,7 @@ apis:
   name: 51offer Ng Enroll API
   description: Enroll Controller
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngEnroll
   properties:
@@ -251,7 +251,7 @@ apis:
   name: 51offer Ng Gpa Calc API
   description: GPA计算器
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngGpaCalc
   properties:
@@ -269,7 +269,7 @@ apis:
   name: 51offer Ng Home API
   description: H5首页控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngHome
   properties:
@@ -287,7 +287,7 @@ apis:
   name: 51offer Ng Lan Correct API
   description: 语培口语批改
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngLanCorrect
   properties:
@@ -305,7 +305,7 @@ apis:
   name: 51offer Ng Mall API
   description: 商城控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngMall
   properties:
@@ -323,7 +323,7 @@ apis:
   name: 51offer Ng Pay Coupon API
   description: 51品牌节支付优惠券
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngPayCoupon
   properties:
@@ -341,7 +341,7 @@ apis:
   name: 51offer Ng Pic API
   description: 文章图片更新控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngPic
   properties:
@@ -359,7 +359,7 @@ apis:
   name: 51offer Ngrefund API
   description: 订单退款控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngrefund
   properties:
@@ -377,7 +377,7 @@ apis:
   name: 51offer Ng Sign API
   description: Sign Controller
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngSign
   properties:
@@ -395,7 +395,7 @@ apis:
   name: 51offer Ng User Info API
   description: runway用户控制层
   humanURL: https://www.51offer.com/
-  baseURL: https://www.51offer.com
+  baseURL: https://m.51offer.com
   tags:
   - ngUserInfo
   properties:

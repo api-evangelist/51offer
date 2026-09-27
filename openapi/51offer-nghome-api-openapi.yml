@@ -393,6 +393,16 @@ components:
         gsDesc:
           type: string
       x-swagger-1-2-name: SysGlobalStatus
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
     Page:
       type: object
       properties:
@@ -421,16 +431,6 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
   securitySchemes:
     tokenHeader:
       type: apiKey

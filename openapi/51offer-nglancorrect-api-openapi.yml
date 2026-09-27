@@ -485,23 +485,16 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nglancorrect
 components:
   schemas:
-    HttpResult:
+    ApiInfo:
       type: object
       properties:
-        message:
+        operationTime:
           type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
+        version:
           type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
     Page:
       type: object
       properties:
@@ -530,16 +523,23 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    ApiInfo:
+    HttpResult:
       type: object
       properties:
-        operationTime:
+        message:
           type: string
-        version:
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
           type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult
   securitySchemes:
     tokenHeader:
       type: apiKey

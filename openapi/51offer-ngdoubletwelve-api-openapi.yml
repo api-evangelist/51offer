@@ -151,6 +151,16 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdoubletwelve
 components:
   schemas:
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
     HttpResult_boolean_f50dfc:
       type: object
       properties:
@@ -213,16 +223,6 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
   securitySchemes:
     tokenHeader:
       type: apiKey
