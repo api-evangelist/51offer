@@ -1173,6 +1173,242 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiyselectschool
 components:
   schemas:
+    Docele:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        title:
+          type: string
+        hot:
+          type: integer
+          format: int32
+        rank:
+          type: integer
+          format: int32
+        primaryRankScore:
+          type: integer
+          format: int32
+        secondRankScore:
+          type: integer
+          format: int32
+        distinctCount:
+          type: integer
+          format: int32
+        onlineStatus:
+          type: integer
+          format: int32
+        sumValue:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Docele
+    HttpResult_List_IntelligentSchool_807cb4:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/IntelligentSchool'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«IntelligentSchool»»
+    HttpResult_List_MajorDirection_55f171:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MajorDirection'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«MajorDirection»»
+    DiyAppliedSchoolVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        uid:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        schoolName:
+          type: string
+        majorId:
+          type: integer
+          format: int32
+        majorName:
+          type: string
+        haveOffer:
+          type: integer
+          format: int32
+        academic:
+          type: string
+        language:
+          type: string
+      x-swagger-1-2-name: DiyAppliedSchoolVO
+    HttpResult_List_MajorCategory_f959a6:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MajorCategory'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«MajorCategory»»
+    Country:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        upperName:
+          type: string
+        cname:
+          type: string
+        ename:
+          type: string
+        logo:
+          type: string
+        iso:
+          type: string
+        iso3:
+          type: string
+        numCode:
+          type: integer
+          format: int32
+        phoneCode:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Country
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    MajorDirection:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        keyword:
+          type: string
+        majorCount:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: MajorDirection
+    UserDiyThreestepsInfo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        uid:
+          type: integer
+          format: int32
+        realnameFirst:
+          type: string
+        realnameLast:
+          type: string
+        applyCountryId:
+          type: integer
+          format: int32
+        hopeYear:
+          type: integer
+          format: int32
+        hopeQuarter:
+          type: integer
+          format: int32
+        attendGrade:
+          type: integer
+          format: int32
+        applyEducationId:
+          type: integer
+          format: int32
+        attendSchool:
+          type: string
+        attendMajor:
+          type: string
+        gpa:
+          type: string
+        gpaLevel:
+          type: integer
+          format: int32
+        hopeMajor1:
+          type: integer
+          format: int32
+        hopeMajor2:
+          type: string
+        languageKey:
+          type: string
+        languageValue:
+          type: string
+        specialRequirements:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+      x-swagger-1-2-name: UserDiyThreestepsInfo
     UserDiyThreestepVO:
       type: object
       properties:
@@ -1195,6 +1431,180 @@ components:
           items:
             $ref: '#/components/schemas/DiyAppliedSchoolVO'
       x-swagger-1-2-name: UserDiyThreestepVO
+    HttpResult_int_f2bae6:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: integer
+          format: int32
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«int»
+    CMSCity:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        areaId:
+          type: integer
+          format: int32
+        cityEname:
+          type: string
+        cityCname:
+          type: string
+        areaCode:
+          type: string
+        lable:
+          type: string
+        weather:
+          type: string
+        spendMoney:
+          type: string
+        traffic:
+          type: string
+        partTime:
+          type: string
+        picture:
+          type: string
+      x-swagger-1-2-name: CMSCity
+    HttpResult_List_University_5b7f89:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/University'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«University»»
+    UserDiyInfoVO:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    HttpResult_List_Map_string_object_43a756:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Map_string_object_e0fd20'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Map«string,object»»»
+    HttpResult_List_Major_58fd76:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Major'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Major»»
+    Major:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        direction:
+          type: string
+        eductionalSystem:
+          type: string
+        degreeName:
+          type: string
+        courseType:
+          type: string
+        majorUrl:
+          type: string
+        tuition:
+          type: string
+        applyFee:
+          type: number
+          format: double
+        shortName:
+          type: string
+        applyStatus:
+          type: integer
+          format: int32
+        currency:
+          type: integer
+          format: int32
+        ieltsRequire:
+          type: string
+        applyRequire:
+          type: string
+        applyType:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Major
+    HttpResult_UserDiyThreestepVO_a0208d:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/UserDiyThreestepVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«UserDiyThreestepVO»
     Area:
       type: object
       properties:
@@ -1243,6 +1653,174 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: SchoolRank
+    HttpResult_List_Docele_6e8881:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Docele'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Docele»»
+    MajorCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        keyword:
+          type: string
+      x-swagger-1-2-name: MajorCategory
+    IntelligentSchool:
+      type: object
+      properties:
+        categoryId:
+          type: integer
+          format: int32
+        categoryName:
+          type: string
+        inCartFlag:
+          type: boolean
+        schoolBasic:
+          $ref: '#/components/schemas/SchoolBasic'
+      x-swagger-1-2-name: IntelligentSchool
+    Map_string_object_e0fd20:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    UserDiyInfo:
+      type: object
+      properties:
+        uid:
+          type: integer
+          format: int32
+        signingAgent:
+          type: integer
+          format: int32
+        hopeRecSchool:
+          type: string
+        listenScore:
+          type: number
+          format: double
+        readScore:
+          type: number
+          format: double
+        writeScore:
+          type: number
+          format: double
+        speakScore:
+          type: number
+          format: double
+        practice:
+          type: string
+        specialRequirements:
+          type: string
+        email:
+          type: string
+        wechatId:
+          type: string
+        hopeIntroService:
+          type: string
+        wechatPhone:
+          type: integer
+          format: int32
+        planningBookId:
+          type: integer
+          format: int32
+        extraService:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: UserDiyInfo
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    University:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        status:
+          type: integer
+          format: int32
+        name:
+          type: string
+        ename:
+          type: string
+        province:
+          type: string
+        city:
+          type: string
+        level:
+          type: string
+        type:
+          type: string
+        v211:
+          type: string
+        v985:
+          type: string
+        rank:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: University
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
     SchoolBasic:
       type: object
       properties:
@@ -1333,110 +1911,6 @@ components:
           type: string
           format: date-time
       x-swagger-1-2-name: SchoolBasic
-    HttpResult_int_f2bae6:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: integer
-          format: int32
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«int»
-    HttpResult_List_University_5b7f89:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/University'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«University»»
-    HttpResult_List_Map_string_object_43a756:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Map_string_object_e0fd20'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«Map«string,object»»»
-    University:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        status:
-          type: integer
-          format: int32
-        name:
-          type: string
-        ename:
-          type: string
-        province:
-          type: string
-        city:
-          type: string
-        level:
-          type: string
-        type:
-          type: string
-        v211:
-          type: string
-        v985:
-          type: string
-        rank:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: University
-    HttpResult_List_MajorDirection_55f171:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/MajorDirection'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«MajorDirection»»
     HttpResult_Map_string_object_5812ac:
       type: object
       properties:
@@ -1454,69 +1928,6 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«Map«string,object»»
-    HttpResult_List_Docele_6e8881:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Docele'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«Docele»»
-    MajorDirection:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        countryId:
-          type: integer
-          format: int32
-        schoolId:
-          type: integer
-          format: int32
-        gradeId:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        keyword:
-          type: string
-        majorCount:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: MajorDirection
-    HttpResult_List_IntelligentSchool_807cb4:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/IntelligentSchool'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«IntelligentSchool»»
     HttpResult_List_string_f13f7f:
       type: object
       properties:
@@ -1536,417 +1947,6 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«List«string»»
-    HttpResult_UserDiyThreestepVO_a0208d:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/UserDiyThreestepVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«UserDiyThreestepVO»
-    Country:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        upperName:
-          type: string
-        cname:
-          type: string
-        ename:
-          type: string
-        logo:
-          type: string
-        iso:
-          type: string
-        iso3:
-          type: string
-        numCode:
-          type: integer
-          format: int32
-        phoneCode:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Country
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
-    HttpResult_boolean_f50dfc:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: boolean
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«boolean»
-    CMSCity:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        countryId:
-          type: integer
-          format: int32
-        areaId:
-          type: integer
-          format: int32
-        cityEname:
-          type: string
-        cityCname:
-          type: string
-        areaCode:
-          type: string
-        lable:
-          type: string
-        weather:
-          type: string
-        spendMoney:
-          type: string
-        traffic:
-          type: string
-        partTime:
-          type: string
-        picture:
-          type: string
-      x-swagger-1-2-name: CMSCity
-    UserDiyInfo:
-      type: object
-      properties:
-        uid:
-          type: integer
-          format: int32
-        signingAgent:
-          type: integer
-          format: int32
-        hopeRecSchool:
-          type: string
-        listenScore:
-          type: number
-          format: double
-        readScore:
-          type: number
-          format: double
-        writeScore:
-          type: number
-          format: double
-        speakScore:
-          type: number
-          format: double
-        practice:
-          type: string
-        specialRequirements:
-          type: string
-        email:
-          type: string
-        wechatId:
-          type: string
-        hopeIntroService:
-          type: string
-        wechatPhone:
-          type: integer
-          format: int32
-        planningBookId:
-          type: integer
-          format: int32
-        extraService:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: UserDiyInfo
-    Major:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        schoolId:
-          type: integer
-          format: int32
-        gradeId:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        direction:
-          type: string
-        eductionalSystem:
-          type: string
-        degreeName:
-          type: string
-        courseType:
-          type: string
-        majorUrl:
-          type: string
-        tuition:
-          type: string
-        applyFee:
-          type: number
-          format: double
-        shortName:
-          type: string
-        applyStatus:
-          type: integer
-          format: int32
-        currency:
-          type: integer
-          format: int32
-        ieltsRequire:
-          type: string
-        applyRequire:
-          type: string
-        applyType:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Major
-    MajorCategory:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        countryId:
-          type: integer
-          format: int32
-        schoolId:
-          type: integer
-          format: int32
-        gradeId:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        keyword:
-          type: string
-      x-swagger-1-2-name: MajorCategory
-    Map_string_object_e0fd20:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
-    Page:
-      type: object
-      properties:
-        currPage:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        count:
-          type: integer
-          format: int32
-        totalPage:
-          type: integer
-          format: int32
-        hasPre:
-          type: boolean
-        hasNext:
-          type: boolean
-        pageStr:
-          type: string
-        startRow:
-          type: integer
-          format: int32
-        endRow:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Page
-    HttpResult_List_MajorCategory_f959a6:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/MajorCategory'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«MajorCategory»»
-    IntelligentSchool:
-      type: object
-      properties:
-        categoryId:
-          type: integer
-          format: int32
-        categoryName:
-          type: string
-        inCartFlag:
-          type: boolean
-        schoolBasic:
-          $ref: '#/components/schemas/SchoolBasic'
-      x-swagger-1-2-name: IntelligentSchool
-    HttpResult_List_Major_58fd76:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Major'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«Major»»
-    DiyAppliedSchoolVO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        uid:
-          type: integer
-          format: int32
-        schoolId:
-          type: integer
-          format: int32
-        schoolName:
-          type: string
-        majorId:
-          type: integer
-          format: int32
-        majorName:
-          type: string
-        haveOffer:
-          type: integer
-          format: int32
-        academic:
-          type: string
-        language:
-          type: string
-      x-swagger-1-2-name: DiyAppliedSchoolVO
-    UserDiyInfoVO:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
-    UserDiyThreestepsInfo:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        uid:
-          type: integer
-          format: int32
-        realnameFirst:
-          type: string
-        realnameLast:
-          type: string
-        applyCountryId:
-          type: integer
-          format: int32
-        hopeYear:
-          type: integer
-          format: int32
-        hopeQuarter:
-          type: integer
-          format: int32
-        attendGrade:
-          type: integer
-          format: int32
-        applyEducationId:
-          type: integer
-          format: int32
-        attendSchool:
-          type: string
-        attendMajor:
-          type: string
-        gpa:
-          type: string
-        gpaLevel:
-          type: integer
-          format: int32
-        hopeMajor1:
-          type: integer
-          format: int32
-        hopeMajor2:
-          type: string
-        languageKey:
-          type: string
-        languageValue:
-          type: string
-        specialRequirements:
-          type: string
-        createTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-      x-swagger-1-2-name: UserDiyThreestepsInfo
-    Docele:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        title:
-          type: string
-        hot:
-          type: integer
-          format: int32
-        rank:
-          type: integer
-          format: int32
-        primaryRankScore:
-          type: integer
-          format: int32
-        secondRankScore:
-          type: integer
-          format: int32
-        distinctCount:
-          type: integer
-          format: int32
-        onlineStatus:
-          type: integer
-          format: int32
-        sumValue:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Docele
   securitySchemes:
     tokenHeader:
       type: apiKey

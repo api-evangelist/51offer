@@ -863,6 +863,64 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nguserinfo
 components:
   schemas:
+    Schema_36ac7e:
+      type: object
+      description: RunwayCountry
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id
+        applyId:
+          type: string
+          description: 申请id
+        countryId:
+          type: integer
+          format: int32
+          description: 意向国家Id
+        countryName:
+          type: string
+          description: 意向国家名称
+      x-swagger-1-2-name: 意向国家对象
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    Schema_0b664c:
+      type: object
+      description: RunwayLanguageScore
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id
+        applyId:
+          type: string
+          description: 申请id
+        type:
+          type: integer
+          format: int32
+          description: 类型 1-成绩单  2-语言成绩  3-其他
+        languageName:
+          type: string
+          description: 语言成绩类型 TOEFL IELTS 高考英语 无
+        score:
+          type: string
+          description: 分数
+        reportName:
+          type: string
+          description: 成绩单名称
+        reportId:
+          type: integer
+          format: int32
+          description: 成绩单id
+      x-swagger-1-2-name: 语言成绩对象
     Schema_1bb5ea:
       type: object
       description: RunwayUserInfoReq
@@ -1057,35 +1115,6 @@ components:
       - contactMobile
       - applyEducation
       x-swagger-1-2-name: 报名申请信息对象
-    Schema_0b664c:
-      type: object
-      description: RunwayLanguageScore
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: id
-        applyId:
-          type: string
-          description: 申请id
-        type:
-          type: integer
-          format: int32
-          description: 类型 1-成绩单  2-语言成绩  3-其他
-        languageName:
-          type: string
-          description: 语言成绩类型 TOEFL IELTS 高考英语 无
-        score:
-          type: string
-          description: 分数
-        reportName:
-          type: string
-          description: 成绩单名称
-        reportId:
-          type: integer
-          format: int32
-          description: 成绩单id
-      x-swagger-1-2-name: 语言成绩对象
     Page:
       type: object
       properties:
@@ -1114,32 +1143,6 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    Schema_c68756:
-      type: object
-      description: ReportCardReq
-      properties:
-        reportName:
-          type: string
-          description: 成绩单名称
-        reportId:
-          type: integer
-          format: int32
-          description: 成绩单id
-        type:
-          type: integer
-          format: int32
-          description: 类型 1-成绩单  2-语言成绩  3-其他
-      x-swagger-1-2-name: 成绩单对象
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
     HttpResult_boolean_f50dfc:
       type: object
       properties:
@@ -1157,25 +1160,22 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«boolean»
-    Schema_36ac7e:
+    Schema_c68756:
       type: object
-      description: RunwayCountry
+      description: ReportCardReq
       properties:
-        id:
+        reportName:
+          type: string
+          description: 成绩单名称
+        reportId:
           type: integer
           format: int32
-          description: id
-        applyId:
-          type: string
-          description: 申请id
-        countryId:
+          description: 成绩单id
+        type:
           type: integer
           format: int32
-          description: 意向国家Id
-        countryName:
-          type: string
-          description: 意向国家名称
-      x-swagger-1-2-name: 意向国家对象
+          description: 类型 1-成绩单  2-语言成绩  3-其他
+      x-swagger-1-2-name: 成绩单对象
   securitySchemes:
     tokenHeader:
       type: apiKey

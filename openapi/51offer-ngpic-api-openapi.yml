@@ -412,6 +412,16 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngpic
 components:
   schemas:
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
     Page:
       type: object
       properties:
@@ -440,6 +450,23 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
     HttpResult_List_string_f13f7f:
       type: object
       properties:
@@ -459,33 +486,6 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«List«string»»
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
-    HttpResult_boolean_f50dfc:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: boolean
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«boolean»
     PicInfoVO:
       type: object
       description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.

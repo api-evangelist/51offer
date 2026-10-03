@@ -178,23 +178,6 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«boolean»
-    HttpResult_Map_5d5fab:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map»
     Page:
       type: object
       properties:
@@ -223,6 +206,23 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
+    HttpResult_Map_5d5fab:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map»
   securitySchemes:
     tokenHeader:
       type: apiKey

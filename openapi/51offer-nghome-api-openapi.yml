@@ -351,58 +351,6 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nghome
 components:
   schemas:
-    HttpResult_SysGlobalStatus_6c6a94:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/SysGlobalStatus'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«SysGlobalStatus»
-    SysGlobalStatus:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        gsName:
-          type: string
-        gsValue:
-          type: integer
-          format: int32
-        gsViewName:
-          type: string
-        gsType:
-          type: string
-          format: byte
-        gsViewGroup:
-          type: integer
-          format: int32
-        bsId:
-          type: integer
-          format: int32
-        gsDesc:
-          type: string
-      x-swagger-1-2-name: SysGlobalStatus
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
     Page:
       type: object
       properties:
@@ -431,6 +379,58 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
+    HttpResult_SysGlobalStatus_6c6a94:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/SysGlobalStatus'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«SysGlobalStatus»
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    SysGlobalStatus:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        gsName:
+          type: string
+        gsValue:
+          type: integer
+          format: int32
+        gsViewName:
+          type: string
+        gsType:
+          type: string
+          format: byte
+        gsViewGroup:
+          type: integer
+          format: int32
+        bsId:
+          type: integer
+          format: int32
+        gsDesc:
+          type: string
+      x-swagger-1-2-name: SysGlobalStatus
   securitySchemes:
     tokenHeader:
       type: apiKey

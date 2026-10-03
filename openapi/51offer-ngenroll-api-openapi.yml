@@ -390,19 +390,19 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/enroll-controller
 components:
   schemas:
-    RunwaySysUser:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
-    RunwayUserInfo:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
     RunwayUserInfoSearch:
       type: object
       description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
       x-undefined-in-source: true
     RunwaySysUserInfoSearch:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    RunwaySysUser:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    RunwayUserInfo:
       type: object
       description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
       x-undefined-in-source: true

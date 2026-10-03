@@ -143,6 +143,16 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngpaycoupon
 components:
   schemas:
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
     HttpResult_Map_string_int_ca4887:
       type: object
       properties:
@@ -197,16 +207,6 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Entry«string,int»
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
     HttpResult_Map_string_string_5634e8:
       type: object
       properties:

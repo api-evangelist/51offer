@@ -114,39 +114,16 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngrefund
 components:
   schemas:
-    SkuAttr:
+    ApiInfo:
       type: object
       properties:
-        skuId:
-          type: integer
-          format: int32
-        attrId:
-          type: integer
-          format: int32
-        attrVal:
+        operationTime:
           type: string
-        pid:
-          type: integer
-          format: int32
-        parentVal:
+        version:
           type: string
-        created:
+        hostName:
           type: string
-          format: date-time
-        creator:
-          type: integer
-          format: int32
-        modified:
-          type: string
-          format: date-time
-        modifier:
-          type: integer
-          format: int32
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/SkuAttr'
-      x-swagger-1-2-name: SkuAttr
+      x-swagger-1-2-name: ApiInfo
     OrderMallRefundParam:
       type: object
       properties:
@@ -203,61 +180,39 @@ components:
         key:
           type: string
       x-swagger-1-2-name: OrderMallRefundParam
-    Page:
+    SkuAttr:
       type: object
       properties:
-        currPage:
+        skuId:
           type: integer
           format: int32
-        pageSize:
+        attrId:
           type: integer
           format: int32
-        count:
-          type: integer
-          format: int32
-        totalPage:
-          type: integer
-          format: int32
-        hasPre:
-          type: boolean
-        hasNext:
-          type: boolean
-        pageStr:
+        attrVal:
           type: string
-        startRow:
+        pid:
           type: integer
           format: int32
-        endRow:
+        parentVal:
+          type: string
+        created:
+          type: string
+          format: date-time
+        creator:
           type: integer
           format: int32
-      x-swagger-1-2-name: Page
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
+        modified:
           type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
-    HttpResult_boolean_f50dfc:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
+          format: date-time
+        modifier:
           type: integer
           format: int32
-        data:
-          type: boolean
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«boolean»
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+      x-swagger-1-2-name: SkuAttr
     VO_-_183f88:
       type: object
       properties:
@@ -451,6 +406,60 @@ components:
           type: boolean
           description: 是否存在在线合同
       x-swagger-1-2-name: 订单信息VO - 前台
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    VO_629325:
+      type: object
+      description: 入学退款信息展示用对象
+      properties:
+        orderMallInfoVO:
+          $ref: '#/components/schemas/VO_-_183f88'
+        orderMallRefundParam:
+          $ref: '#/components/schemas/OrderMallRefundParam'
+      x-swagger-1-2-name: 入学退款VO
     HttpResult_VO_698bb0:
       type: object
       properties:
@@ -468,15 +477,6 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«入学退款VO»
-    VO_629325:
-      type: object
-      description: 入学退款信息展示用对象
-      properties:
-        orderMallInfoVO:
-          $ref: '#/components/schemas/VO_-_183f88'
-        orderMallRefundParam:
-          $ref: '#/components/schemas/OrderMallRefundParam'
-      x-swagger-1-2-name: 入学退款VO
   securitySchemes:
     tokenHeader:
       type: apiKey
