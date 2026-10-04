@@ -133,33 +133,18 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/nggpacalc
 components:
   schemas:
-    HttpResult_Map_string_object_5812ac:
+    GpaCalc:
       type: object
       properties:
-        message:
+        score:
+          type: number
+          format: double
+        level:
+          type: number
+          format: double
+        scoreStr:
           type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,object»»
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
+      x-swagger-1-2-name: GpaCalc
     Page:
       type: object
       properties:
@@ -188,18 +173,33 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    GpaCalc:
+    HttpResult_Map_string_object_5812ac:
       type: object
       properties:
-        score:
-          type: number
-          format: double
-        level:
-          type: number
-          format: double
-        scoreStr:
+        message:
           type: string
-      x-swagger-1-2-name: GpaCalc
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
   securitySchemes:
     tokenHeader:
       type: apiKey

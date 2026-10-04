@@ -1560,761 +1560,6 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/diymschool
 components:
   schemas:
-    HttpResult_UsersApplyInfoVO_61ce7d:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/UsersApplyInfoVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«UsersApplyInfoVO»
-    OrderVO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        orderId:
-          type: integer
-          format: int32
-        orderType:
-          type: integer
-          format: int32
-        applyCountryId:
-          type: integer
-          format: int32
-        applyEducationId:
-          type: integer
-          format: int32
-        applyCountryName:
-          type: string
-        applyEducationName:
-          type: string
-        status:
-          type: integer
-          format: int32
-        statusName:
-          type: string
-        school:
-          $ref: '#/components/schemas/SchoolBasic'
-        major:
-          $ref: '#/components/schemas/Major'
-        grade:
-          $ref: '#/components/schemas/Grade'
-        course:
-          $ref: '#/components/schemas/Course'
-        orderApplyFee:
-          $ref: '#/components/schemas/Schema_2467b7'
-        showPayment:
-          type: boolean
-        modifedTime:
-          type: string
-          format: date-time
-        degreeType:
-          type: string
-        snapShotKey:
-          type: string
-        operateTime:
-          type: string
-          format: date-time
-        isAdviserCreated:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: OrderVO
-    CityCounty:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        cityId:
-          type: integer
-          format: int32
-        disName:
-          type: string
-      x-swagger-1-2-name: CityCounty
-    UsersApplyInfoVO:
-      type: object
-      properties:
-        usersInfoVO:
-          $ref: '#/components/schemas/UsersInfoVO'
-          description: 用户个人基础信息实体
-        usersEducationVOList:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersEducationVO'
-          description: 用户教育背景实体
-        usersWorkVOList:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersWorkVO'
-          description: 用户工作经历实体
-        usersLanguageScoreVOList:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersLanguageScoreVO'
-          description: 用户语言成绩实体
-        schoolMaterialVOList:
-          type: array
-          items:
-            $ref: '#/components/schemas/SchoolMaterialVO'
-          description: 用户学校材料实体
-      x-swagger-1-2-name: UsersApplyInfoVO
-    Country:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        upperName:
-          type: string
-        cname:
-          type: string
-        ename:
-          type: string
-        logo:
-          type: string
-        iso:
-          type: string
-        iso3:
-          type: string
-        numCode:
-          type: integer
-          format: int32
-        phoneCode:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Country
-    Grade:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        schoolId:
-          type: integer
-          format: int32
-        gradeId:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        shortName:
-          type: string
-        type:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Grade
-    UsersInfoVO:
-      type: object
-      properties:
-        uid:
-          type: integer
-          format: int32
-          description: 用户id
-        realnameFirst:
-          type: string
-          description: 姓
-        realnameLast:
-          type: string
-          description: 名
-        pinyinFirst:
-          type: string
-          description: 姓拼音
-        pinyinLast:
-          type: string
-          description: 名拼音
-        sex:
-          type: integer
-          format: int32
-          description: 性别
-        birthday:
-          type: string
-          format: date-time
-          description: 生日
-        nationalityId:
-          type: integer
-          format: int32
-          description: 国籍
-        nationalityName:
-          type: string
-          description: 国籍中文名
-        contactsName:
-          type: string
-          description: 紧急联系人姓名
-        areaCode:
-          type: string
-          description: 紧急联系人电话区域号
-        phone:
-          type: string
-          description: 紧急联系人电话
-        contactsType:
-          type: integer
-          format: int32
-          description: 紧急联系人关系
-        resumeFileId:
-          type: integer
-          format: int32
-          description: 简历
-        resumeFileName:
-          type: string
-          description: 简历文件名
-        countryId:
-          type: integer
-          format: int32
-          description: 居住地-国家
-        countryName:
-          type: string
-          description: 居住地-国家中文名
-        provinceId:
-          type: integer
-          format: int32
-          description: 居住地-省份
-        provinceName:
-          type: string
-          description: 居住地-省份中文名
-        cityId:
-          type: integer
-          format: int32
-          description: 居住地-城市
-        cityName:
-          type: string
-          description: 居住地-城市中文名
-        address:
-          type: string
-          description: 居住地-详细地址
-        zip:
-          type: string
-          description: 邮编
-        passport:
-          type: string
-          description: 护照号
-        passportFileId:
-          type: integer
-          format: int32
-          description: 护照
-        passportFileName:
-          type: string
-          description: 护照文件名
-      x-swagger-1-2-name: UsersInfoVO
-    HttpResult_boolean_f50dfc:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: boolean
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«boolean»
-    HttpResult_List_CityCounty_269c0c:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CityCounty'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«CityCounty»»
-    HttpResult_List_UsersEducationVO_f1a5d3:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersEducationVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«UsersEducationVO»»
-    HttpResult_UsersInfoVO_fe4808:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/UsersInfoVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«UsersInfoVO»
-    HttpResult_List_MaterialSuborderPs_27499a:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/MaterialSuborderPs'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«MaterialSuborderPs»»
-    CMSCity:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        countryId:
-          type: integer
-          format: int32
-        areaId:
-          type: integer
-          format: int32
-        cityEname:
-          type: string
-        cityCname:
-          type: string
-        areaCode:
-          type: string
-        lable:
-          type: string
-        weather:
-          type: string
-        spendMoney:
-          type: string
-        traffic:
-          type: string
-        partTime:
-          type: string
-        picture:
-          type: string
-      x-swagger-1-2-name: CMSCity
-    UsersLanguageScoreVO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: 自增id
-        uid:
-          type: integer
-          format: int32
-          description: 用户id
-        type:
-          type: integer
-          format: int32
-          description: 语言成绩类型 1-雅思 2-托福 3-其他
-        typeName:
-          type: string
-          description: 语言成绩名称
-        testId:
-          type: string
-          description: 考试号
-        testDate:
-          type: string
-          format: date-time
-          description: 考试时间
-        scoreTotal:
-          type: string
-          description: 总成绩
-        scoreL:
-          type: number
-          format: double
-          description: 雅思或托福L
-        scoreR:
-          type: number
-          format: double
-          description: 雅思或托福R
-        scoreW:
-          type: number
-          format: double
-          description: 雅思或托福W
-        scoreS:
-          type: number
-          format: double
-          description: 雅思或托福S
-        scoreReport:
-          type: integer
-          format: int32
-          description: 成绩单(文件)
-        scoreReportName:
-          type: string
-          description: 成绩单(文件)文件名
-      x-swagger-1-2-name: UsersLanguageScoreVO
-    HttpResult_List_MaterialSuborderOther_df22a6:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/MaterialSuborderOther'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«MaterialSuborderOther»»
-    HttpResult_MaterialSuborderPs_13bc4a:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/MaterialSuborderPs'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«MaterialSuborderPs»
-    HttpResult_List_CMSCity_c63aae:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CMSCity'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«CMSCity»»
-    Schema_2467b7:
-      type: object
-      description: order_apply_fee
-      properties:
-        id:
-          type: integer
-          format: int32
-        orderCode:
-          type: string
-          description: 订单编号（用于与支付中心结构一致）
-        uid:
-          type: integer
-          format: int32
-          description: 订单用户ID
-        applyOrderType:
-          type: integer
-          format: int32
-          description: 申请订单类型 2 正课 3 欧亚 4 语言 5 美国
-        applyOrderId:
-          type: integer
-          format: int32
-          description: 申请订单ID
-        isRequire:
-          type: integer
-          format: int32
-          description: 需要不需要 0-不需要 1-需要
-        receivableAmount:
-          type: number
-          format: double
-          description: 应收金额 元
-        receivableCurrency:
-          type: integer
-          format: int32
-          description: 应收币种 1-人民币 2-英镑 3-美元 4-澳币 5-新加坡元
-        payPrice:
-          type: integer
-          format: int32
-          description: 实收金额，单位=分
-        exchangeRate:
-          type: number
-          format: double
-          description: 支付时汇率
-        payTime:
-          type: string
-          format: date-time
-          description: 支付时间
-        refundPrice:
-          type: integer
-          format: int32
-          description: 退款金额，单位=分
-        refundTime:
-          type: string
-          format: date-time
-          description: 退款时间
-        orderStatus:
-          type: integer
-          format: int32
-          description: 订单状态（0=待支付 1=关闭 2=部分支付 3=已支付 4=退款中 5=已退款）
-        payToSchool:
-          type: integer
-          format: int32
-          description: 是否缴纳到学校 0=否 1=是
-        remitProof:
-          type: integer
-          format: int32
-          description: 向学校的汇款凭证
-        orderRemark:
-          type: string
-          description: 订单备注
-        creator:
-          type: integer
-          format: int32
-        created:
-          type: string
-          format: date-time
-        modifier:
-          type: integer
-          format: int32
-        modified:
-          type: string
-          format: date-time
-      x-swagger-1-2-name: 申请费支付信息对象
-    Major:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        schoolId:
-          type: integer
-          format: int32
-        gradeId:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        direction:
-          type: string
-        eductionalSystem:
-          type: string
-        degreeName:
-          type: string
-        courseType:
-          type: string
-        majorUrl:
-          type: string
-        tuition:
-          type: string
-        applyFee:
-          type: number
-          format: double
-        shortName:
-          type: string
-        applyStatus:
-          type: integer
-          format: int32
-        currency:
-          type: integer
-          format: int32
-        ieltsRequire:
-          type: string
-        applyRequire:
-          type: string
-        applyType:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Major
-    UsersReferenceVO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: id
-        uid:
-          type: integer
-          format: int32
-          description: 用户id
-        suborderId:
-          type: integer
-          format: int32
-          description: 订单id
-        referenceId:
-          type: integer
-          format: int32
-          description: 推荐信文件id
-        referenceObjectId:
-          type: integer
-          format: int32
-          description: 推荐信id
-        referenceName:
-          type: string
-          description: 推荐信文件名
-        refereeId:
-          type: integer
-          format: int32
-          description: 推荐人id
-        realname:
-          type: string
-          description: 推荐人姓名
-        title:
-          type: integer
-          format: int32
-          description: 推荐人称谓
-        type:
-          type: integer
-          format: int32
-          description: 类型 1-学术推荐人 2-工作推荐人
-        relation:
-          type: string
-          description: 与学生关系
-        knownDate:
-          type: string
-          description: 认识年数
-        telphone:
-          type: string
-          description: 推荐人联系电话
-        orgZip:
-          type: string
-          description: 推荐人工作单位邮编
-        email:
-          type: string
-          description: 推荐人邮箱
-        job:
-          type: string
-          description: 推荐人职业
-        org:
-          type: string
-          description: 推荐人所在单位
-        address:
-          type: string
-          description: 推荐人单位地址
-      x-swagger-1-2-name: UsersReferenceVO
-    MaterialSuborderPs:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        uid:
-          type: integer
-          format: int32
-        channelId:
-          type: integer
-          format: int32
-        suborderId:
-          type: integer
-          format: int32
-        psFileId:
-          type: integer
-          format: int32
-        psFileName:
-          type: string
-        isDelete:
-          type: integer
-          format: int32
-        created:
-          type: string
-          format: date-time
-        creator:
-          type: integer
-          format: int32
-        modified:
-          type: string
-          format: date-time
-        modifier:
-          type: integer
-          format: int32
-        deleted:
-          type: string
-          format: date-time
-        deleter:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: MaterialSuborderPs
-    Area:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        countryId:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        regionalCname:
-          type: string
-        regionalEname:
-          type: string
-        zipCode:
-          type: integer
-          format: int32
-        phoneCode:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Area
-    HttpResult_MaterialSuborderOther_e3a16c:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/MaterialSuborderOther'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«MaterialSuborderOther»
     SchoolRank:
       type: object
       properties:
@@ -2339,7 +1584,7 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: SchoolRank
-    HttpResult_List_UsersReferenceVO_94b319:
+    HttpResult_List_UsersEducationVO_f1a5d3:
       type: object
       properties:
         message:
@@ -2350,400 +1595,14 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/UsersReferenceVO'
+            $ref: '#/components/schemas/UsersEducationVO'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«UsersReferenceVO»»
-    HttpResult_List_Area_f64d77:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Area'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«Area»»
-    UsersWorkVO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: 自增id
-        uid:
-          type: integer
-          format: int32
-          description: 用户id
-        org:
-          type: string
-          description: 工作单位
-        orgZip:
-          type: string
-          description: 工作单位邮编
-        address:
-          type: string
-          description: 单位地址
-        orgPhone:
-          type: string
-          description: 工作单位联系电话
-        startDate:
-          type: string
-          format: date-time
-          description: 开始时间
-        endDate:
-          type: string
-          format: date-time
-          description: 结束时间
-        title:
-          type: string
-          description: 职位
-        workType:
-          type: integer
-          format: int32
-          description: 工作性质，1：全职，2：非全职
-        job:
-          type: string
-          description: 指责
-        employmentCertificate:
-          type: integer
-          format: int32
-          description: 工作证明
-        employmentCertificateName:
-          type: string
-          description: 工作证明文件名
-      x-swagger-1-2-name: UsersWorkVO
-    HttpResult_List_UsersLanguageScoreVO_3a3339:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersLanguageScoreVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«UsersLanguageScoreVO»»
-    HttpResult_List_UsersWorkVO_99b986:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersWorkVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«UsersWorkVO»»
-    HttpResult_List_DiyMaterialOrder_066184:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/DiyMaterialOrder'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«DiyMaterialOrder»»
-    SchoolMaterialVO:
-      type: object
-      properties:
-        subOrderId:
-          type: integer
-          format: int32
-          description: 子订单ID
-        materialSuborderPs:
-          $ref: '#/components/schemas/MaterialSuborderPs'
-          description: 个人陈述实体
-        usersReferenceVOList:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersReferenceVO'
-          description: 推荐信实体
-        materialSuborderOther:
-          $ref: '#/components/schemas/MaterialSuborderOther'
-          description: 作品及其他实体
-      x-swagger-1-2-name: SchoolMaterialVO
-    HttpResult_List_OrderVO_89c6f2:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/OrderVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«OrderVO»»
-    HttpResult_Map_string_string_5634e8:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,string»»
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
-    Page:
-      type: object
-      properties:
-        currPage:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        count:
-          type: integer
-          format: int32
-        totalPage:
-          type: integer
-          format: int32
-        hasPre:
-          type: boolean
-        hasNext:
-          type: boolean
-        pageStr:
-          type: string
-        startRow:
-          type: integer
-          format: int32
-        endRow:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Page
-    Course:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        schoolId:
-          type: integer
-          format: int32
-        gradeId:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        brief:
-          type: string
-        theirSchools:
-          type: string
-        degreeType:
-          type: integer
-          format: int32
-        joinMajorId:
-          type: string
-        gradeEname:
-          type: string
-        majorCourse:
-          type: string
-        chooseCourse:
-          type: string
-        credits:
-          type: integer
-          format: int32
-        languageClass:
-          type: string
-      x-swagger-1-2-name: Course
-    DiyMaterialOrder:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-          description: 自增id
-        uid:
-          type: integer
-          format: int32
-          description: 用户id
-        orderId:
-          type: integer
-          format: int32
-          description: 订单id
-        orderStatus:
-          type: integer
-          format: int32
-          description: 订单提交状态，0:未提交，1:已提交
-        submitTime:
-          type: string
-          format: date-time
-          description: 子订单材料提交时间
-      x-swagger-1-2-name: DiyMaterialOrder
-    SchoolBasic:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        cname:
-          type: string
-        ename:
-          type: string
-        logo:
-          type: string
-        url:
-          type: string
-        tel:
-          type: string
-        address:
-          type: string
-        longitude:
-          type: string
-        latitude:
-          type: string
-        zip:
-          type: string
-        areaId:
-          type: integer
-          format: int32
-        cityId:
-          type: integer
-          format: int32
-        countryId:
-          type: integer
-          format: int32
-        area:
-          $ref: '#/components/schemas/Area'
-        city:
-          $ref: '#/components/schemas/CMSCity'
-        country:
-          $ref: '#/components/schemas/Country'
-        modified:
-          type: string
-          format: date-time
-        buildTime:
-          type: string
-        eduLevel:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        urlkey:
-          type: string
-        logo2:
-          type: string
-        status:
-          type: integer
-          format: int32
-        courseType:
-          type: string
-        schoolType:
-          type: string
-        logo3:
-          type: string
-        automaticApply:
-          type: integer
-          format: int32
-        schoolRent:
-          type: string
-        houseRent:
-          type: string
-        fax:
-          type: string
-        weibo:
-          type: string
-        email:
-          type: string
-        wechat:
-          type: string
-        recommendType:
-          type: string
-        rankList:
-          type: array
-          items:
-            $ref: '#/components/schemas/SchoolRank'
-        logoCover:
-          type: string
-        openTime:
-          type: string
-          format: date-time
-      x-swagger-1-2-name: SchoolBasic
-    HttpResult_Map_string_object_5812ac:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,object»»
+      x-swagger-1-2-name: HttpResult«List«UsersEducationVO»»
     MaterialSuborderOther:
       type: object
       properties:
@@ -2788,6 +1647,86 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: MaterialSuborderOther
+    HttpResult_UsersInfoVO_fe4808:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/UsersInfoVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«UsersInfoVO»
+    HttpResult_Map_string_string_5634e8:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
+    HttpResult_List_CMSCity_c63aae:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CMSCity'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«CMSCity»»
+    UsersApplyInfoVO:
+      type: object
+      properties:
+        usersInfoVO:
+          $ref: '#/components/schemas/UsersInfoVO'
+          description: 用户个人基础信息实体
+        usersEducationVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersEducationVO'
+          description: 用户教育背景实体
+        usersWorkVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersWorkVO'
+          description: 用户工作经历实体
+        usersLanguageScoreVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersLanguageScoreVO'
+          description: 用户语言成绩实体
+        schoolMaterialVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchoolMaterialVO'
+          description: 用户学校材料实体
+      x-swagger-1-2-name: UsersApplyInfoVO
     UsersEducationVO:
       type: object
       properties:
@@ -2909,6 +1848,1067 @@ components:
           type: string
           description: 获奖证书文件名
       x-swagger-1-2-name: UsersEducationVO
+    SchoolMaterialVO:
+      type: object
+      properties:
+        subOrderId:
+          type: integer
+          format: int32
+          description: 子订单ID
+        materialSuborderPs:
+          $ref: '#/components/schemas/MaterialSuborderPs'
+          description: 个人陈述实体
+        usersReferenceVOList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersReferenceVO'
+          description: 推荐信实体
+        materialSuborderOther:
+          $ref: '#/components/schemas/MaterialSuborderOther'
+          description: 作品及其他实体
+      x-swagger-1-2-name: SchoolMaterialVO
+    HttpResult_MaterialSuborderOther_e3a16c:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/MaterialSuborderOther'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«MaterialSuborderOther»
+    HttpResult_List_OrderVO_89c6f2:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«OrderVO»»
+    HttpResult_MaterialSuborderPs_13bc4a:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/MaterialSuborderPs'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«MaterialSuborderPs»
+    HttpResult_UsersApplyInfoVO_61ce7d:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/UsersApplyInfoVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«UsersApplyInfoVO»
+    DiyMaterialOrder:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: 自增id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        orderId:
+          type: integer
+          format: int32
+          description: 订单id
+        orderStatus:
+          type: integer
+          format: int32
+          description: 订单提交状态，0:未提交，1:已提交
+        submitTime:
+          type: string
+          format: date-time
+          description: 子订单材料提交时间
+      x-swagger-1-2-name: DiyMaterialOrder
+    HttpResult_List_UsersWorkVO_99b986:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersWorkVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersWorkVO»»
+    Major:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        direction:
+          type: string
+        eductionalSystem:
+          type: string
+        degreeName:
+          type: string
+        courseType:
+          type: string
+        majorUrl:
+          type: string
+        tuition:
+          type: string
+        applyFee:
+          type: number
+          format: double
+        shortName:
+          type: string
+        applyStatus:
+          type: integer
+          format: int32
+        currency:
+          type: integer
+          format: int32
+        ieltsRequire:
+          type: string
+        applyRequire:
+          type: string
+        applyType:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Major
+    HttpResult_List_CityCounty_269c0c:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CityCounty'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«CityCounty»»
+    MaterialSuborderPs:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        uid:
+          type: integer
+          format: int32
+        channelId:
+          type: integer
+          format: int32
+        suborderId:
+          type: integer
+          format: int32
+        psFileId:
+          type: integer
+          format: int32
+        psFileName:
+          type: string
+        isDelete:
+          type: integer
+          format: int32
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        deleted:
+          type: string
+          format: date-time
+        deleter:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: MaterialSuborderPs
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
+    Grade:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        shortName:
+          type: string
+        type:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Grade
+    Country:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        upperName:
+          type: string
+        cname:
+          type: string
+        ename:
+          type: string
+        logo:
+          type: string
+        iso:
+          type: string
+        iso3:
+          type: string
+        numCode:
+          type: integer
+          format: int32
+        phoneCode:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Country
+    Area:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        regionalCname:
+          type: string
+        regionalEname:
+          type: string
+        zipCode:
+          type: integer
+          format: int32
+        phoneCode:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Area
+    UsersWorkVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: 自增id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        org:
+          type: string
+          description: 工作单位
+        orgZip:
+          type: string
+          description: 工作单位邮编
+        address:
+          type: string
+          description: 单位地址
+        orgPhone:
+          type: string
+          description: 工作单位联系电话
+        startDate:
+          type: string
+          format: date-time
+          description: 开始时间
+        endDate:
+          type: string
+          format: date-time
+          description: 结束时间
+        title:
+          type: string
+          description: 职位
+        workType:
+          type: integer
+          format: int32
+          description: 工作性质，1：全职，2：非全职
+        job:
+          type: string
+          description: 指责
+        employmentCertificate:
+          type: integer
+          format: int32
+          description: 工作证明
+        employmentCertificateName:
+          type: string
+          description: 工作证明文件名
+      x-swagger-1-2-name: UsersWorkVO
+    HttpResult_Map_string_object_5812ac:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
+    HttpResult_List_MaterialSuborderOther_df22a6:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaterialSuborderOther'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«MaterialSuborderOther»»
+    CMSCity:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        areaId:
+          type: integer
+          format: int32
+        cityEname:
+          type: string
+        cityCname:
+          type: string
+        areaCode:
+          type: string
+        lable:
+          type: string
+        weather:
+          type: string
+        spendMoney:
+          type: string
+        traffic:
+          type: string
+        partTime:
+          type: string
+        picture:
+          type: string
+      x-swagger-1-2-name: CMSCity
+    HttpResult_List_DiyMaterialOrder_066184:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiyMaterialOrder'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«DiyMaterialOrder»»
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    UsersReferenceVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        suborderId:
+          type: integer
+          format: int32
+          description: 订单id
+        referenceId:
+          type: integer
+          format: int32
+          description: 推荐信文件id
+        referenceObjectId:
+          type: integer
+          format: int32
+          description: 推荐信id
+        referenceName:
+          type: string
+          description: 推荐信文件名
+        refereeId:
+          type: integer
+          format: int32
+          description: 推荐人id
+        realname:
+          type: string
+          description: 推荐人姓名
+        title:
+          type: integer
+          format: int32
+          description: 推荐人称谓
+        type:
+          type: integer
+          format: int32
+          description: 类型 1-学术推荐人 2-工作推荐人
+        relation:
+          type: string
+          description: 与学生关系
+        knownDate:
+          type: string
+          description: 认识年数
+        telphone:
+          type: string
+          description: 推荐人联系电话
+        orgZip:
+          type: string
+          description: 推荐人工作单位邮编
+        email:
+          type: string
+          description: 推荐人邮箱
+        job:
+          type: string
+          description: 推荐人职业
+        org:
+          type: string
+          description: 推荐人所在单位
+        address:
+          type: string
+          description: 推荐人单位地址
+      x-swagger-1-2-name: UsersReferenceVO
+    Schema_2467b7:
+      type: object
+      description: order_apply_fee
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderCode:
+          type: string
+          description: 订单编号（用于与支付中心结构一致）
+        uid:
+          type: integer
+          format: int32
+          description: 订单用户ID
+        applyOrderType:
+          type: integer
+          format: int32
+          description: 申请订单类型 2 正课 3 欧亚 4 语言 5 美国
+        applyOrderId:
+          type: integer
+          format: int32
+          description: 申请订单ID
+        isRequire:
+          type: integer
+          format: int32
+          description: 需要不需要 0-不需要 1-需要
+        receivableAmount:
+          type: number
+          format: double
+          description: 应收金额 元
+        receivableCurrency:
+          type: integer
+          format: int32
+          description: 应收币种 1-人民币 2-英镑 3-美元 4-澳币 5-新加坡元
+        payPrice:
+          type: integer
+          format: int32
+          description: 实收金额，单位=分
+        exchangeRate:
+          type: number
+          format: double
+          description: 支付时汇率
+        payTime:
+          type: string
+          format: date-time
+          description: 支付时间
+        refundPrice:
+          type: integer
+          format: int32
+          description: 退款金额，单位=分
+        refundTime:
+          type: string
+          format: date-time
+          description: 退款时间
+        orderStatus:
+          type: integer
+          format: int32
+          description: 订单状态（0=待支付 1=关闭 2=部分支付 3=已支付 4=退款中 5=已退款）
+        payToSchool:
+          type: integer
+          format: int32
+          description: 是否缴纳到学校 0=否 1=是
+        remitProof:
+          type: integer
+          format: int32
+          description: 向学校的汇款凭证
+        orderRemark:
+          type: string
+          description: 订单备注
+        creator:
+          type: integer
+          format: int32
+        created:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+      x-swagger-1-2-name: 申请费支付信息对象
+    UsersLanguageScoreVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: 自增id
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        type:
+          type: integer
+          format: int32
+          description: 语言成绩类型 1-雅思 2-托福 3-其他
+        typeName:
+          type: string
+          description: 语言成绩名称
+        testId:
+          type: string
+          description: 考试号
+        testDate:
+          type: string
+          format: date-time
+          description: 考试时间
+        scoreTotal:
+          type: string
+          description: 总成绩
+        scoreL:
+          type: number
+          format: double
+          description: 雅思或托福L
+        scoreR:
+          type: number
+          format: double
+          description: 雅思或托福R
+        scoreW:
+          type: number
+          format: double
+          description: 雅思或托福W
+        scoreS:
+          type: number
+          format: double
+          description: 雅思或托福S
+        scoreReport:
+          type: integer
+          format: int32
+          description: 成绩单(文件)
+        scoreReportName:
+          type: string
+          description: 成绩单(文件)文件名
+      x-swagger-1-2-name: UsersLanguageScoreVO
+    SchoolBasic:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        logo:
+          type: string
+        url:
+          type: string
+        tel:
+          type: string
+        address:
+          type: string
+        longitude:
+          type: string
+        latitude:
+          type: string
+        zip:
+          type: string
+        areaId:
+          type: integer
+          format: int32
+        cityId:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        area:
+          $ref: '#/components/schemas/Area'
+        city:
+          $ref: '#/components/schemas/CMSCity'
+        country:
+          $ref: '#/components/schemas/Country'
+        modified:
+          type: string
+          format: date-time
+        buildTime:
+          type: string
+        eduLevel:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        urlkey:
+          type: string
+        logo2:
+          type: string
+        status:
+          type: integer
+          format: int32
+        courseType:
+          type: string
+        schoolType:
+          type: string
+        logo3:
+          type: string
+        automaticApply:
+          type: integer
+          format: int32
+        schoolRent:
+          type: string
+        houseRent:
+          type: string
+        fax:
+          type: string
+        weibo:
+          type: string
+        email:
+          type: string
+        wechat:
+          type: string
+        recommendType:
+          type: string
+        rankList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SchoolRank'
+        logoCover:
+          type: string
+        openTime:
+          type: string
+          format: date-time
+      x-swagger-1-2-name: SchoolBasic
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        schoolId:
+          type: integer
+          format: int32
+        gradeId:
+          type: integer
+          format: int32
+        cname:
+          type: string
+        ename:
+          type: string
+        brief:
+          type: string
+        theirSchools:
+          type: string
+        degreeType:
+          type: integer
+          format: int32
+        joinMajorId:
+          type: string
+        gradeEname:
+          type: string
+        majorCourse:
+          type: string
+        chooseCourse:
+          type: string
+        credits:
+          type: integer
+          format: int32
+        languageClass:
+          type: string
+      x-swagger-1-2-name: Course
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    UsersInfoVO:
+      type: object
+      properties:
+        uid:
+          type: integer
+          format: int32
+          description: 用户id
+        realnameFirst:
+          type: string
+          description: 姓
+        realnameLast:
+          type: string
+          description: 名
+        pinyinFirst:
+          type: string
+          description: 姓拼音
+        pinyinLast:
+          type: string
+          description: 名拼音
+        sex:
+          type: integer
+          format: int32
+          description: 性别
+        birthday:
+          type: string
+          format: date-time
+          description: 生日
+        nationalityId:
+          type: integer
+          format: int32
+          description: 国籍
+        nationalityName:
+          type: string
+          description: 国籍中文名
+        contactsName:
+          type: string
+          description: 紧急联系人姓名
+        areaCode:
+          type: string
+          description: 紧急联系人电话区域号
+        phone:
+          type: string
+          description: 紧急联系人电话
+        contactsType:
+          type: integer
+          format: int32
+          description: 紧急联系人关系
+        resumeFileId:
+          type: integer
+          format: int32
+          description: 简历
+        resumeFileName:
+          type: string
+          description: 简历文件名
+        countryId:
+          type: integer
+          format: int32
+          description: 居住地-国家
+        countryName:
+          type: string
+          description: 居住地-国家中文名
+        provinceId:
+          type: integer
+          format: int32
+          description: 居住地-省份
+        provinceName:
+          type: string
+          description: 居住地-省份中文名
+        cityId:
+          type: integer
+          format: int32
+          description: 居住地-城市
+        cityName:
+          type: string
+          description: 居住地-城市中文名
+        address:
+          type: string
+          description: 居住地-详细地址
+        zip:
+          type: string
+          description: 邮编
+        passport:
+          type: string
+          description: 护照号
+        passportFileId:
+          type: integer
+          format: int32
+          description: 护照
+        passportFileName:
+          type: string
+          description: 护照文件名
+      x-swagger-1-2-name: UsersInfoVO
+    CityCounty:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        cityId:
+          type: integer
+          format: int32
+        disName:
+          type: string
+      x-swagger-1-2-name: CityCounty
+    HttpResult_List_UsersLanguageScoreVO_3a3339:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersLanguageScoreVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersLanguageScoreVO»»
+    HttpResult_List_Area_f64d77:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Area'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Area»»
+    HttpResult_List_UsersReferenceVO_94b319:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersReferenceVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersReferenceVO»»
+    OrderVO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderId:
+          type: integer
+          format: int32
+        orderType:
+          type: integer
+          format: int32
+        applyCountryId:
+          type: integer
+          format: int32
+        applyEducationId:
+          type: integer
+          format: int32
+        applyCountryName:
+          type: string
+        applyEducationName:
+          type: string
+        status:
+          type: integer
+          format: int32
+        statusName:
+          type: string
+        school:
+          $ref: '#/components/schemas/SchoolBasic'
+        major:
+          $ref: '#/components/schemas/Major'
+        grade:
+          $ref: '#/components/schemas/Grade'
+        course:
+          $ref: '#/components/schemas/Course'
+        orderApplyFee:
+          $ref: '#/components/schemas/Schema_2467b7'
+        showPayment:
+          type: boolean
+        modifedTime:
+          type: string
+          format: date-time
+        degreeType:
+          type: string
+        snapShotKey:
+          type: string
+        operateTime:
+          type: string
+          format: date-time
+        isAdviserCreated:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: OrderVO
+    HttpResult_List_MaterialSuborderPs_27499a:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaterialSuborderPs'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«MaterialSuborderPs»»
   securitySchemes:
     tokenHeader:
       type: apiKey

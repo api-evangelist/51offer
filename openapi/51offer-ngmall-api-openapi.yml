@@ -1190,73 +1190,14 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngmall
 components:
   schemas:
-    PayInfoVo:
+    Organization:
       type: object
       properties:
-        transactionId:
+        orgId:
           type: string
-        itemPriceFen:
-          type: integer
-          format: int32
-        payPriceFen:
-          type: integer
-          format: int32
-        payFinishTime:
+        orgName:
           type: string
-          format: date-time
-        payId:
-          type: string
-        bizOrderId:
-          type: string
-        payActionUrl:
-          type: string
-        payStatus:
-          type: string
-          enum:
-          - '1'
-          - '2'
-          - '3'
-          - '4'
-      x-swagger-1-2-name: PayInfoVo
-    Schema_f23045:
-      type: object
-      description: order_doc_info_file
-      properties:
-        id:
-          type: integer
-          format: int32
-        orderDocCode:
-          type: string
-          description: 文书业务单编号
-        orderDocFileType:
-          type: integer
-          format: int32
-          description: 文件类型（如:ps、cv等）106=个人陈述107=推荐信108=小论文109=个人简历
-        orderDocFile:
-          type: integer
-          format: int32
-          description: 关联文件ID
-        orderDocUserType:
-          type: integer
-          format: int32
-          description: 文件上传人类型(0=顾问,1=学生)
-        orderDocUser:
-          type: integer
-          format: int32
-          description: 上传人ID
-        orderDocFileTime:
-          type: string
-          format: date-time
-          description: 上传时间
-        orderFileIsDelete:
-          type: integer
-          format: int32
-          description: 是否删除 0=未删除 1=已除
-        orderFileDeleted:
-          type: string
-          format: date-time
-          description: 删除时间
-      x-swagger-1-2-name: 文书业务单文件关联信息对象
+      x-swagger-1-2-name: Organization
     VO_-_890e8c:
       type: object
       properties:
@@ -1307,107 +1248,6 @@ components:
             $ref: '#/components/schemas/VO_-_890e8c'
           description: 联合子订单列表
       x-swagger-1-2-name: 添加订单参数VO - 后台
-    VO_-_a75db4:
-      type: object
-      properties:
-        goodsId:
-          type: integer
-          format: int32
-          description: 商品ID
-        goodsName:
-          type: string
-          description: 商品名称
-        goodsPriceYuan:
-          type: integer
-          format: int64
-          description: 商品价格 元
-        united:
-          type: boolean
-          description: 是否是联合商品 1=是 0=否
-        sku:
-          type: integer
-          format: int32
-          description: SKU id
-        skuName:
-          type: string
-          description: sku名称
-        skuAttrs:
-          type: array
-          items:
-            $ref: '#/components/schemas/SkuAttr'
-          description: sku属性列表
-        couponList:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserCouponVo'
-          description: 优惠券列表
-        activCoupon:
-          type: string
-          description: 当前选中的优惠券号
-        payAmount:
-          type: integer
-          format: int64
-          description: 应付金额 元
-      x-swagger-1-2-name: 确认订单信息VO - 前台
-    HttpResult_OrderStudyInfoDetailVo_174008:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/OrderStudyInfoDetailVo'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«OrderStudyInfoDetailVo»
-    Schema_689fdb:
-      type: object
-      description: order_video
-      properties:
-        id:
-          type: integer
-          format: int32
-        courseId:
-          type: integer
-          format: int32
-          description: 课程id
-        classId:
-          type: string
-          description: 展视互动教室id或者全时教室唯一码
-        classNumber:
-          type: integer
-          format: int32
-          description: 课堂编号
-        assistantToken:
-          type: string
-          description: 助教口令
-        teacherToken:
-          type: string
-          description: 老师口令
-        studentClientToken:
-          type: string
-          description: 学生客户端口令
-        startDate:
-          type: string
-          format: date-time
-          description: 开始时间
-        teacherJoinUrl:
-          type: string
-          description: 老师和助教加入url
-        studentJoinUrl:
-          type: string
-          description: 学生加入url
-        scene:
-          type: integer
-          format: int32
-          description: 0:大讲堂，1：小班课，2：私教课
-      x-swagger-1-2-name: 语培视屏信息对象
     HttpResult_List_VO_-_1b4268:
       type: object
       properties:
@@ -1427,73 +1267,45 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«List«订单信息VO - 前台»»
-    StudyCourseSearchVo:
+    Schema_f23045:
       type: object
+      description: order_doc_info_file
       properties:
-        courseStarttime:
-          type: string
-        couserEndtime:
-          type: string
-        uid:
+        id:
           type: integer
           format: int32
-        courseName:
+        orderDocCode:
           type: string
-        userName:
-          type: string
-        status:
+          description: 文书业务单编号
+        orderDocFileType:
           type: integer
           format: int32
-        orderStudyCode:
-          type: string
-        pageNo:
+          description: 文件类型（如:ps、cv等）106=个人陈述107=推荐信108=小论文109=个人简历
+        orderDocFile:
           type: integer
           format: int32
-        offset:
+          description: 关联文件ID
+        orderDocUserType:
           type: integer
           format: int32
-        pageSize:
+          description: 文件上传人类型(0=顾问,1=学生)
+        orderDocUser:
           type: integer
           format: int32
-        sort:
+          description: 上传人ID
+        orderDocFileTime:
           type: string
-        teacherId:
+          format: date-time
+          description: 上传时间
+        orderFileIsDelete:
           type: integer
           format: int32
-        teacherName:
+          description: 是否删除 0=未删除 1=已除
+        orderFileDeleted:
           type: string
-        itemName:
-          type: string
-        itemPrice:
-          type: integer
-          format: int64
-        pinyin:
-          type: string
-      x-swagger-1-2-name: StudyCourseSearchVo
-    SignCallback:
-      type: object
-      properties:
-        action:
-          type: string
-        signFlowId:
-          type: string
-        signResult:
-          type: integer
-          format: int32
-        signOrder:
-          type: integer
-          format: int32
-        timestamp:
-          type: integer
-          format: int64
-        operateTime:
-          type: integer
-          format: int64
-        resultDescription:
-          type: string
-        organization:
-          $ref: '#/components/schemas/Organization'
-      x-swagger-1-2-name: SignCallback
+          format: date-time
+          description: 删除时间
+      x-swagger-1-2-name: 文书业务单文件关联信息对象
     HttpResult:
       type: object
       properties:
@@ -1511,11 +1323,7 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult
-    Schema_81c246:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
-    HttpResult_Map_5d5fab:
+    HttpResult_Map_string_string_5634e8:
       type: object
       properties:
         message:
@@ -1531,319 +1339,7 @@ components:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map»
-    Schema_86072f:
-      type: object
-      properties:
-        orderCode:
-          type: string
-          description: 订单编号
-        opTime:
-          type: string
-          format: date-time
-          description: 订单编号
-        opType:
-          type: string
-          description: 操作类型  支付/退款
-        gateway:
-          type: string
-          description: 支付方式/退款方式
-        amount:
-          type: string
-          description: 金额 支付金额/退款金额
-      x-swagger-1-2-name: 支付相关操作记录
-    SkuAttr:
-      type: object
-      properties:
-        skuId:
-          type: integer
-          format: int32
-        attrId:
-          type: integer
-          format: int32
-        attrVal:
-          type: string
-        pid:
-          type: integer
-          format: int32
-        parentVal:
-          type: string
-        created:
-          type: string
-          format: date-time
-        creator:
-          type: integer
-          format: int32
-        modified:
-          type: string
-          format: date-time
-        modifier:
-          type: integer
-          format: int32
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/SkuAttr'
-      x-swagger-1-2-name: SkuAttr
-    -_ad6a28:
-      type: object
-      properties:
-        agreementCode:
-          type: string
-          description: 合同编号
-        goodsName:
-          type: string
-          description: 商品名称
-        contractCreated:
-          type: string
-          format: date-time
-          description: 合同创建时间
-        signStatus:
-          type: integer
-          format: int32
-          description: 流程状态,0-草稿1-签署中2-完成3-撤销5-过期（签署截至日志到期后触发）7-拒签 8-失效
-        flowId:
-          type: string
-          description: 签署流程id
-        flowUrl:
-          type: string
-          description: 用户签署链接
-        fileId:
-          type: string
-          description: 文件id
-        fileUrl:
-          type: string
-          description: 原文件地址
-      x-swagger-1-2-name: 订单合同在线签署 - 前台
-    EnumsObj:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        code:
-          type: string
-        value:
-          type: string
-        type:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: EnumsObj
-    OrderStudyInfoDetailVo:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        orderCode:
-          type: string
-        orderUid:
-          type: integer
-          format: int32
-        orderStudyCode:
-          type: string
-        orderStudyStatus:
-          type: integer
-          format: int32
-        orderStudyAssistantUid:
-          type: integer
-          format: int32
-        orderStudyAssistantTime:
-          type: string
-          format: date-time
-        orderStudyEduUid:
-          type: integer
-          format: int32
-        orderStudyEduTime:
-          type: string
-          format: date-time
-        scoreType:
-          type: integer
-          format: int32
-        scoreSmallType:
-          type: integer
-          format: int32
-        trainBeforeScore:
-          type: number
-          format: double
-        trainTargetScore:
-          type: number
-          format: double
-        trainAfterScore:
-          type: number
-          format: double
-        testDate:
-          type: string
-          format: date-time
-        orderStudyCreated:
-          type: string
-          format: date-time
-        orderStudyCreator:
-          type: integer
-          format: int32
-        orderStudyModified:
-          type: string
-          format: date-time
-        orderStudyModifier:
-          type: integer
-          format: int32
-        orderStudyReark:
-          type: string
-        orderType:
-          type: integer
-          format: int32
-        statusMap:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnumsObj'
-      x-swagger-1-2-name: OrderStudyInfoDetailVo
-    HttpResult_List_-_a0ea6d:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/-_ad6a28'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«订单合同在线签署 - 前台»»
-    HttpResult_PayInfoVo_66732c:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/PayInfoVo'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«PayInfoVo»
-    UserCouponVo:
-      type: object
-      properties:
-        code:
-          type: string
-        poolCode:
-          type: string
-        poolName:
-          type: string
-        receiver:
-          type: integer
-          format: int32
-        receiveTime:
-          type: string
-          format: date-time
-        useTime:
-          type: string
-          format: date-time
-        channel:
-          type: string
-        payCode:
-          type: string
-        couponStatus:
-          type: integer
-          format: int32
-        startTime:
-          type: string
-          format: date-time
-        endTime:
-          type: string
-          format: date-time
-        poolStatusUse:
-          type: integer
-          format: int32
-        poolStatusProvide:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        val:
-          type: integer
-          format: int32
-        description:
-          type: string
-        effectiveType:
-          type: integer
-          format: int32
-        effectiveTime:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: UserCouponVo
-    StudyCourseVo:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        courseName:
-          type: string
-        courseStarttime:
-          type: string
-          format: date-time
-        couserEndtime:
-          type: string
-          format: date-time
-        courseStartTimeStr:
-          type: string
-        couserEndTimeStr:
-          type: string
-        uid:
-          type: integer
-          format: int32
-        userName:
-          type: string
-        status:
-          type: integer
-          format: int32
-        teacher1:
-          type: integer
-          format: int32
-        teacher2:
-          type: integer
-          format: int32
-        teacher3:
-          type: integer
-          format: int32
-        teacherName:
-          type: string
-        orderStudyCode:
-          type: string
-        createTime:
-          type: string
-          format: date-time
-        createUser:
-          type: integer
-          format: int32
-        updateTime:
-          type: string
-          format: date-time
-        updateUser:
-          type: integer
-          format: int32
-        courseComboCode:
-          type: string
-        courseType:
-          type: integer
-          format: int32
-        studyVideo:
-          $ref: '#/components/schemas/Schema_689fdb'
-      x-swagger-1-2-name: StudyCourseVo
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
     VO_-_183f88:
       type: object
       properties:
@@ -2037,6 +1533,108 @@ components:
           type: boolean
           description: 是否存在在线合同
       x-swagger-1-2-name: 订单信息VO - 前台
+    HttpResult_List_02431d:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_86072f'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«支付相关操作记录»»
+    StudyCourseVo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        courseName:
+          type: string
+        courseStarttime:
+          type: string
+          format: date-time
+        couserEndtime:
+          type: string
+          format: date-time
+        courseStartTimeStr:
+          type: string
+        couserEndTimeStr:
+          type: string
+        uid:
+          type: integer
+          format: int32
+        userName:
+          type: string
+        status:
+          type: integer
+          format: int32
+        teacher1:
+          type: integer
+          format: int32
+        teacher2:
+          type: integer
+          format: int32
+        teacher3:
+          type: integer
+          format: int32
+        teacherName:
+          type: string
+        orderStudyCode:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        createUser:
+          type: integer
+          format: int32
+        updateTime:
+          type: string
+          format: date-time
+        updateUser:
+          type: integer
+          format: int32
+        courseComboCode:
+          type: string
+        courseType:
+          type: integer
+          format: int32
+        studyVideo:
+          $ref: '#/components/schemas/Schema_689fdb'
+      x-swagger-1-2-name: StudyCourseVo
+    SignCallback:
+      type: object
+      properties:
+        action:
+          type: string
+        signFlowId:
+          type: string
+        signResult:
+          type: integer
+          format: int32
+        signOrder:
+          type: integer
+          format: int32
+        timestamp:
+          type: integer
+          format: int64
+        operateTime:
+          type: integer
+          format: int64
+        resultDescription:
+          type: string
+        organization:
+          $ref: '#/components/schemas/Organization'
+      x-swagger-1-2-name: SignCallback
     OrderDocInfoDetailVo:
       type: object
       properties:
@@ -2139,101 +1737,6 @@ components:
         materialTemplateUrl:
           type: string
       x-swagger-1-2-name: OrderDocInfoDetailVo
-    HttpResult_VO_-_3affa5:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/VO_-_a75db4'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«确认订单信息VO - 前台»
-    HttpResult_Map_string_string_5634e8:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,string»»
-    HttpResult_VO_-_d79457:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/VO_-_183f88'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«订单信息VO - 前台»
-    HttpResult_StudyCourseVo_4a61ad:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/StudyCourseVo'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«StudyCourseVo»
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
-    HttpResult_OrderDocInfoDetailVo_acc9c1:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/OrderDocInfoDetailVo'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«OrderDocInfoDetailVo»
     Page:
       type: object
       properties:
@@ -2262,14 +1765,194 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    Organization:
+    HttpResult_PayInfoVo_66732c:
       type: object
       properties:
-        orgId:
+        message:
           type: string
-        orgName:
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/PayInfoVo'
+        header:
           type: string
-      x-swagger-1-2-name: Organization
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«PayInfoVo»
+    StudyCourseSearchVo:
+      type: object
+      properties:
+        courseStarttime:
+          type: string
+        couserEndtime:
+          type: string
+        uid:
+          type: integer
+          format: int32
+        courseName:
+          type: string
+        userName:
+          type: string
+        status:
+          type: integer
+          format: int32
+        orderStudyCode:
+          type: string
+        pageNo:
+          type: integer
+          format: int32
+        offset:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        sort:
+          type: string
+        teacherId:
+          type: integer
+          format: int32
+        teacherName:
+          type: string
+        itemName:
+          type: string
+        itemPrice:
+          type: integer
+          format: int64
+        pinyin:
+          type: string
+      x-swagger-1-2-name: StudyCourseSearchVo
+    HttpResult_StudyCourseVo_4a61ad:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/StudyCourseVo'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«StudyCourseVo»
+    Schema_689fdb:
+      type: object
+      description: order_video
+      properties:
+        id:
+          type: integer
+          format: int32
+        courseId:
+          type: integer
+          format: int32
+          description: 课程id
+        classId:
+          type: string
+          description: 展视互动教室id或者全时教室唯一码
+        classNumber:
+          type: integer
+          format: int32
+          description: 课堂编号
+        assistantToken:
+          type: string
+          description: 助教口令
+        teacherToken:
+          type: string
+          description: 老师口令
+        studentClientToken:
+          type: string
+          description: 学生客户端口令
+        startDate:
+          type: string
+          format: date-time
+          description: 开始时间
+        teacherJoinUrl:
+          type: string
+          description: 老师和助教加入url
+        studentJoinUrl:
+          type: string
+          description: 学生加入url
+        scene:
+          type: integer
+          format: int32
+          description: 0:大讲堂，1：小班课，2：私教课
+      x-swagger-1-2-name: 语培视屏信息对象
+    HttpResult_VO_-_d79457:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/VO_-_183f88'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«订单信息VO - 前台»
+    SkuAttr:
+      type: object
+      properties:
+        skuId:
+          type: integer
+          format: int32
+        attrId:
+          type: integer
+          format: int32
+        attrVal:
+          type: string
+        pid:
+          type: integer
+          format: int32
+        parentVal:
+          type: string
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+      x-swagger-1-2-name: SkuAttr
+    HttpResult_List_-_a0ea6d:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/-_ad6a28'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«订单合同在线签署 - 前台»»
     HttpResult_Map_string_object_5812ac:
       type: object
       properties:
@@ -2287,7 +1970,75 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«Map«string,object»»
-    HttpResult_List_02431d:
+    Schema_86072f:
+      type: object
+      properties:
+        orderCode:
+          type: string
+          description: 订单编号
+        opTime:
+          type: string
+          format: date-time
+          description: 订单编号
+        opType:
+          type: string
+          description: 操作类型  支付/退款
+        gateway:
+          type: string
+          description: 支付方式/退款方式
+        amount:
+          type: string
+          description: 金额 支付金额/退款金额
+      x-swagger-1-2-name: 支付相关操作记录
+    Schema_81c246:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    EnumsObj:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        code:
+          type: string
+        value:
+          type: string
+        type:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: EnumsObj
+    -_ad6a28:
+      type: object
+      properties:
+        agreementCode:
+          type: string
+          description: 合同编号
+        goodsName:
+          type: string
+          description: 商品名称
+        contractCreated:
+          type: string
+          format: date-time
+          description: 合同创建时间
+        signStatus:
+          type: integer
+          format: int32
+          description: 流程状态,0-草稿1-签署中2-完成3-撤销5-过期（签署截至日志到期后触发）7-拒签 8-失效
+        flowId:
+          type: string
+          description: 签署流程id
+        flowUrl:
+          type: string
+          description: 用户签署链接
+        fileId:
+          type: string
+          description: 文件id
+        fileUrl:
+          type: string
+          description: 原文件地址
+      x-swagger-1-2-name: 订单合同在线签署 - 前台
+    HttpResult_OrderStudyInfoDetailVo_174008:
       type: object
       properties:
         message:
@@ -2296,16 +2047,265 @@ components:
           type: integer
           format: int32
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schema_86072f'
+          $ref: '#/components/schemas/OrderStudyInfoDetailVo'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«支付相关操作记录»»
+      x-swagger-1-2-name: HttpResult«OrderStudyInfoDetailVo»
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    VO_-_a75db4:
+      type: object
+      properties:
+        goodsId:
+          type: integer
+          format: int32
+          description: 商品ID
+        goodsName:
+          type: string
+          description: 商品名称
+        goodsPriceYuan:
+          type: integer
+          format: int64
+          description: 商品价格 元
+        united:
+          type: boolean
+          description: 是否是联合商品 1=是 0=否
+        sku:
+          type: integer
+          format: int32
+          description: SKU id
+        skuName:
+          type: string
+          description: sku名称
+        skuAttrs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+          description: sku属性列表
+        couponList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserCouponVo'
+          description: 优惠券列表
+        activCoupon:
+          type: string
+          description: 当前选中的优惠券号
+        payAmount:
+          type: integer
+          format: int64
+          description: 应付金额 元
+      x-swagger-1-2-name: 确认订单信息VO - 前台
+    PayInfoVo:
+      type: object
+      properties:
+        transactionId:
+          type: string
+        itemPriceFen:
+          type: integer
+          format: int32
+        payPriceFen:
+          type: integer
+          format: int32
+        payFinishTime:
+          type: string
+          format: date-time
+        payId:
+          type: string
+        bizOrderId:
+          type: string
+        payActionUrl:
+          type: string
+        payStatus:
+          type: string
+          enum:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+      x-swagger-1-2-name: PayInfoVo
+    UserCouponVo:
+      type: object
+      properties:
+        code:
+          type: string
+        poolCode:
+          type: string
+        poolName:
+          type: string
+        receiver:
+          type: integer
+          format: int32
+        receiveTime:
+          type: string
+          format: date-time
+        useTime:
+          type: string
+          format: date-time
+        channel:
+          type: string
+        payCode:
+          type: string
+        couponStatus:
+          type: integer
+          format: int32
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        poolStatusUse:
+          type: integer
+          format: int32
+        poolStatusProvide:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        val:
+          type: integer
+          format: int32
+        description:
+          type: string
+        effectiveType:
+          type: integer
+          format: int32
+        effectiveTime:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: UserCouponVo
+    OrderStudyInfoDetailVo:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        orderCode:
+          type: string
+        orderUid:
+          type: integer
+          format: int32
+        orderStudyCode:
+          type: string
+        orderStudyStatus:
+          type: integer
+          format: int32
+        orderStudyAssistantUid:
+          type: integer
+          format: int32
+        orderStudyAssistantTime:
+          type: string
+          format: date-time
+        orderStudyEduUid:
+          type: integer
+          format: int32
+        orderStudyEduTime:
+          type: string
+          format: date-time
+        scoreType:
+          type: integer
+          format: int32
+        scoreSmallType:
+          type: integer
+          format: int32
+        trainBeforeScore:
+          type: number
+          format: double
+        trainTargetScore:
+          type: number
+          format: double
+        trainAfterScore:
+          type: number
+          format: double
+        testDate:
+          type: string
+          format: date-time
+        orderStudyCreated:
+          type: string
+          format: date-time
+        orderStudyCreator:
+          type: integer
+          format: int32
+        orderStudyModified:
+          type: string
+          format: date-time
+        orderStudyModifier:
+          type: integer
+          format: int32
+        orderStudyReark:
+          type: string
+        orderType:
+          type: integer
+          format: int32
+        statusMap:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumsObj'
+      x-swagger-1-2-name: OrderStudyInfoDetailVo
+    HttpResult_VO_-_3affa5:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/VO_-_a75db4'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«确认订单信息VO - 前台»
+    HttpResult_Map_5d5fab:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map»
+    HttpResult_OrderDocInfoDetailVo_acc9c1:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/OrderDocInfoDetailVo'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«OrderDocInfoDetailVo»
   securitySchemes:
     tokenHeader:
       type: apiKey

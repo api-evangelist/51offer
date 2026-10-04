@@ -405,276 +405,23 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiy
 components:
   schemas:
-    MaterialOtherVO:
+    Schema_0e135e:
       type: object
       properties:
-        applyEmail:
-          type: string
-        applyPassword:
-          type: string
-        userStatus:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: MaterialOtherVO
-    HttpResult_d4e4aa:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/Schema_e23c20'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«邮件详情实体»
-    MaterialOther:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
-    VO_-_a75db4:
-      type: object
-      properties:
-        goodsId:
-          type: integer
-          format: int32
-          description: 商品ID
-        goodsName:
-          type: string
-          description: 商品名称
-        goodsPriceYuan:
-          type: integer
-          format: int64
-          description: 商品价格 元
-        united:
-          type: boolean
-          description: 是否是联合商品 1=是 0=否
-        sku:
-          type: integer
-          format: int32
-          description: SKU id
-        skuName:
-          type: string
-          description: sku名称
-        skuAttrs:
-          type: array
-          items:
-            $ref: '#/components/schemas/SkuAttr'
-          description: sku属性列表
-        couponList:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserCouponVo'
-          description: 优惠券列表
-        activCoupon:
-          type: string
-          description: 当前选中的优惠券号
-        payAmount:
-          type: integer
-          format: int64
-          description: 应付金额 元
-      x-swagger-1-2-name: 确认订单信息VO - 前台
-    HttpResult_List_47fc17:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schema_2ea806'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«邮件列表实体»»
-    HttpResult_boolean_f50dfc:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: boolean
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«boolean»
-    Schema_92c8b6:
-      type: object
-      properties:
-        key:
-          type: string
-          description: 键
         name:
           type: string
-          description: 名称
-      x-swagger-1-2-name: 邮件基本信息实体
-    Schema_e23c20:
-      type: object
-      properties:
-        from:
-          $ref: '#/components/schemas/Schema_92c8b6'
-          description: 发件人
-        to:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schema_92c8b6'
-          description: 收件人
-        cc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schema_92c8b6'
-          description: 抄送
-        bcc:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schema_92c8b6'
-          description: 暗送
-        title:
+          description: 附件名称
+        size:
           type: string
-          description: 邮件标题
-        is_read:
-          type: boolean
-          description: 是否读取,true 读过， false 未读
-        html_content:
-          type: string
-          description: 邮件正文
-        files:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schema_0e135e'
-          description: 附件列表
-        time:
-          type: string
-          format: date-time
-          description: 接收邮件时间
-        iso_time:
-          type: string
-          description: 接收邮件时间 ISO
-      x-swagger-1-2-name: 邮件详情实体
-    Schema_2ea806:
-      type: object
-      properties:
-        email_id:
-          type: integer
-          format: int32
-          description: 邮件id
-        title:
-          type: string
-          description: 邮件标题
-        time:
-          type: string
-          format: date-time
-          description: 接收邮件时间
-        iso_time:
-          type: string
-          description: 接收邮件时间 iso
-        attachment:
-          type: integer
-          format: int32
-          description: 附件数量
-        from:
-          $ref: '#/components/schemas/Schema_92c8b6'
-          description: 发件人
-        to:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schema_92c8b6'
-          description: 收件人
-        is_read:
-          type: boolean
-          description: 是否读取,true 读过， false 未读
-        tags:
-          type: string
-          description: 邮件标签
-        mid:
-          type: string
-          description: 根据mid 获取邮件详情
-      x-swagger-1-2-name: 邮件列表实体
-    Sku:
-      type: object
-      properties:
-        skuId:
-          type: integer
-          format: int32
-        category:
-          type: integer
-          format: int32
-        categoryName:
-          type: string
-        skuName:
-          type: string
-        actived:
-          type: boolean
-        picUrl:
-          type: string
-        priceFen:
-          type: integer
-          format: int32
-        originalPriceFen:
-          type: integer
-          format: int32
-        costPriceFen:
-          type: integer
-          format: int32
-        sales:
-          type: integer
-          format: int32
-        attrs:
-          type: array
-          items:
-            $ref: '#/components/schemas/SkuAttr'
-        attrsLevel:
-          type: array
-          items:
-            $ref: '#/components/schemas/SkuAttr'
-        parentType:
-          type: integer
-          format: int32
+          description: 附件大小
         type:
-          type: integer
-          format: int32
-        created:
           type: string
-          format: date-time
-        creator:
-          type: integer
-          format: int32
-        modified:
+          description: 附件类型
+        file_url:
           type: string
-          format: date-time
-        modifier:
-          type: integer
-          format: int32
-        costFen:
-          type: integer
-          format: int32
-        iuid:
-          type: string
-        priceYuan:
-          type: string
-        originalPriceYuan:
-          type: string
-        costPriceYuan:
-          type: string
-      x-swagger-1-2-name: Sku
-    HttpResult_Map_5d5fab:
+          description: 附件地址
+      x-swagger-1-2-name: 邮件附件实体
+    HttpResult_Sku_a71c3a:
       type: object
       properties:
         message:
@@ -683,99 +430,14 @@ components:
           type: integer
           format: int32
         data:
-          type: object
+          $ref: '#/components/schemas/Sku'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map»
-    SkuAttr:
-      type: object
-      properties:
-        skuId:
-          type: integer
-          format: int32
-        attrId:
-          type: integer
-          format: int32
-        attrVal:
-          type: string
-        pid:
-          type: integer
-          format: int32
-        parentVal:
-          type: string
-        created:
-          type: string
-          format: date-time
-        creator:
-          type: integer
-          format: int32
-        modified:
-          type: string
-          format: date-time
-        modifier:
-          type: integer
-          format: int32
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/SkuAttr'
-      x-swagger-1-2-name: SkuAttr
-    UserCouponVo:
-      type: object
-      properties:
-        code:
-          type: string
-        poolCode:
-          type: string
-        poolName:
-          type: string
-        receiver:
-          type: integer
-          format: int32
-        receiveTime:
-          type: string
-          format: date-time
-        useTime:
-          type: string
-          format: date-time
-        channel:
-          type: string
-        payCode:
-          type: string
-        couponStatus:
-          type: integer
-          format: int32
-        startTime:
-          type: string
-          format: date-time
-        endTime:
-          type: string
-          format: date-time
-        poolStatusUse:
-          type: integer
-          format: int32
-        poolStatusProvide:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        val:
-          type: integer
-          format: int32
-        description:
-          type: string
-        effectiveType:
-          type: integer
-          format: int32
-        effectiveTime:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: UserCouponVo
+      x-swagger-1-2-name: HttpResult«Sku»
     VO_-_183f88:
       type: object
       properties:
@@ -969,7 +631,7 @@ components:
           type: boolean
           description: 是否存在在线合同
       x-swagger-1-2-name: 订单信息VO - 前台
-    HttpResult_Sku_a71c3a:
+    HttpResult_List_47fc17:
       type: object
       properties:
         message:
@@ -978,108 +640,16 @@ components:
           type: integer
           format: int32
         data:
-          $ref: '#/components/schemas/Sku'
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_2ea806'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Sku»
-    HttpResult_VO_-_3affa5:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/VO_-_a75db4'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«确认订单信息VO - 前台»
-    Schema_0e135e:
-      type: object
-      properties:
-        name:
-          type: string
-          description: 附件名称
-        size:
-          type: string
-          description: 附件大小
-        type:
-          type: string
-          description: 附件类型
-        file_url:
-          type: string
-          description: 附件地址
-      x-swagger-1-2-name: 邮件附件实体
-    HttpResult_VO_-_d79457:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/VO_-_183f88'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«订单信息VO - 前台»
-    HttpResult_string_3275da:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: string
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«string»
-    HttpResult_MaterialOtherVO_6ed5d6:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/MaterialOtherVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«MaterialOtherVO»
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
+      x-swagger-1-2-name: HttpResult«List«邮件列表实体»»
     Page:
       type: object
       properties:
@@ -1108,6 +678,436 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
+    Schema_2ea806:
+      type: object
+      properties:
+        email_id:
+          type: integer
+          format: int32
+          description: 邮件id
+        title:
+          type: string
+          description: 邮件标题
+        time:
+          type: string
+          format: date-time
+          description: 接收邮件时间
+        iso_time:
+          type: string
+          description: 接收邮件时间 iso
+        attachment:
+          type: integer
+          format: int32
+          description: 附件数量
+        from:
+          $ref: '#/components/schemas/Schema_92c8b6'
+          description: 发件人
+        to:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_92c8b6'
+          description: 收件人
+        is_read:
+          type: boolean
+          description: 是否读取,true 读过， false 未读
+        tags:
+          type: string
+          description: 邮件标签
+        mid:
+          type: string
+          description: 根据mid 获取邮件详情
+      x-swagger-1-2-name: 邮件列表实体
+    HttpResult_VO_-_d79457:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/VO_-_183f88'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«订单信息VO - 前台»
+    SkuAttr:
+      type: object
+      properties:
+        skuId:
+          type: integer
+          format: int32
+        attrId:
+          type: integer
+          format: int32
+        attrVal:
+          type: string
+        pid:
+          type: integer
+          format: int32
+        parentVal:
+          type: string
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+      x-swagger-1-2-name: SkuAttr
+    MaterialOther:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
+    MaterialOtherVO:
+      type: object
+      properties:
+        applyEmail:
+          type: string
+        applyPassword:
+          type: string
+        userStatus:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: MaterialOtherVO
+    HttpResult_d4e4aa:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/Schema_e23c20'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«邮件详情实体»
+    VO_-_a75db4:
+      type: object
+      properties:
+        goodsId:
+          type: integer
+          format: int32
+          description: 商品ID
+        goodsName:
+          type: string
+          description: 商品名称
+        goodsPriceYuan:
+          type: integer
+          format: int64
+          description: 商品价格 元
+        united:
+          type: boolean
+          description: 是否是联合商品 1=是 0=否
+        sku:
+          type: integer
+          format: int32
+          description: SKU id
+        skuName:
+          type: string
+          description: sku名称
+        skuAttrs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+          description: sku属性列表
+        couponList:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserCouponVo'
+          description: 优惠券列表
+        activCoupon:
+          type: string
+          description: 当前选中的优惠券号
+        payAmount:
+          type: integer
+          format: int64
+          description: 应付金额 元
+      x-swagger-1-2-name: 确认订单信息VO - 前台
+    HttpResult_string_3275da:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: string
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«string»
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    UserCouponVo:
+      type: object
+      properties:
+        code:
+          type: string
+        poolCode:
+          type: string
+        poolName:
+          type: string
+        receiver:
+          type: integer
+          format: int32
+        receiveTime:
+          type: string
+          format: date-time
+        useTime:
+          type: string
+          format: date-time
+        channel:
+          type: string
+        payCode:
+          type: string
+        couponStatus:
+          type: integer
+          format: int32
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        poolStatusUse:
+          type: integer
+          format: int32
+        poolStatusProvide:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        val:
+          type: integer
+          format: int32
+        description:
+          type: string
+        effectiveType:
+          type: integer
+          format: int32
+        effectiveTime:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: UserCouponVo
+    HttpResult_MaterialOtherVO_6ed5d6:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/MaterialOtherVO'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«MaterialOtherVO»
+    Sku:
+      type: object
+      properties:
+        skuId:
+          type: integer
+          format: int32
+        category:
+          type: integer
+          format: int32
+        categoryName:
+          type: string
+        skuName:
+          type: string
+        actived:
+          type: boolean
+        picUrl:
+          type: string
+        priceFen:
+          type: integer
+          format: int32
+        originalPriceFen:
+          type: integer
+          format: int32
+        costPriceFen:
+          type: integer
+          format: int32
+        sales:
+          type: integer
+          format: int32
+        attrs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+        attrsLevel:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkuAttr'
+        parentType:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+        modified:
+          type: string
+          format: date-time
+        modifier:
+          type: integer
+          format: int32
+        costFen:
+          type: integer
+          format: int32
+        iuid:
+          type: string
+        priceYuan:
+          type: string
+        originalPriceYuan:
+          type: string
+        costPriceYuan:
+          type: string
+      x-swagger-1-2-name: Sku
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    HttpResult_VO_-_3affa5:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          $ref: '#/components/schemas/VO_-_a75db4'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«确认订单信息VO - 前台»
+    HttpResult_Map_5d5fab:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map»
+    Schema_92c8b6:
+      type: object
+      properties:
+        key:
+          type: string
+          description: 键
+        name:
+          type: string
+          description: 名称
+      x-swagger-1-2-name: 邮件基本信息实体
+    Schema_e23c20:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/Schema_92c8b6'
+          description: 发件人
+        to:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_92c8b6'
+          description: 收件人
+        cc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_92c8b6'
+          description: 抄送
+        bcc:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_92c8b6'
+          description: 暗送
+        title:
+          type: string
+          description: 邮件标题
+        is_read:
+          type: boolean
+          description: 是否读取,true 读过， false 未读
+        html_content:
+          type: string
+          description: 邮件正文
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema_0e135e'
+          description: 附件列表
+        time:
+          type: string
+          format: date-time
+          description: 接收邮件时间
+        iso_time:
+          type: string
+          description: 接收邮件时间 ISO
+      x-swagger-1-2-name: 邮件详情实体
   securitySchemes:
     tokenHeader:
       type: apiKey

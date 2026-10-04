@@ -1875,7 +1875,37 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngadviser
 components:
   schemas:
-    HttpResult_List_SignWechatCode_fccc47:
+    Dict:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        code:
+          type: string
+        name:
+          type: string
+        pcode:
+          type: string
+        dataValue:
+          type: string
+        createUser:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        lastModifiedUser:
+          type: string
+        lastModifiedTime:
+          type: string
+          format: date-time
+        remark:
+          type: string
+        sort:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Dict
+    HttpResult_List_SysUsers_0356ba:
       type: object
       properties:
         message:
@@ -1886,14 +1916,18 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/SignWechatCode'
+            $ref: '#/components/schemas/SysUsers'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«SignWechatCode»»
+      x-swagger-1-2-name: HttpResult«List«SysUsers»»
+    SignWechatCodeVO:
+      type: object
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
     SignWechatCode:
       type: object
       properties:
@@ -1920,7 +1954,7 @@ components:
         bgUrl:
           type: string
       x-swagger-1-2-name: SignWechatCode
-    HttpResult_List_Dict_628083:
+    HttpResult_List_Users_81a132:
       type: object
       properties:
         message:
@@ -1931,14 +1965,201 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Dict'
+            $ref: '#/components/schemas/Users'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«Dict»»
+      x-swagger-1-2-name: HttpResult«List«Users»»
+    HttpResult_List_Country_4307e8:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Country'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Country»»
+    Users:
+      type: object
+      properties:
+        uid:
+          type: integer
+          format: int32
+        username:
+          type: string
+        nickname:
+          type: string
+        password:
+          type: string
+        salt:
+          type: string
+        region:
+          type: string
+        mobile:
+          type: string
+        email:
+          type: string
+        userStatus:
+          type: integer
+          format: int32
+        mobileStatus:
+          type: integer
+          format: int32
+        emailStatus:
+          type: integer
+          format: int32
+        userAvatar:
+          type: string
+        createDate:
+          type: string
+          format: date-time
+        modifyDate:
+          type: string
+          format: date-time
+        token:
+          type: string
+      x-swagger-1-2-name: Users
+    SysPartners:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        username:
+          type: string
+        mobile:
+          type: string
+        password:
+          type: string
+        sex:
+          type: integer
+          format: int32
+        salt:
+          type: string
+        nikename:
+          type: string
+        realname:
+          type: string
+        status:
+          type: integer
+          format: int32
+        recommend:
+          type: string
+        area:
+          type: string
+        created:
+          type: string
+          format: date-time
+        creator:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: SysPartners
+    ChannelInfo:
+      type: object
+      properties:
+        channelName:
+          type: string
+        channelId:
+          type: string
+        opratorName:
+          type: string
+        channelUrl:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        status:
+          type: integer
+          format: int32
+        channelNameShort:
+          type: string
+        categoryId:
+          type: integer
+          format: int32
+        categoryCode:
+          type: string
+        channelCategory:
+          type: string
+        groupId:
+          type: integer
+          format: int32
+        groupCode:
+          type: string
+        groupName:
+          type: string
+        isCost:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: ChannelInfo
+    Country:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        upperName:
+          type: string
+        cname:
+          type: string
+        ename:
+          type: string
+        logo:
+          type: string
+        iso:
+          type: string
+        iso3:
+          type: string
+        numCode:
+          type: integer
+          format: int32
+        phoneCode:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Country
+    Page:
+      type: object
+      properties:
+        currPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        totalPage:
+          type: integer
+          format: int32
+        hasPre:
+          type: boolean
+        hasNext:
+          type: boolean
+        pageStr:
+          type: string
+        startRow:
+          type: integer
+          format: int32
+        endRow:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Page
     SysUsers:
       type: object
       properties:
@@ -2015,86 +2236,10 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: SysUsers
-    HttpResult_List_UsersPartnerInfo_c9de4a:
+    UsersSignSearchVO:
       type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersPartnerInfo'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«UsersPartnerInfo»»
-    Country:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        upperName:
-          type: string
-        cname:
-          type: string
-        ename:
-          type: string
-        logo:
-          type: string
-        iso:
-          type: string
-        iso3:
-          type: string
-        numCode:
-          type: integer
-          format: int32
-        phoneCode:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Country
-    HttpResult_boolean_f50dfc:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: boolean
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«boolean»
-    HttpResult_List_SysUsers_0356ba:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/SysUsers'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«SysUsers»»
+      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
+      x-undefined-in-source: true
     HttpResult_List_SysPartners_77c335:
       type: object
       properties:
@@ -2114,10 +2259,6 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«List«SysPartners»»
-    SignWechatCodeVO:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
     HttpResult_List_ChannelInfo_c68762:
       type: object
       properties:
@@ -2137,46 +2278,85 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«List«ChannelInfo»»
-    Users:
+    HttpResult_List_UsersPartnerInfo_c9de4a:
       type: object
       properties:
-        uid:
+        message:
+          type: string
+        code:
           type: integer
           format: int32
-        username:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsersPartnerInfo'
+        header:
           type: string
-        nickname:
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«UsersPartnerInfo»»
+    HttpResult_List_SignWechatCode_fccc47:
+      type: object
+      properties:
+        message:
           type: string
-        password:
-          type: string
-        salt:
-          type: string
-        region:
-          type: string
-        mobile:
-          type: string
-        email:
-          type: string
-        userStatus:
+        code:
           type: integer
           format: int32
-        mobileStatus:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SignWechatCode'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«SignWechatCode»»
+    List:
+      type: array
+      items: {}
+      description: Untyped Java List as emitted by the source Swagger 1.2 documents.
+      x-swagger-1-2-name: List
+    HttpResult_List_Dict_628083:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
           type: integer
           format: int32
-        emailStatus:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dict'
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«List«Dict»»
+    HttpResult_Map_string_object_5812ac:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
           type: integer
           format: int32
-        userAvatar:
+        data:
+          type: object
+        header:
           type: string
-        createDate:
-          type: string
-          format: date-time
-        modifyDate:
-          type: string
-          format: date-time
-        token:
-          type: string
-      x-swagger-1-2-name: Users
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
     UsersSignVO:
       type: object
       properties:
@@ -2203,6 +2383,33 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: UsersSignVO
+    HttpResult_string_3275da:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: string
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«string»
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
     HttpResult_SignWechatCode_40ac55:
       type: object
       properties:
@@ -2220,47 +2427,41 @@ components:
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
       x-swagger-1-2-name: HttpResult«SignWechatCode»
-    ChannelInfo:
+    HttpResult_AllianceStore_f306f7:
       type: object
       properties:
-        channelName:
+        message:
           type: string
-        channelId:
-          type: string
-        opratorName:
-          type: string
-        channelUrl:
-          type: string
-        createTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-        status:
+        code:
           type: integer
           format: int32
-        channelNameShort:
+        data:
+          $ref: '#/components/schemas/AllianceStore'
+        header:
           type: string
-        categoryId:
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«AllianceStore»
+    HttpResult_boolean_f50dfc:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
           type: integer
           format: int32
-        categoryCode:
+        data:
+          type: boolean
+        header:
           type: string
-        channelCategory:
-          type: string
-        groupId:
-          type: integer
-          format: int32
-        groupCode:
-          type: string
-        groupName:
-          type: string
-        isCost:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: ChannelInfo
-    HttpResult_List_Country_4307e8:
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«boolean»
+    HttpResult_List_string_f13f7f:
       type: object
       properties:
         message:
@@ -2271,14 +2472,14 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Country'
+            type: string
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«Country»»
+      x-swagger-1-2-name: HttpResult«List«string»»
     AllianceStore:
       type: object
       properties:
@@ -2333,81 +2534,6 @@ components:
         regAcceptor:
           type: string
       x-swagger-1-2-name: AllianceStore
-    List:
-      type: array
-      items: {}
-      description: Untyped Java List as emitted by the source Swagger 1.2 documents.
-      x-swagger-1-2-name: List
-    Dict:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        code:
-          type: string
-        name:
-          type: string
-        pcode:
-          type: string
-        dataValue:
-          type: string
-        createUser:
-          type: string
-        createTime:
-          type: string
-          format: date-time
-        lastModifiedUser:
-          type: string
-        lastModifiedTime:
-          type: string
-          format: date-time
-        remark:
-          type: string
-        sort:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Dict
-    UsersSignSearchVO:
-      type: object
-      description: Model referenced by the 51offer Swagger 1.2 documents at https://www.51offer.com/api-docs but never defined in them; no properties are asserted here because the provider does not publish any.
-      x-undefined-in-source: true
-    HttpResult_string_3275da:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: string
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«string»
-    HttpResult_List_UsersSignVO_0f9221:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/UsersSignVO'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«UsersSignVO»»
     UsersPartnerInfo:
       type: object
       properties:
@@ -2450,80 +2576,7 @@ components:
         unfitCountryInfo:
           type: string
       x-swagger-1-2-name: UsersPartnerInfo
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
-    SysPartners:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        username:
-          type: string
-        mobile:
-          type: string
-        password:
-          type: string
-        sex:
-          type: integer
-          format: int32
-        salt:
-          type: string
-        nikename:
-          type: string
-        realname:
-          type: string
-        status:
-          type: integer
-          format: int32
-        recommend:
-          type: string
-        area:
-          type: string
-        created:
-          type: string
-          format: date-time
-        creator:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: SysPartners
-    Page:
-      type: object
-      properties:
-        currPage:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        count:
-          type: integer
-          format: int32
-        totalPage:
-          type: integer
-          format: int32
-        hasPre:
-          type: boolean
-        hasNext:
-          type: boolean
-        pageStr:
-          type: string
-        startRow:
-          type: integer
-          format: int32
-        endRow:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Page
-    HttpResult_List_Users_81a132:
+    HttpResult_List_UsersSignVO_0f9221:
       type: object
       properties:
         message:
@@ -2534,67 +2587,14 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/Users'
+            $ref: '#/components/schemas/UsersSignVO'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«Users»»
-    HttpResult_Map_string_object_5812ac:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,object»»
-    HttpResult_List_string_f13f7f:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: array
-          items:
-            type: string
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«List«string»»
-    HttpResult_AllianceStore_f306f7:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          $ref: '#/components/schemas/AllianceStore'
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«AllianceStore»
+      x-swagger-1-2-name: HttpResult«List«UsersSignVO»»
   securitySchemes:
     tokenHeader:
       type: apiKey
