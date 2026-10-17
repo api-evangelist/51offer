@@ -143,7 +143,7 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngpaycoupon
 components:
   schemas:
-    HttpResult_Map_string_int_ca4887:
+    HttpResult_Map_string_string_5634e8:
       type: object
       properties:
         message:
@@ -152,23 +152,24 @@ components:
           type: integer
           format: int32
         data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entry_string_int_3e25de'
+          type: object
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,int»»
-    Entry_string_int_3e25de:
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
+    ApiInfo:
       type: object
       properties:
-        key:
-          type: integer
-          format: int32
-      x-swagger-1-2-name: Entry«string,int»
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
     Page:
       type: object
       properties:
@@ -197,17 +198,14 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    ApiInfo:
+    Entry_string_int_3e25de:
       type: object
       properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
-    HttpResult_Map_string_string_5634e8:
+        key:
+          type: integer
+          format: int32
+      x-swagger-1-2-name: Entry«string,int»
+    HttpResult_Map_string_int_ca4887:
       type: object
       properties:
         message:
@@ -216,14 +214,16 @@ components:
           type: integer
           format: int32
         data:
-          type: object
+          type: array
+          items:
+            $ref: '#/components/schemas/Entry_string_int_3e25de'
         header:
           type: string
         page:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,string»»
+      x-swagger-1-2-name: HttpResult«Map«string,int»»
   securitySchemes:
     tokenHeader:
       type: apiKey

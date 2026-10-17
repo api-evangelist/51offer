@@ -228,23 +228,6 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/sign-controller
 components:
   schemas:
-    HttpResult_Map_string_string_5634e8:
-      type: object
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          format: int32
-        data:
-          type: object
-        header:
-          type: string
-        page:
-          $ref: '#/components/schemas/Page'
-        apiInfo:
-          $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,string»»
     Page:
       type: object
       properties:
@@ -283,6 +266,23 @@ components:
         hostName:
           type: string
       x-swagger-1-2-name: ApiInfo
+    HttpResult_Map_string_string_5634e8:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          format: int32
+        data:
+          type: object
+        header:
+          type: string
+        page:
+          $ref: '#/components/schemas/Page'
+        apiInfo:
+          $ref: '#/components/schemas/ApiInfo'
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
   securitySchemes:
     tokenHeader:
       type: apiKey

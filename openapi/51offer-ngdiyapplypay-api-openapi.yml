@@ -85,7 +85,7 @@ paths:
       x-swagger-1-2-source: https://www.51offer.com/api-docs/default/ngdiyapplypay
 components:
   schemas:
-    HttpResult_Map_string_string_5634e8:
+    HttpResult_Map_string_object_5812ac:
       type: object
       properties:
         message:
@@ -101,7 +101,7 @@ components:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,string»»
+      x-swagger-1-2-name: HttpResult«Map«string,object»»
     Page:
       type: object
       properties:
@@ -130,7 +130,17 @@ components:
           type: integer
           format: int32
       x-swagger-1-2-name: Page
-    HttpResult_Map_string_object_5812ac:
+    ApiInfo:
+      type: object
+      properties:
+        operationTime:
+          type: string
+        version:
+          type: string
+        hostName:
+          type: string
+      x-swagger-1-2-name: ApiInfo
+    HttpResult_Map_string_string_5634e8:
       type: object
       properties:
         message:
@@ -146,17 +156,7 @@ components:
           $ref: '#/components/schemas/Page'
         apiInfo:
           $ref: '#/components/schemas/ApiInfo'
-      x-swagger-1-2-name: HttpResult«Map«string,object»»
-    ApiInfo:
-      type: object
-      properties:
-        operationTime:
-          type: string
-        version:
-          type: string
-        hostName:
-          type: string
-      x-swagger-1-2-name: ApiInfo
+      x-swagger-1-2-name: HttpResult«Map«string,string»»
   securitySchemes:
     tokenHeader:
       type: apiKey
