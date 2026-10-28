@@ -64,51 +64,134 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-51offer (Shanghai Huizhi Business Consulting Co., Ltd. / 上海汇紫商务咨询有限公司, Xuhui District,
-Shanghai) is a one-stop online study-abroad platform for Chinese students applying to universities in
-the United Kingdom, Australia, the United States, New Zealand, Japan and Singapore. Its surface covers
-DIY application filing, AI/big-data school and course matching, personal statements and application
-materials, IELTS/TOEFL language training, adviser and channel-partner services, a study-abroad mall
-with online contract signing, payment and refund, a GPA calculator, and a student content section.
+51offer (Shanghai Huizhi Business Consulting Co., Ltd. / 上海汇紫商务咨询有限公司) is a Shanghai-based one-stop online study-abroad platform for Chinese students applying to universities in the United Kingdom, Australia, the United States, New Zealand, Japan and Singapore. Its consumer surface covers DIY application filing, AI/big-data school and course matching, personal-statement and document services, language training (IELTS/TOEFL), adviser and channel-partner services, a study-abroad mall with online contract signing, payment and refund flows, a GPA calculator and a student content and community section. 51offer publishes no developer program, but its official site www.51offer.com serves a public, unauthenticated Swagger 1.2 API listing at /api-docs ("Horizon Site APIConfig List / 51offer官网所有开放接口清单") describing 24 controllers and several hundred JSON operations, and that listing is the machine-readable contract profiled here.
 
-## The contract
+**Areas:** Company · Education · Study Abroad · Higher Education · University Applications · Students · Language Training · E-Commerce · China · Consulting
 
-51offer runs **no developer programme** — no portal, no documentation, no SDKs, no support channel for
-API consumers. It does, however, serve an unauthenticated **Swagger 1.2** API listing on its own
-official site:
+## 51offer on APIs.io
 
-- <https://www.51offer.com/api-docs> — HTTP 200, `application/json`, `swaggerVersion: 1.2`,
-  `info.title: "Horizon Site APIConfig List"`, `info.description: "51offer官网所有开放接口清单"`,
-  `info.contact: woodrow.w@51offer.com`. 24 resource declarations, 452 operations.
-- The same documents are served at <https://m.51offer.com/api-docs>.
+Everything profiled for 51offer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/51offer/](https://apis.io/providers/51offer/)** — or go straight to one of the APIs or properties below.
 
-Those 25 documents are saved verbatim under `openapi/_original/`. `openapi/51offer-horizon-site-openapi.yml`
-is a mechanical conversion of them to OpenAPI 3.1 — 221 paths, 389 operations, 159 schemas — carrying
-their provenance in `info.x-provenance` and per-operation `x-swagger-1-2-source`. Nothing in it was
-invented; 14 models the provider's own documents reference but never define are flagged
-`x-undefined-in-source` rather than filled in.
+### APIs (21)
 
-The API base is `https://www.51offer.com` — the marketing site and the API share one host. Verified
-live on 2026-09-05: `GET https://www.51offer.com/ngGpaCalc/constants` returned HTTP 200 and
-`application/json`.
+- [51offer Diym API](https://apis.io/apis/51offer/51offer-diym-api/) — diy材料申请信息控制层
+- [51offer Ng Adviser API](https://apis.io/apis/51offer/51offer-ngadviser-api/) — 顾问控制层
+- [51offer Ng Alliance API](https://apis.io/apis/51offer/51offer-ngalliance-api/) — 大总管服务控制层
+- [51offer Ng Delivery Channel API](https://apis.io/apis/51offer/51offer-ngdeliverychannel-api/) — 渠道限时兑换礼包相关控制层
+- [51offer Ng Diy API](https://apis.io/apis/51offer/51offer-ngdiy-api/) — Diy服务控制层
+- [51offer Ngdiyapplypay API](https://apis.io/apis/51offer/51offer-ngdiyapplypay-api/) — Diy申请支付服务控制
+- [51offer Ngdiychoose School API](https://apis.io/apis/51offer/51offer-ngdiychooseschool-api/) — diy选校控制器
+- [51offer Ngdiypositioningnotice API](https://apis.io/apis/51offer/51offer-ngdiypositioningnotice-api/) — diy定位通知服务
+- [51offer Ngdiyselectschool API](https://apis.io/apis/51offer/51offer-ngdiyselectschool-api/) — Diy选校控制器前置
+- [51offer Ngdiysinglepage API](https://apis.io/apis/51offer/51offer-ngdiysinglepage-api/) — diy单品页控制器
+- [51offer Ng Double Twelve API](https://apis.io/apis/51offer/51offer-ngdoubletwelve-api/) — 双十二活动服务控制层
+- [51offer Ng Enroll API](https://apis.io/apis/51offer/51offer-ngenroll-api/) — Enroll Controller
+- [51offer Ng Gpa Calc API](https://apis.io/apis/51offer/51offer-nggpacalc-api/) — GPA计算器
+- [51offer Ng Home API](https://apis.io/apis/51offer/51offer-nghome-api/) — H5首页控制层
+- [51offer Ng Lan Correct API](https://apis.io/apis/51offer/51offer-nglancorrect-api/) — 语培口语批改
+- [51offer Ng Mall API](https://apis.io/apis/51offer/51offer-ngmall-api/) — 商城控制层
+- [51offer Ng Pay Coupon API](https://apis.io/apis/51offer/51offer-ngpaycoupon-api/) — 51品牌节支付优惠券
+- [51offer Ng Pic API](https://apis.io/apis/51offer/51offer-ngpic-api/) — 文章图片更新控制层
+- [51offer Ngrefund API](https://apis.io/apis/51offer/51offer-ngrefund-api/) — 订单退款控制层
+- [51offer Ng Sign API](https://apis.io/apis/51offer/51offer-ngsign-api/) — Sign Controller
+- [51offer Ng User Info API](https://apis.io/apis/51offer/51offer-nguserinfo-api/) — runway用户控制层
 
-## What an integrator needs to know
+### Published properties
 
-- One envelope on every response — `{message, code, data, header, page, apiInfo}`. The HTTP status is
-  200 on success **and** on most failures; the outcome is the `code` field.
-- Authentication is a `token` request header, evidenced only by CORS headers. Undocumented.
-- **No idempotency mechanism** on any of the 118 mutating operations, including `createOrder`,
-  `payOrder` and `submitEntranceRefund`.
-- Many mutating operations are declared `GET` (`addCart`, `submitIntentions`, every `diym` delete).
-- A refund path exists (`POST /ngrefund/sub`, `GET /ngrefund/progress`) but **no reversal window is
-  published anywhere**, so reversibility grades `documented`, not `verified`.
-- Unknown paths return HTTP 200 with an HTML error page rather than a 404.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## What is absent
+#### MCP servers (1)
 
-Probed and not found on 2026-09-05: any `/.well-known/` document on any of five hosts (every path
-returns a soft 404, a real 404, or `{"error":"Document not found"}`), `security.txt`, `llms.txt`,
-`robots.txt`, an A2A agent card, an MCP server, OAuth or OIDC metadata, GraphQL, WSDL, AsyncAPI or
-webhooks, a status page (`status.51offer.com` is NXDOMAIN, as are `developer.`, `open.` and `docs.`),
-a changelog, a deprecation policy, an SLA, published rate limits, an error-code reference, a trust
-centre or vulnerability-disclosure programme, and any API pricing.
+Model Context Protocol servers that expose the API to agents.
+
+- [51offer-mcp.yml](https://apis.io/servers/51offer/51offer-mcp-yml/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [51Offer Horizon Site Overlay](https://apis.io/overlays/51offer/51offer-horizon-site-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [51Offer Authentication](https://apis.io/security/51offer/51offer-authentication/)
+- [51Offer Domain Security](https://apis.io/security/51offer/51offer-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [51Offer Plans Pricing](https://apis.io/plans/51offer/51offer-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [51Offer Rate Limits](https://apis.io/rate-limits/51offer/51offer-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.51offer.com/)
+- [Sign up](https://account.51offer.com/register.html)
+- [Support](https://account.51offer.com/user/feedback.html)
+- [Blog](https://51offer.github.io/)
+- [Terms of service](https://www.51offer.com/aboutus/contract.html)
+- [Privacy policy](https://www.51offer.com/aboutus/protection.html)
+- [GitHub](https://github.com/51offer)
+
+## API Evangelist rating
+
+**Kin Score 20.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 16.4 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 24.4 |
+| Access clarity | 17.1 |
+
+**Agent readiness 21.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/51offer/](https://apis.io/providers/51offer/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 51offer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/51offer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
