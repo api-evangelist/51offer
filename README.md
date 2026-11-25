@@ -110,26 +110,32 @@ Model Context Protocol servers that expose the API to agents.
 
 OpenAPI overlays, including conversational phrasing for each operation.
 
-- [51Offer Horizon Site Overlay](https://apis.io/overlays/51offer/51offer-horizon-site-overlay/)
+- [51offer Horizon Site Overlay](https://apis.io/overlays/51offer/51offer-horizon-site-overlay/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [51offer API Rules](https://apis.io/rules/51offer/51offer-rules/)
 
 #### Security (2)
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [51Offer Authentication](https://apis.io/security/51offer/51offer-authentication/)
-- [51Offer Domain Security](https://apis.io/security/51offer/51offer-domain-security/)
+- [51offer Authentication](https://apis.io/security/51offer/51offer-authentication/)
+- [51offer Domain Security](https://apis.io/security/51offer/51offer-domain-security/)
 
 #### Plans and pricing (1)
 
 Published plans, tiers and prices.
 
-- [51Offer Plans Pricing](https://apis.io/plans/51offer/51offer-plans-pricing/)
+- [51offer Plans Pricing](https://apis.io/plans/51offer/51offer-plans-pricing/)
 
 #### Rate limits (1)
 
 Published request limits.
 
-- [51Offer Rate Limits](https://apis.io/rate-limits/51offer/51offer-rate-limits/)
+- [51offer Rate Limits](https://apis.io/rate-limits/51offer/51offer-rate-limits/)
 
 ## Where to find this API
 
@@ -145,18 +151,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 20.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 23.4** — emerging · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
 | Discoverability | 71.4 |
 | Contract quality | 16.4 |
-| Contract governance | 4.5 |
-| Operational transparency | 2.6 |
+| Contract governance | 18.2 |
+| Operational transparency | 4.8 |
 | Developer ergonomics | 24.4 |
-| Access clarity | 17.1 |
+| Access clarity | 28.7 |
 
-**Agent readiness 21.3** — agent-aware
+**Agent readiness 19.8** — agent-aware
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -179,8 +185,14 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | — |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
-**Regulatory alignment 20.6** — Education & Research
+**Regulatory alignment 14.7** — Education & Research
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/51offer/](https://apis.io/providers/51offer/).
 
